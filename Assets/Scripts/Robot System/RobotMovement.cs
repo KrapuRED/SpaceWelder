@@ -69,10 +69,6 @@ public class RobotMovement : MonoBehaviour
             _isMoving = true;
             return;
         }
-        else
-        {
-            Debug.Log($"[TryToMove] {input} not found in connections: {string.Join(", ", _currentPoint.connections.Keys)}");
-        }
     }
 
     private void MoveToRailPoint()
