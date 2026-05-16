@@ -100,6 +100,15 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Welding"",
+                    ""type"": ""Button"",
+                    ""id"": ""a342511b-e887-4ac2-86ca-bbb02016fbd9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -157,6 +166,17 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8caec108-f473-4854-b7e1-ff8d66fa1ee9"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Welding"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +186,7 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Movement = m_GamePlay.FindAction("Movement", throwIfNotFound: true);
+        m_GamePlay_Welding = m_GamePlay.FindAction("Welding", throwIfNotFound: true);
     }
 
     ~@GamePlayInput()
@@ -247,6 +268,7 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_GamePlay;
     private List<IGamePlayActions> m_GamePlayActionsCallbackInterfaces = new List<IGamePlayActions>();
     private readonly InputAction m_GamePlay_Movement;
+    private readonly InputAction m_GamePlay_Welding;
     /// <summary>
     /// Provides access to input actions defined in input action map "GamePlay".
     /// </summary>
@@ -262,6 +284,10 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "GamePlay/Movement".
         /// </summary>
         public InputAction @Movement => m_Wrapper.m_GamePlay_Movement;
+        /// <summary>
+        /// Provides access to the underlying input action "GamePlay/Welding".
+        /// </summary>
+        public InputAction @Welding => m_Wrapper.m_GamePlay_Welding;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -291,6 +317,9 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @Welding.started += instance.OnWelding;
+            @Welding.performed += instance.OnWelding;
+            @Welding.canceled += instance.OnWelding;
         }
 
         /// <summary>
@@ -305,6 +334,9 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @Welding.started -= instance.OnWelding;
+            @Welding.performed -= instance.OnWelding;
+            @Welding.canceled -= instance.OnWelding;
         }
 
         /// <summary>
@@ -352,5 +384,12 @@ public partial class @GamePlayInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMovement(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Welding" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnWelding(InputAction.CallbackContext context);
     }
 }
