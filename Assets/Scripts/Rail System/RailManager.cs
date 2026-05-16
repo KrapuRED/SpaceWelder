@@ -38,7 +38,7 @@ public class RailManager : MonoBehaviour
 
         DetectIntersections();
         ApplyConnector();
-        LogJunctions();
+        //LogJunctions();
     }
 
     void LogJunctions()
