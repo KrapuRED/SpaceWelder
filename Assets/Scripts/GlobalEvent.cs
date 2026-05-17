@@ -84,4 +84,5 @@ public class GlobalEvents
     public static readonly CustomEvents<float, float> OnProgressDestinationUI = new();
     public static readonly CustomEvents<float> OnProgressTimeDestinationUI = new();
     public static readonly CustomEvents<float> OnShipEffciencyUI = new();
+    public static readonly CustomEvents<string> OnMissionControlDialogue = new();
 }

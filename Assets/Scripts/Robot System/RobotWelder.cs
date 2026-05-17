@@ -6,6 +6,9 @@ public class RobotWelder : Robot, IDamageAble
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _currentHealth;
 
+    public float MaxHealth => _maxHealth;
+    public float CurrentHealth => _currentHealth;
+
     private void Start()
     {
         _currentHealth = _maxHealth;

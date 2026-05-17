@@ -13,7 +13,7 @@ public class EffciencyShipManager : MonoBehaviour
     ManagerHullShip _managerHullShip;
     private float _targetEffciency;
 
-    public float EffciencyShip => effciencyShip;
+    public float EfficiencyShip => effciencyShip;
 
     private void Awake()
     {

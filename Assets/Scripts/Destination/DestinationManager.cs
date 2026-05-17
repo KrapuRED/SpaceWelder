@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class DestinationManager : MonoBehaviour
 {
+    public static DestinationManager Instance;
+
     [Header("Destination Manager Config")]
     [SerializeField] private float _speedShip;
     [SerializeField] private float _maxSpeedShip;
@@ -14,6 +16,16 @@ public class DestinationManager : MonoBehaviour
     private float _efficiency;
     private bool _reachDestination;
     private float _timeElapsed;
+
+    public float TotalDistance => _distanceTravel;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -37,6 +49,11 @@ public class DestinationManager : MonoBehaviour
         GlobalEvents.OnProgressTimeDestinationUI.Invoke(_timeElapsed);
     }
 
+    public float DistanceToTarget()
+    {
+        return _distanceToTravel - _distanceTravel;
+    }
+
     private void ReachDestination()
     {
         _reachDestination = true;
@@ -46,16 +63,11 @@ public class DestinationManager : MonoBehaviour
     private void CalculateShipToDestination()
     {
         float prevEfficiency = _efficiency;
-        _efficiency = _effciencyShipManager.EffciencyShip / 100f;
-
-        if (prevEfficiency != _efficiency)
-            Debug.Log($"Efficiency changed: {prevEfficiency} -> {_efficiency}");
+        _efficiency = _effciencyShipManager.EfficiencyShip / 100f;
 
         float targetSpeed = Mathf.Min(_speedShip * _efficiency, _maxSpeedShip   ) ;
         _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
 
         _distanceTravel += _currentSpeed * Time.deltaTime;
-
-        //Debug.Log($"Efficiency: {_efficiency} | Target: {targetSpeed} | Current: {_currentSpeed}");
     }
 }
