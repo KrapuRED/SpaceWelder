@@ -78,4 +78,10 @@ public class CustomEvents<T1, T2, T3>
 public class GlobalEvents 
 {
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
+
+    //=============================== UI ================================================//
+    public static readonly CustomEvents<float> OnUpdateHealthRobotUI = new();
+    public static readonly CustomEvents<float, float> OnProgressDestinationUI = new();
+    public static readonly CustomEvents<float> OnProgressTimeDestinationUI = new();
+    public static readonly CustomEvents<float> OnShipEffciencyUI = new();
 }
