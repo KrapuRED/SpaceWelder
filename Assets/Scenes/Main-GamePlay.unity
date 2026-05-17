@@ -5460,6 +5460,7 @@ MonoBehaviour:
         dialogue: "Don\u2019t shut down on me now\u2026"
   _InactiveTalking: 10
   _isActive: 1
+  _lockedTimeout: 15
   _shipManager: {fileID: 0}
   _destinationManager: {fileID: 0}
   _currentPlayer: {fileID: 1456857408}

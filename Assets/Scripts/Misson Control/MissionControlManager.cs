@@ -37,10 +37,12 @@ public class MissionControlManager : MonoBehaviour
     [SerializeField] private bool _isActive = true;
 
     private MissionControltype _prevSelectedMissionControltype;
+    [SerializeField] private float _lockedTimeout;
     [SerializeField] private EffciencyShipManager _shipManager;
     [SerializeField] private DestinationManager _destinationManager;
     [SerializeField] private RobotWelder _currentPlayer;
     private Coroutine _inactiveCoroutine;
+    private float _lockedTimer;
 
     private HashSet<int> _firedPlayerThresholds = new();
     private HashSet<int> _firedEfficiencyThresholds = new();
@@ -70,6 +72,20 @@ public class MissionControlManager : MonoBehaviour
         if (!_isActive) return;
 
         if (!_lockedTypes.Contains(MissionControltype.Start)) return;
+
+        if (_lockedTypes.Count > 0)
+        {
+            _lockedTimer += Time.deltaTime;
+            if (_lockedTimer >= _lockedTimeout)
+            {
+                _lockedTimer = 0f;
+                _lockedTypes.Clear(); // force unlock all
+            }
+        }
+        else
+        {
+            _lockedTimer = 0f;
+        }
 
         CheckEfficienyThreshold();
         CheckDistanceThreshold();
@@ -202,6 +218,15 @@ public class MissionControlManager : MonoBehaviour
 
         if (_firedPlayerThresholds.Count >= mcd.MissionControlDialogueData.Count)
             _firedPlayerThresholds.Clear();
+    }
+
+    private void ClearLockedTypes()
+    {
+        foreach (MissionControltype t in System.Enum.GetValues(typeof(MissionControltype)))
+        {
+            if (t == MissionControltype.Start) continue;
+            _lockedTypes.Remove(t);
+        }
     }
 
     IEnumerator OnInactiveTalking()
