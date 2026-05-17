@@ -42,6 +42,8 @@ public class Welding : MonoBehaviour
             {
                 if (hitCollider.TryGetComponent(out DamageHull damageHull))
                 {
+                    if (!damageHull.IsHullBreach) return;
+
                     damageHull.OnReapairHull(moveDistance);
                     WeldingHullEffect(damageHull.WeldingEffectContiner);
                 }

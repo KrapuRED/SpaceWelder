@@ -17,13 +17,13 @@ public class DamageHull : MonoBehaviour, IRepairAble
 
     private void Awake()
     {
-        _currentHealth  = 0;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderer.color = Color.green;
     }
 
     public void OnHullBreach()
     {
+        _currentHealth = 0;
         _isHullBreach = true;
         _spriteRenderer.color = Color.red;
     }
