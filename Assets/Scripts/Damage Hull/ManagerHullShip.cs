@@ -33,7 +33,8 @@ public class ManagerHullShip : MonoBehaviour
     private PhaseData _selectedPhaseData;
     private Coroutine _activeManagerDamageHull;
 
-    public int possibleHullDamages => damageHulls.Count;
+    public int PossibleHullDamages => damageHulls.Count;
+    public int ActiveHullBreachs => hullBreachDatas.Count;
 
     private void Awake()
     {
