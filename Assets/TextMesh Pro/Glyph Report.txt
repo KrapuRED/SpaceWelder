@@ -1,0 +1,14 @@
+Font: Zekton  Style: Regular
+Point Size: 68   Padding: 5   SP/PD Ratio: 7.4%
+
+Characters included: 97/99
+Missing characters: 2
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 96	Hex: 60	Char [`]
+ID: 9633	Hex: 25A1	Char [□]
+
+Characters excluded from packing:
+----------------------------------------
