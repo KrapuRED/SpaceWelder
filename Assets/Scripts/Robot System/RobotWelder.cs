@@ -5,6 +5,7 @@ public class RobotWelder : Robot, IDamageAble
     [Header("Robot Welder Config")]
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _currentHealth;
+    [SerializeField] private BoomArmGenerator boomArmGenerator;
 
     public float MaxHealth => _maxHealth;
     public float CurrentHealth => _currentHealth;
@@ -12,7 +13,26 @@ public class RobotWelder : Robot, IDamageAble
     private void Start()
     {
         _currentHealth = _maxHealth;
+        RobotUpgradeManager.Instance.ApplyUpgrades();
+
         GlobalEvents.OnUpdateHealthRobotUI.Invoke(_currentHealth);
+    }
+
+    private void OnEnable()
+    {
+        GlobalEvents.OnApplyExtraBoomArm.AddListener(OnGetExtraBoom);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnApplyExtraBoomArm.RemoveListener(OnGetExtraBoom);
+
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnApplyExtraBoomArm.RemoveListener(OnGetExtraBoom);
+
     }
 
     public void OnTakeDamage(float damageValue)
@@ -27,5 +47,19 @@ public class RobotWelder : Robot, IDamageAble
         }
 
         Debug.Log($"[RobotWelder] current Health = {_currentHealth}");
+    }
+
+    void OnGetExtraBoom(int extraBoom)
+    {
+        if (boomArmGenerator == null)
+        {
+            Debug.Log($"Boom Arm Generator are missing from {gameObject.name}");
+            return;
+        }
+
+        for (int i = 0; i < extraBoom; i++)
+        {
+            boomArmGenerator.AddArm();
+        }
     }
 }

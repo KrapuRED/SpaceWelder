@@ -57,6 +57,7 @@ public class DestinationManager : MonoBehaviour
     private void ReachDestination()
     {
         _reachDestination = true;
+        GlobalEvents.OnShowPanel.Invoke();
         Debug.Log($"Ship reach the Destination in {_timeElapsed}");
     }
 

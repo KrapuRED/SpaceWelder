@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class IKBoomArmManager : MonoBehaviour
@@ -8,10 +9,59 @@ public class IKBoomArmManager : MonoBehaviour
     [SerializeField] private float rotate_rate;
     [SerializeField] private int steps;
 
-    public JoinPoint jp_root;
-    public JoinPoint jp_end;
+    [SerializeField] private JoinPoint jp_root;
+    [SerializeField] private JoinPoint jp_end;
 
+    public JoinPoint JointPointRoot => jp_root;
+    public JoinPoint JointPoinEnd => jp_end;
     public GameObject target;
+
+    private void Start()
+    {
+        BuildChainFromHierarchy();
+    }
+
+    public void RebuildChain()
+    {
+        BuildChainFromHierarchy();
+    }
+
+    private void BuildChainFromHierarchy()
+    {
+        List<JoinPoint> joints = new List<JoinPoint>();
+
+        CollectJoints(jp_root, joints);
+
+        for (int i = 0; i < joints.Count - 1; i++)
+        {
+            joints[i].jp_child = joints[i + 1];
+        }
+
+        if (joints.Count > 0)
+        {
+            joints[joints.Count - 1].jp_child = null;
+            jp_end = joints[joints.Count - 1]; // auto-assign end
+        }
+
+        Debug.Log($"IK Chain built: {joints.Count} joints. End = {jp_end?.name}");
+    }
+
+    private void CollectJoints(JoinPoint current, List<JoinPoint> result)
+    {
+        if (current == null) return;
+        result.Add(current);
+
+        // Find the next JoinPoint among children in scene hierarchy
+        foreach (Transform child in current.transform)
+        {
+            JoinPoint next = child.GetComponent<JoinPoint>();
+            if (next != null)
+            {
+                CollectJoints(next, result);
+                break; // Only follow first JoinPoint child (linear chain)
+            }
+        }
+    }
 
     float GetCalculated(JoinPoint _joinPoint)
     {

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 #region Custom Events
 public class CustomEvents
@@ -23,18 +24,25 @@ public class CustomEvents
 public class CustomEvents<T>
 {
     private event Action<T> _action = delegate { };
+    private List<Action<T>> _listeners = new();
+    public void AddListener(Action<T> listener) => _listeners.Add(listener);
+    public void RemoveListener(Action<T> listener) => _listeners.Remove(listener);
+
     public void Invoke(T arg)
     {
-        _action?.Invoke(arg);
-    }
+        for (int i = _listeners.Count - 1; i >= 0; i--)
+        {
+            var listener = _listeners[i];
 
-    public void AddListener(Action<T> listener)
-    {
-        _action += listener;
-    }
-    public void RemoveListener(Action<T> listener)
-    {
-        _action += listener;
+            // Check if the target object is still alive
+            if (listener.Target is UnityEngine.Object unityObj && unityObj == null)
+            {
+                _listeners.RemoveAt(i); // auto-clean dead listeners
+                continue;
+            }
+
+            listener.Invoke(arg);
+        }
     }
 }
 
@@ -78,6 +86,8 @@ public class CustomEvents<T1, T2, T3>
 public class GlobalEvents 
 {
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
+    public static readonly CustomEvents<int> OnApplyExtraBoomArm = new();
+    public static readonly CustomEvents<UpgradeType> OnUpgradeRobot = new();
 
     //=============================== UI ================================================//
     public static readonly CustomEvents<float> OnUpdateHealthRobotUI = new();
@@ -85,4 +95,7 @@ public class GlobalEvents
     public static readonly CustomEvents<float> OnProgressTimeDestinationUI = new();
     public static readonly CustomEvents<float> OnShipEffciencyUI = new();
     public static readonly CustomEvents<string> OnMissionControlDialogue = new();
+
+    //=============================== Panel ================================================//
+    public static readonly CustomEvents OnShowPanel = new();
 }

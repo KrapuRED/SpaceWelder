@@ -20,9 +20,15 @@ public class DialogueBox : MonoBehaviour
         GlobalEvents.OnMissionControlDialogue.RemoveListener(SetDialogueText);
     }
 
+    private void OnDestroy()
+    {
+        GlobalEvents.OnMissionControlDialogue.RemoveListener(SetDialogueText);
+    }
 
     public void ShowDialogueBox()
     {
+        if (gameObject == null) return;
+
         if (canvasGroup == null) return;
 
         canvasGroup.alpha = 1;
