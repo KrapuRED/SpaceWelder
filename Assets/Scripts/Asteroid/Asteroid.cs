@@ -4,6 +4,7 @@ public class Asteroid : MonoBehaviour
 {
     [SerializeField] private float _speedAsteroid;
     [SerializeField] private float _nearDestinationPoint;
+    [SerializeField] private float _damage;
 
     private Vector2 _destinationPoint;
 
@@ -13,9 +14,18 @@ public class Asteroid : MonoBehaviour
 
         if (Vector2.Distance(transform.position, _destinationPoint) <= _nearDestinationPoint)
         {
-            AsteroidManager.Instance.OnAsteroidDestroyed();
-            Destroy(gameObject);
+            AsteroidDestroy();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        IDamageAble damageAble = collision.collider.GetComponent<IDamageAble>();
+
+        if (damageAble == null) return;
+
+        damageAble.OnTakeDamage(_damage);
+        AsteroidDestroy();
     }
 
     public void InitializedAsteroid(Vector2 destinationPoint)
@@ -31,5 +41,11 @@ public class Asteroid : MonoBehaviour
             transform.position,
             _destinationPoint,
             _speedAsteroid * Time.deltaTime);
+    }
+
+    void AsteroidDestroy()
+    {
+        AsteroidManager.Instance.OnAsteroidDestroyed();
+        Destroy(gameObject);
     }
 }

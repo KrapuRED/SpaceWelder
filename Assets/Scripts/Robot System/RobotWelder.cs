@@ -1,14 +1,28 @@
 using UnityEngine;
 
-public class RobotWelder : Robot
+public class RobotWelder : Robot, IDamageAble
 {
     [Header("Robot Welder Config")]
-    [SerializeField] private bool _isWelding = false;
+    [SerializeField] private float _maxHealth;
+    [SerializeField] private float _currentHealth;
 
-    [Header("Rail")]
-    [SerializeField] private Transform _checkRailPoint;
-    [SerializeField] private LayerMask _layerRail;
+    private void Start()
+    {
+        _currentHealth = _maxHealth;
+        GlobalEvents.OnUpdateHealthRobotUI.Invoke(_currentHealth);
+    }
 
-    public bool IsWelding => _isWelding;
+    public void OnTakeDamage(float damageValue)
+    {
+        _currentHealth -= damageValue;
+        GlobalEvents.OnUpdateHealthRobotUI.Invoke(_currentHealth/100f);
 
+        if (_currentHealth <= 0)
+        {
+            Debug.Log("[RobotWelder] Dead!");
+            Destroy(gameObject);
+        }
+
+        Debug.Log($"[RobotWelder] current Health = {_currentHealth}");
+    }
 }

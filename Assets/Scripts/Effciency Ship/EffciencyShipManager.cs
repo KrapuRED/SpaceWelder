@@ -13,6 +13,8 @@ public class EffciencyShipManager : MonoBehaviour
     ManagerHullShip _managerHullShip;
     private float _targetEffciency;
 
+    public float EffciencyShip => effciencyShip;
+
     private void Awake()
     {
         if (Instance == null)
@@ -33,6 +35,8 @@ public class EffciencyShipManager : MonoBehaviour
         _targetEffciency = CalculateEffciencyShip();
 
         effciencyShip = Mathf.Lerp(effciencyShip, _targetEffciency, _effciencyShipLerpSpeed * Time.deltaTime);
+
+        GlobalEvents.OnShipEffciencyUI.Invoke(effciencyShip/100f);
     }
 
     private float CalculateEffciencyShip()

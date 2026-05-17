@@ -120,8 +120,6 @@ public class ManagerHullShip : MonoBehaviour
 
     private void OnHullBreach()
     {
-        Debug.Log("HullBreach");
-
         int index = Random.Range(0, damageHulls.Count);
         var possibel = damageHulls[index];
 
@@ -147,13 +145,11 @@ public class ManagerHullShip : MonoBehaviour
     private float GetRandomSpawnRate()
     {
         float time = Random.Range(_selectedPhaseData.minSpawnRate, _selectedPhaseData.maxSpawnRate);
-        Debug.Log($"[ManagerHullShip - GetRandomSpawnRate] spawn rate : {time}");
         return time;
     }
 
     private IEnumerator OnDelayHullBreach()
     {
-        Debug.Log("On Delay HullBreach");
         yield return new WaitForSeconds(GetRandomSpawnRate());
         OnHullBreach();
     }
