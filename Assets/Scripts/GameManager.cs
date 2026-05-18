@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    private int _level;
+
     private void Awake()
     {
         if (Instance != null)
@@ -17,19 +19,15 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnEnable()
+    public void NextLevel()
     {
-        GlobalEvents.OnChangeScene.AddListener(NextLevel);
+        _level++;
+        Debug.Log($"Change Scene to {_level}");
+        SceneManager.LoadScene($"Main-GamePlay-Level{_level}");
     }
 
-    private void OnDisable()
+    public void ResetGame()
     {
-        GlobalEvents.OnChangeScene.RemoveListener(NextLevel);
-    }
-
-    public void NextLevel(int next)
-    {
-        Debug.Log($"Change Scene to {next}");
-        SceneManager.LoadScene(next);
+        _level = 1;
     }
 }

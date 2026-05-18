@@ -30,13 +30,16 @@ public class ManagerHullShip : MonoBehaviour
     [SerializeField] private List<PhaseData> phaseDatas = new ();
     [SerializeField] private List<HullBreachData> hullBreachDatas = new ();
     [SerializeField] private List<Sprite> _aviableHullBreachSprites = new();
-    [SerializeField] private int _activePhaseIndex;
+    [SerializeField] private int _limitHullBreach;
+    private int _activePhaseIndex;
 
-    private PhaseData _selectedPhaseData;
+    [SerializeField] private PhaseData _selectedPhaseData;
     private Coroutine _activeManagerDamageHull;
 
     public int PossibleHullDamages => damageHulls.Count;
     public int ActiveHullBreachs => hullBreachDatas.Count;
+
+    private HashSet<string> _activePhases = new HashSet<string>();
 
     private void Awake()
     {
@@ -70,15 +73,17 @@ public class ManagerHullShip : MonoBehaviour
     private void OnDestroy()
     {
         Unsubscripe();
-
     }
 
-    public void ChangePhase(float time)
+    public void CheckPhase(float time)
     {
         foreach (var phase in phaseDatas)
         {
-            if (phase.activeAt >= time)
+            if (phase.activeAt <= time && !_activePhases.Contains(phase.phaseID))
+            {
+                _activePhases.Add(phase.phaseID);
                 OnChangePhase(phase);
+            }
         }
     }
 
@@ -113,6 +118,7 @@ public class ManagerHullShip : MonoBehaviour
     private void OnChangePhase(PhaseData phase)
     {
         _selectedPhaseData = phase;
+        Debug.Log($"Phase change to {phase.phaseName}");
 
         if (_activeManagerDamageHull != null) StopCoroutine(_activeManagerDamageHull);
         _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
@@ -152,14 +158,13 @@ public class ManagerHullShip : MonoBehaviour
             return;
         }
 
-        int index = Random.Range(0, damageHulls.Count);
-        var possibel = damageHulls[index];
+        if (hullBreachDatas.Count >= _limitHullBreach) return;
 
-        if (CheckHullBreachData(possibel.HullID))
-        {
-            _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
-            return;
-        }
+        var availableHulls = damageHulls.FindAll(h => !CheckHullBreachData(h.HullID));
+        if (availableHulls.Count <= 0) return;
+
+        int index = Random.Range(0, availableHulls.Count);
+        var possibel = availableHulls[index];
 
         Sprite sprite = GetRandomHullBreachSprite();
 

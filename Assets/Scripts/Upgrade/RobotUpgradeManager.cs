@@ -4,9 +4,9 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
 {
     public static RobotUpgradeManager Instance { get; private set; }
 
-    private int extraBoomArm;
-    private float speedUpgrade;
-    private float weldingAreaUpgrade;
+    [SerializeField] private int extraBoomArm;
+    [SerializeField] private float speedUpgrade;
+    [SerializeField] private float weldingAreaUpgrade;
 
     private void Awake()
     {
@@ -19,8 +19,6 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
             Destroy(gameObject);
             return;
         }
-
-      
     }
 
     private void OnEnable()
@@ -86,6 +84,8 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
         this.extraBoomArm       = data.extraBoomArm;
         this.speedUpgrade       = data.speedUpgrade;
         this.weldingAreaUpgrade = data.weldingAreaUpgrade;
+
+        ApplyUpgrades();
     }
 
     public void SaveData(ref GameData data)

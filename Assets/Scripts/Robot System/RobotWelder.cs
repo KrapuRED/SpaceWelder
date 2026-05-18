@@ -13,7 +13,6 @@ public class RobotWelder : Robot, IDamageAble
     private void Start()
     {
         _currentHealth = _maxHealth;
-        RobotUpgradeManager.Instance.ApplyUpgrades();
 
         GlobalEvents.OnUpdateHealthRobotUI.Invoke(_currentHealth);
     }
@@ -56,6 +55,7 @@ public class RobotWelder : Robot, IDamageAble
             Debug.Log($"Boom Arm Generator are missing from {gameObject.name}");
             return;
         }
+        Debug.Log("Extra boom : " +  extraBoom);
 
         for (int i = 0; i < extraBoom; i++)
         {

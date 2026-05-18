@@ -2530,6 +2530,10 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2975820564631971289, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3128577601633709737, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4109,6 +4113,10 @@ PrefabInstance:
       value: == Manager Game Play ==
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: _limitHullBreach
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[0]'
       value: 
       objectReference: {fileID: 893498645}
@@ -4273,6 +4281,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7805352241991778268, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -247
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4288,6 +4300,6 @@ SceneRoots:
   - {fileID: 515421302}
   - {fileID: 1564468968}
   - {fileID: 5872344790223307629}
-  - {fileID: 1441721683}
   - {fileID: 641988975}
   - {fileID: 1974718279}
+  - {fileID: 1441721683}

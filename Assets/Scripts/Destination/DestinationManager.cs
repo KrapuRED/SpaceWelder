@@ -50,6 +50,7 @@ public class DestinationManager : MonoBehaviour
         else
             _timeElapsed += Time.deltaTime;
 
+        ManagerHullShip.Insantce.CheckPhase(_timeElapsed);
         GlobalEvents.OnProgressDestinationUI.Invoke(_distanceTravel, _distanceToTravel);
         GlobalEvents.OnProgressTimeDestinationUI.Invoke(_timeElapsed);
     }
@@ -69,9 +70,6 @@ public class DestinationManager : MonoBehaviour
     {
         float prevEfficiency = _efficiency;
         _efficiency = _effciencyShipManager.EfficiencyShip / 100f;
-
-        // Debug to confirm values
-        Debug.Log($"Efficiency: {_efficiency} | TargetSpeed: {_speedShip * _efficiency} | CurrentSpeed: {_currentSpeed}");
 
         float targetSpeed = Mathf.Min(_speedShip * _efficiency, _maxSpeedShip);
         _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
