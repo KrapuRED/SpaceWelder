@@ -54,21 +54,18 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
     public bool UpgradeBoomArm(int amount)
     {
         extraBoomArm += amount;
-        DataPersistenceManager.Instance.SaveGame();
         return true;
     }
 
     public bool UpgradeSpeed(float amount)
     {
         speedUpgrade += amount;
-        DataPersistenceManager.Instance.SaveGame();
         return true;
     }
 
     public bool UpgradeWeldingRadius(float amount)
     {
         weldingAreaUpgrade += amount;
-        DataPersistenceManager.Instance.SaveGame();
         return true;
     }
 

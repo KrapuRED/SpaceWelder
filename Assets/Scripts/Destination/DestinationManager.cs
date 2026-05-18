@@ -18,6 +18,7 @@ public class DestinationManager : MonoBehaviour
     private bool _reachDestination;
     private float _timeElapsed;
 
+    public float TimeElapsed => _timeElapsed;
     public float TotalDistance => _distanceTravel;
 
     private void Awake()
@@ -63,7 +64,8 @@ public class DestinationManager : MonoBehaviour
     private void ReachDestination()
     {
         _reachDestination = true;
-        GlobalEvents.OnShowPanel.Invoke();
+        GlobalEvents.OnShowUpgradePanel.Invoke();
+        GlobalEvents.OnReachDestination.Invoke();
     }
 
     private void CalculateShipToDestination()

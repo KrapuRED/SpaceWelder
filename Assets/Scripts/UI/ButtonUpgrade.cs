@@ -14,8 +14,7 @@ public class ButtonUpgrade : MonoBehaviour
 
     public void OnClickButtonUpgrade()
     {
-        Debug.Log($"[{gameObject.name}] OnClickButtonUpgrade");
         GlobalEvents.OnUpgradeRobot.Invoke(upgradeType, amount);
-        GameManager.Instance.NextLevel();
+        MissionControlManager.Instance.OnShowPerformace();
     }
 }

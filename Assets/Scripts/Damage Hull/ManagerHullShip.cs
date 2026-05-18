@@ -35,6 +35,7 @@ public class ManagerHullShip : MonoBehaviour
 
     [SerializeField] private PhaseData _selectedPhaseData;
     private Coroutine _activeManagerDamageHull;
+    private bool _reachDestination;
 
     public int PossibleHullDamages => damageHulls.Count;
     public int ActiveHullBreachs => hullBreachDatas.Count;
@@ -63,6 +64,7 @@ public class ManagerHullShip : MonoBehaviour
     private void OnEnable()
     {
         GlobalEvents.OnHullBeenReapir.AddListener(OnHullBeenReapir);
+        GlobalEvents.OnReachDestination.AddListener(ReachDestination);
     }
 
     private void OnDisable()
@@ -73,6 +75,11 @@ public class ManagerHullShip : MonoBehaviour
     private void OnDestroy()
     {
         Unsubscripe();
+    }
+
+    private void ReachDestination()
+    {
+        _reachDestination = true;
     }
 
     public void CheckPhase(float time)
@@ -152,13 +159,19 @@ public class ManagerHullShip : MonoBehaviour
 
     private void OnHullBreach()
     {
+        if (_reachDestination) return;
+
         if (damageHulls.Count <= 0)
         {
             Debug.Log($"Damage Hull in {gameObject.name} is empty");
             return;
         }
 
-        if (hullBreachDatas.Count >= _limitHullBreach) return;
+        if (hullBreachDatas.Count >= _limitHullBreach)
+        {
+            _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
+            return;
+        }
 
         var availableHulls = damageHulls.FindAll(h => !CheckHullBreachData(h.HullID));
         if (availableHulls.Count <= 0) return;
@@ -198,6 +211,7 @@ public class ManagerHullShip : MonoBehaviour
 
     private void Unsubscripe()
     {
+        GlobalEvents.OnReachDestination.RemoveListener(ReachDestination);
         GlobalEvents.OnHullBeenReapir.RemoveListener(OnHullBeenReapir);
     }
 }

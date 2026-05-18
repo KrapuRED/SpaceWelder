@@ -20,8 +20,9 @@ public class AsteroidManager : MonoBehaviour
     private List<Transform> _spawnPoints = new List<Transform>();
     private List<Transform> _endPoints = new List<Transform>();
 
-    private Coroutine _startSpawnAsteroid;
+    private Coroutine _spawnAsteroidCorutine;
     private int _activeAsteroidCount;
+    private bool _reachDestination;
 
     private void Awake()
     {
@@ -33,6 +34,23 @@ public class AsteroidManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnReachDestination.AddListener(StopSpawnAsteroid);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnReachDestination.RemoveListener(StopSpawnAsteroid);
+
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnReachDestination.RemoveListener(StopSpawnAsteroid);
+
+    }
+
     private void Start()
     {
         foreach (Transform point in _spawPointContainer)
@@ -41,9 +59,20 @@ public class AsteroidManager : MonoBehaviour
         foreach (Transform point in _endPointContainer)
             _endPoints.Add(point.GetComponentInChildren<Transform>());
 
-        _startSpawnAsteroid = StartCoroutine(DelaySpawnAsteroid());
+        _spawnAsteroidCorutine = StartCoroutine(DelaySpawnAsteroid());
     }
 
+    private void StopSpawnAsteroid()
+    {
+        if (this == null) return;
+
+        _reachDestination = true;
+        if (_spawnAsteroidCorutine != null)
+        {
+            StopCoroutine(_spawnAsteroidCorutine);
+            _spawnAsteroidCorutine = null;
+        }
+    }
     private Vector3 GetSpawnPosition()
     {
         int index = Random.Range(0, _spawnPoints.Count);
@@ -59,6 +88,8 @@ public class AsteroidManager : MonoBehaviour
 
     private void OnSpawnAsteroid()
     {
+        if (_reachDestination) return;
+
         Vector3 spawnPos = GetSpawnPosition();
 
         var newAsteroidGO = Instantiate(prefabAsteroid, spawnPos, Quaternion.identity, _asteroidContiner);
@@ -101,5 +132,4 @@ public class AsteroidManager : MonoBehaviour
             }
         }
     }
-
 }

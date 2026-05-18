@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using UnityEngine.Rendering;
 
 [System.Serializable]
 public enum MissionControltype
@@ -10,6 +11,14 @@ public enum MissionControltype
     Efficiency,
     Distination,
     Player
+}
+
+[System.Serializable]
+public enum MissionSuccesType
+{
+    OnTime,
+    Delay,
+    Late
 }
 
 [System.Serializable]
@@ -32,31 +41,37 @@ public class MissionControlData
 public class MissionData
 {
     public string MissionName;
-    public float ArvialAt;
+    public float ArrivalAt;
+    public float maxDelay; 
 }
 
-public class MissionControlManager : MonoBehaviour
+public class MissionControlManager : MonoBehaviour, IDataPersistence
 {
     public static MissionControlManager Instance;
 
+    [SerializeField] private MissionData missionData;
+    
+    [Header("Mission Control Dialogue")]
     [SerializeField] private List<MissionControlData> _missionControlDialogues = new ();
     [SerializeField] private float _InactiveTalking;
     [SerializeField] private bool _isActive = true;
+    [SerializeField] private float _lockedTimeout;
 
     private MissionControltype _prevSelectedMissionControltype;
-    [SerializeField] private float _lockedTimeout;
-    [SerializeField] private EffciencyShipManager _shipManager;
-    [SerializeField] private DestinationManager _destinationManager;
+    private EffciencyShipManager _shipManager;
+    private DestinationManager _destinationManager;
     [SerializeField] private RobotWelder _currentPlayer;
     private Coroutine _inactiveCoroutine;
     private float _lockedTimer;
 
+    private List<MissionSuccesData> _missionSuccesDatas = new();
     private HashSet<int> _firedPlayerThresholds = new();
     private HashSet<int> _firedEfficiencyThresholds = new();
     private HashSet<int> _firedDistanceThresholds = new();
-
     private HashSet<MissionControltype> _lockedTypes = new();
-    private MissionControltype _lastFiredType = MissionControltype.Start;
+
+    private bool _missionStarted;
+    private bool _missionResultRecorded = false;
 
     private void Awake()
     {
@@ -72,13 +87,39 @@ public class MissionControlManager : MonoBehaviour
         _destinationManager = DestinationManager.Instance;
 
         TriggerDialogueByType(MissionControltype.Start);
+        GlobalEvents.OnMissionGoalUI.Invoke(missionData.ArrivalAt);
+
+        _missionStarted = true;
     }
+
+    #region Event Area
+    private void OnEnable()
+    {
+        GlobalEvents.OnReachDestination.AddListener(OnReachDestination);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnReachDestination.RemoveListener(OnReachDestination);
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnReachDestination.RemoveListener(OnReachDestination);
+    }
+
+    private void OnReachDestination()
+    {
+        if (this == null) return;
+        CheckDurationMission(DestinationManager.Instance.TimeElapsed);
+    }
+    #endregion
 
     private void Update()
     {
         if (!_isActive) return;
 
-        if (!_lockedTypes.Contains(MissionControltype.Start)) return;
+        if (!_missionStarted) return;
 
         if (_lockedTypes.Count > 0)
         {
@@ -99,10 +140,29 @@ public class MissionControlManager : MonoBehaviour
         CheckPlayerHealthThreshold();
     }
 
+    private void CheckDurationMission(float time)
+    {
+        Debug.Log(time);
+        if (_missionResultRecorded) return;
+        _missionResultRecorded = true;
+
+        var missionSucces = new MissionSuccesData();
+        missionSucces.MissionName = missionData.MissionName;
+        missionSucces.ArriveAt = time;
+
+        if (time <= missionData.ArrivalAt)
+            missionSucces.MissionSuccesType = MissionSuccesType.OnTime;
+        else if (time <= missionData.ArrivalAt + missionData.maxDelay) 
+            missionSucces.MissionSuccesType = MissionSuccesType.Delay;
+        else
+            missionSucces.MissionSuccesType = MissionSuccesType.Late;
+
+        _missionSuccesDatas.Add(missionSucces);
+        DataPersistenceManager.Instance.SaveGame();
+    }
+
     private void OnTypeFired(MissionControltype type)
     {
-        _lastFiredType = type;
-
         _lockedTypes.Add(type);
 
         foreach (MissionControltype t in System.Enum.GetValues(typeof(MissionControltype)))
@@ -146,10 +206,6 @@ public class MissionControlManager : MonoBehaviour
 
         if (mcd == null) return;
 
-        var sorted = mcd.MissionControlDialogueData
-        .OrderByDescending(x => x.activeAt)
-        .ToList();
-
         // Find the FIRST(highest) threshold that efficiency is at or below
         var target = mcd.MissionControlDialogueData
        .Where(x => x.activeAt >= efficiency &&
@@ -174,7 +230,7 @@ public class MissionControlManager : MonoBehaviour
 
         float totalDistance    = _destinationManager.TotalDistance;
         float currentDistance  = _destinationManager.DistanceToTarget();
-        float progressDistance = (1f - (currentDistance - totalDistance)) * 100f;
+        float progressDistance = (1f - (currentDistance / totalDistance)) * 100f;
 
         MissionControlData mcd = _missionControlDialogues
             .Find(x => x.MissionControlDataType == MissionControltype.Distination);
@@ -227,19 +283,32 @@ public class MissionControlManager : MonoBehaviour
             _firedPlayerThresholds.Clear();
     }
 
-    private void ClearLockedTypes()
-    {
-        foreach (MissionControltype t in System.Enum.GetValues(typeof(MissionControltype)))
-        {
-            if (t == MissionControltype.Start) continue;
-            _lockedTypes.Remove(t);
-        }
-    }
-
     IEnumerator OnInactiveTalking()
     {
         _isActive = false;
         yield return new WaitForSeconds(_InactiveTalking);
         _isActive = true;
+    }
+
+    public void LoadData(GameData data)
+    {
+        foreach (var mission in data.missionSuccesDatas)
+        {
+            _missionSuccesDatas.Add(mission);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        foreach (var mission in _missionSuccesDatas)
+        {
+            data.missionSuccesDatas.Add(mission);
+        }
+    }
+
+    public void OnShowPerformace() 
+    {
+
+        GlobalEvents.OnShowPerformacePanel.Invoke(_missionSuccesDatas);
     }
 }

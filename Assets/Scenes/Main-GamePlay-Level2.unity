@@ -4688,6 +4688,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+--- !u!114 &1488545359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 517271433261913867, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+  m_PrefabInstance: {fileID: 1488545358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07526e8c91481824b863031b73b17275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1505473637
 GameObject:
   m_ObjectHideFlags: 0
@@ -8315,6 +8326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727cbd5a69e7aa6479bb2c941b450f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionData:
+    MissionName: 
+    ArvialAt: 0
   _missionControlDialogues:
   - NameMissionControlData: Mission Control Start
     MissionControlDataType: 0
@@ -8383,9 +8397,7 @@ MonoBehaviour:
   _InactiveTalking: 10
   _isActive: 1
   _lockedTimeout: 15
-  _shipManager: {fileID: 0}
-  _destinationManager: {fileID: 0}
-  _currentPlayer: {fileID: 0}
+  _currentPlayer: {fileID: 1488545359}
 --- !u!222 &1740376628192979074
 CanvasRenderer:
   m_ObjectHideFlags: 0

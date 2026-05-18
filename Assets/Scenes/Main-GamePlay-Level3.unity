@@ -588,6 +588,10 @@ PrefabInstance:
       value: == Manager Game Play ==
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: _limitHullBreach
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9558,6 +9562,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+--- !u!114 &1987306630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 517271433261913867, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+  m_PrefabInstance: {fileID: 1987306629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07526e8c91481824b863031b73b17275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1996926669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5186902779969197136, guid: 9df05a1b887c0634bbcba83ff9e540f0, type: 3}
@@ -10175,6 +10190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 380099406}
     m_Modifications:
+    - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: _currentPlayer
+      value: 
+      objectReference: {fileID: 1987306630}
     - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

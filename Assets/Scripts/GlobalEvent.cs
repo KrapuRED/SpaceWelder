@@ -89,6 +89,8 @@ public class GlobalEvents
 
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
 
+    public static readonly CustomEvents OnReachDestination = new CustomEvents();
+
     public static readonly CustomEvents<UpgradeType, float> OnUpgradeRobot = new();
     public static readonly CustomEvents<int> OnApplyExtraBoomArm = new();
     public static readonly CustomEvents<float> OnApplySpeedUpgrade = new();
@@ -99,8 +101,11 @@ public class GlobalEvents
     public static readonly CustomEvents<float, float> OnProgressDestinationUI = new();
     public static readonly CustomEvents<float> OnProgressTimeDestinationUI = new();
     public static readonly CustomEvents<float> OnShipEffciencyUI = new();
+    public static readonly CustomEvents<float> OnMissionGoalUI = new();
     public static readonly CustomEvents<string> OnMissionControlDialogue = new();
 
     //=============================== Panel ================================================//
-    public static readonly CustomEvents OnShowPanel = new();
+    public static readonly CustomEvents OnHideUpgradePanel = new();
+    public static readonly CustomEvents OnShowUpgradePanel = new();
+    public static readonly CustomEvents<List<MissionSuccesData>> OnShowPerformacePanel = new();
 }
