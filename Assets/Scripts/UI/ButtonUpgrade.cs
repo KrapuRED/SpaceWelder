@@ -10,9 +10,10 @@ public enum UpgradeType
 public class ButtonUpgrade : MonoBehaviour
 {
     public UpgradeType upgradeType;
+    public float amount;
 
     public void OnClickButtonUpgrade()
     {
-        GlobalEvents.OnUpgradeRobot.Invoke(upgradeType);
+        GlobalEvents.OnUpgradeRobot.Invoke(upgradeType, amount);
     }
 }

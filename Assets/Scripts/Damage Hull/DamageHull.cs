@@ -45,7 +45,5 @@ public class DamageHull : MonoBehaviour, IRepairAble
                 Destroy(child.gameObject);
             }
         }
-
-        Debug.Log($"{gameObject.name} Repaired! HP: {_currentHealth}/{_maxHealth}");
     }
 }

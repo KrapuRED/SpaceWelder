@@ -86,8 +86,11 @@ public class CustomEvents<T1, T2, T3>
 public class GlobalEvents 
 {
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
+
+    public static readonly CustomEvents<UpgradeType, float> OnUpgradeRobot = new();
     public static readonly CustomEvents<int> OnApplyExtraBoomArm = new();
-    public static readonly CustomEvents<UpgradeType> OnUpgradeRobot = new();
+    public static readonly CustomEvents<float> OnApplySpeedUpgrade = new();
+    public static readonly CustomEvents<float> OnApplyWeldingUpgrade = new();
 
     //=============================== UI ================================================//
     public static readonly CustomEvents<float> OnUpdateHealthRobotUI = new();

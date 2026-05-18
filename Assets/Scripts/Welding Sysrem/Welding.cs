@@ -3,10 +3,13 @@ using UnityEngine.InputSystem;
 
 public class Welding : MonoBehaviour
 {
+    [SerializeField] private RobotWelder _ownerRobot;
     [SerializeField] private Transform _weldingPoint;
     [SerializeField] private float _weldingRadius;
     [SerializeField] private LayerMask _hullDamageLayer;
     [SerializeField] private float _minMoveDistance;
+    [SerializeField] private float _baseRepairRate = 1f;
+    private float _weldingMultiplier = 1f;
 
     [SerializeField] private GameObject _particelWelding;
 
@@ -28,6 +31,23 @@ public class Welding : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnApplyWeldingUpgrade.AddListener(UpgradeWelding);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnApplyWeldingUpgrade.RemoveListener(UpgradeWelding);
+
+    }
+
+    private void UpgradeWelding(float percent)
+    {
+        _weldingMultiplier = _baseRepairRate + (percent / 100f);
+        Debug.Log("Welding been upgrade to " + _weldingMultiplier);
+    }
+
     private void Update()
     {
         if (!_isWelding) return;
@@ -44,7 +64,7 @@ public class Welding : MonoBehaviour
                 {
                     if (!damageHull.IsHullBreach) return;
 
-                    damageHull.OnReapairHull(moveDistance);
+                    damageHull.OnReapairHull(moveDistance * _weldingMultiplier);
                     WeldingHullEffect(damageHull.WeldingEffectContiner);
                 }
             }

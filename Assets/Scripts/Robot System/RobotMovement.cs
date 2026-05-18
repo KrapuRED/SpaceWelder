@@ -10,11 +10,12 @@ public class RobotMovement : MonoBehaviour
     [SerializeField] private float _nearTargetPoint = 0.05f;
     [SerializeField] private RailPoint _currentPoint;
     [SerializeField] private Direction _currentDirection;
+    [SerializeField] private float _baseSpeedRate = 1f;
+    private float _speedMultiplier = 1f;
 
     private RailPoint _targetPoint;
     [SerializeField] private Direction? _bufferedInput;
     [SerializeField] private bool _isMoving;
-    private Rigidbody2D _rigidbody2D;
 
     private void Start()
     {
@@ -29,18 +30,33 @@ public class RobotMovement : MonoBehaviour
         transform.position = _currentPoint.position;
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnApplySpeedUpgrade.AddListener(UpgradeSpeed);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnApplySpeedUpgrade.RemoveListener(UpgradeSpeed);
+
+    }
+
+    private void UpgradeSpeed(float percent)
+    {
+        _speedMultiplier = _baseSpeedRate + (percent / 100f);
+        Debug.Log("Welding been upgrade to " + _speedMultiplier);
+    }
+
     public void InputMovementRail(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             Vector2 dir = context.ReadValue<Vector2>();
             _bufferedInput = GetInputDirection(dir);
-            Debug.Log($"[Input] performed: {_bufferedInput}");
         }
 
         if (context.canceled)
         {
-            Debug.Log($"[Input] canceled, clearing buffer");
             _bufferedInput = null;
         }
     }
@@ -60,8 +76,6 @@ public class RobotMovement : MonoBehaviour
 
         Direction input = _bufferedInput.Value;
 
-        Debug.Log($"[TryToMove] input: {input} | currentDir: {_currentDirection} | pointType: {_currentPoint.type} | available: {string.Join(", ", _currentPoint.availableDirections)}");
-
         if (_currentPoint.connections.TryGetValue(input, out RailPoint next))
         {
             _currentDirection = input;
@@ -78,7 +92,7 @@ public class RobotMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(
             transform.position,
             _targetPoint.position,
-            _speedMovement * Time.deltaTime);
+             _speedMovement * _speedMultiplier * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, _targetPoint.position) < _nearTargetPoint)
         {

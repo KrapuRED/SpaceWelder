@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class RobotUpgradeManager : MonoBehaviour
+public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
 {
     public static RobotUpgradeManager Instance { get; private set; }
 
-    [Header("Upgrade Data")]
-    [SerializeField] private RobotUpgrade upgradeData;
+    private int extraBoomArm;
+    private float speedUpgrade;
+    private float weldingAreaUpgrade;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class RobotUpgradeManager : MonoBehaviour
             return;
         }
 
-        upgradeData.Load();
+      
     }
 
     private void OnEnable()
@@ -34,70 +35,62 @@ public class RobotUpgradeManager : MonoBehaviour
 
     }
 
-    void OnButtonUpgradePress(UpgradeType type)
+    void OnButtonUpgradePress(UpgradeType type, float amount)
     {
         switch (type)
         {
             case UpgradeType.ExtraBoom:
-                UpgradeBoomArm();
+                UpgradeBoomArm((int) amount);
                 break;
 
             case UpgradeType.Speed:
-                //UpgradeSpeed();
+                UpgradeSpeed(amount);
                 return;
 
             case UpgradeType.WeldingRadius:
-                //UpgradeWeldingRadius();
+                UpgradeWeldingRadius(amount);
                 break;
         }
 
     }
 
-    public bool UpgradeBoomArm()
+    public bool UpgradeBoomArm(int amount)
     {
-        if (upgradeData.extraBoomArm >= upgradeData.maxBoomArm)
-        {
-            Debug.Log("Max boom arm reached!");
-            return false;
-        }
-
-        upgradeData.extraBoomArm++;
-        upgradeData.Save();
+        extraBoomArm += amount;
+       
         return true;
     }
 
     public bool UpgradeSpeed(float amount)
     {
-        if (upgradeData.speed >= upgradeData.maxSpeed)
-        {
-            Debug.Log("max Speed reached!");
-            return false;
-        }
-
-        upgradeData.speed += amount;
-        upgradeData.Save();
+        speedUpgrade += amount;
         return true;
     }
 
     public bool UpgradeWeldingRadius(float amount)
     {
-        if (upgradeData.weldingArea >= upgradeData.maxWeldingArea)
-        {
-            Debug.Log("Max welding area reached!");
-            return false;
-        }
-
-        upgradeData.weldingArea += amount;
-        upgradeData.Save();
+       
         return true;
     }
 
     public void ApplyUpgrades()
     {
-        GlobalEvents.OnApplyExtraBoomArm.Invoke(upgradeData.extraBoomArm);
-
-        Debug.Log($"Applied {upgradeData.extraBoomArm} boom arms, speed {upgradeData.speed}, weld area {upgradeData.weldingArea}");
+        GlobalEvents.OnApplyExtraBoomArm.Invoke(extraBoomArm);
+        GlobalEvents.OnApplySpeedUpgrade.Invoke(speedUpgrade);
+        GlobalEvents.OnApplyWeldingUpgrade.Invoke(weldingAreaUpgrade);
     }
 
-    public RobotUpgrade GetData() => upgradeData;
+    public void LoadData(GameData data)
+    {
+        this.extraBoomArm       = data.extraBoomArm;
+        this.speedUpgrade       = data.speedUpgrade;
+        this.weldingAreaUpgrade = data.weldingAreaUpgrade;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.extraBoomArm       = this.extraBoomArm;
+        data.speedUpgrade       = this.speedUpgrade;
+        data.weldingAreaUpgrade = this.weldingAreaUpgrade;
+    }
 }
