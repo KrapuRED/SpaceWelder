@@ -64,7 +64,7 @@ public class Welding : MonoBehaviour
                 {
                     if (!damageHull.IsHullBreach) return;
 
-                    damageHull.OnReapairHull(moveDistance * _weldingMultiplier);
+                    damageHull.OnReapairHull(_baseRepairRate * _weldingMultiplier);
                     WeldingHullEffect(damageHull.WeldingEffectContiner);
                 }
             }

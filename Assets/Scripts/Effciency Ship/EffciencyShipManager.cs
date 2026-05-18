@@ -43,7 +43,7 @@ public class EffciencyShipManager : MonoBehaviour
     {
         float efficiency = 100;
 
-        if (_totalPossibleHullBreach == 0) return efficiency;
+        if (_totalPossibleHullBreach == 0) return 100;
 
         int activeBreaches = _managerHullShip.ActiveHullBreachs;
 

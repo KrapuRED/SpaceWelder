@@ -28,6 +28,13 @@ public class MissionControlData
     public List<MissionControlDialogueData> MissionControlDialogueData = new();
 }
 
+[System.Serializable]
+public class MissionData
+{
+    public string MissionName;
+    public float ArvialAt;
+}
+
 public class MissionControlManager : MonoBehaviour
 {
     public static MissionControlManager Instance;

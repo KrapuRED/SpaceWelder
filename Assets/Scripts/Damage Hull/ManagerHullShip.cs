@@ -8,6 +8,7 @@ public class PhaseData
 {
     public string phaseName;
     public string phaseID;
+    public float activeAt;
     public float minSpawnRate;
     public float maxSpawnRate;
 }
@@ -28,6 +29,7 @@ public class ManagerHullShip : MonoBehaviour
     [SerializeField] private List<DamageHull> damageHulls = new ();
     [SerializeField] private List<PhaseData> phaseDatas = new ();
     [SerializeField] private List<HullBreachData> hullBreachDatas = new ();
+    [SerializeField] private List<Sprite> _aviableHullBreachSprites = new();
     [SerializeField] private int _activePhaseIndex;
 
     private PhaseData _selectedPhaseData;
@@ -51,7 +53,7 @@ public class ManagerHullShip : MonoBehaviour
             Debug.LogError("[ManagerHullShip] phaseDatas Dont have any Phase Data!");
             return;
         }
-
+        _selectedPhaseData = phaseDatas[0];
         OnStartHullBreach(_activePhaseIndex);
     }
 
@@ -71,6 +73,15 @@ public class ManagerHullShip : MonoBehaviour
 
     }
 
+    public void ChangePhase(float time)
+    {
+        foreach (var phase in phaseDatas)
+        {
+            if (phase.activeAt >= time)
+                OnChangePhase(phase);
+        }
+    }
+
     private HullBreachData FindHullBreachDataByID(string hullID)
     {
         HullBreachData data = null;
@@ -84,11 +95,26 @@ public class ManagerHullShip : MonoBehaviour
         return data;
     }
 
+    private Sprite GetRandomHullBreachSprite()
+    {
+        int index = Random.Range(0, _aviableHullBreachSprites.Count);
+
+        return _aviableHullBreachSprites[index];
+    }
+
     private void OnStartHullBreach(int phaseIndex)
     {
         _activePhaseIndex = phaseIndex;
         _selectedPhaseData = phaseDatas[phaseIndex];
 
+        _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
+    }
+
+    private void OnChangePhase(PhaseData phase)
+    {
+        _selectedPhaseData = phase;
+
+        if (_activeManagerDamageHull != null) StopCoroutine(_activeManagerDamageHull);
         _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
     }
 
@@ -120,6 +146,12 @@ public class ManagerHullShip : MonoBehaviour
 
     private void OnHullBreach()
     {
+        if (damageHulls.Count <= 0)
+        {
+            Debug.Log($"Damage Hull in {gameObject.name} is empty");
+            return;
+        }
+
         int index = Random.Range(0, damageHulls.Count);
         var possibel = damageHulls[index];
 
@@ -129,7 +161,12 @@ public class ManagerHullShip : MonoBehaviour
             return;
         }
 
-        possibel.OnHullBreach();
+        Sprite sprite = GetRandomHullBreachSprite();
+
+        if (sprite == null)
+            return;
+
+        possibel.OnHullBreach(sprite);
 
         HullBreachData newData = new HullBreachData
         {

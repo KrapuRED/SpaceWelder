@@ -3963,12 +3963,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749ebf7ff4f2f1a48a993dadcaad6147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ownerRobot: {fileID: 0}
   _weldingPoint: {fileID: 629195744}
   _weldingRadius: 0.5
   _hullDamageLayer:
     serializedVersion: 2
     m_Bits: 256
   _minMoveDistance: 0.1
+  _baseRepairRate: 1
   _particelWelding: {fileID: 2468275850478173095, guid: 16f3f888eb8e1f443910e9212e119cb7, type: 3}
 --- !u!212 &683613070
 SpriteRenderer:
@@ -4332,6 +4334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: 0
+  amount: 1
+  nextSceneID: 1
 --- !u!1 &748180844
 GameObject:
   m_ObjectHideFlags: 0
@@ -8815,6 +8819,7 @@ Transform:
   m_Children:
   - {fileID: 8463812991955939872}
   - {fileID: 1853645246}
+  - {fileID: 2074912591}
   m_Father: {fileID: 409559276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1456857406
@@ -8981,6 +8986,7 @@ MonoBehaviour:
     type: 0
     availableDirections: 
   _currentDirection: 0
+  _baseSpeedRate: 1
   _isMoving: 0
 --- !u!1 &1469477402
 GameObject:
@@ -10600,6 +10606,63 @@ Transform:
   - {fileID: 1751035283}
   m_Father: {fileID: 770675964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1901722664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901722667}
+  - component: {fileID: 1901722666}
+  - component: {fileID: 1901722665}
+  m_Layer: 0
+  m_Name: DDOL - GamaManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1901722665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901722664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f769b33828d9443a3ebfd1d10abdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1901722666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901722664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f769b33828d9443a3ebfd1d10abdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1901722667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901722664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.0359097, y: 0.6881356, z: -0.9863889}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942165837
 GameObject:
   m_ObjectHideFlags: 0
@@ -11778,7 +11841,7 @@ GameObject:
   - component: {fileID: 2074912591}
   - component: {fileID: 2074912590}
   m_Layer: 0
-  m_Name: DDOL - Robot Upgrade Manager
+  m_Name: Robot - Upgrade Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11804,12 +11867,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074912589}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4163935, y: 6.1390333, z: -1.0296893}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.260284, y: 7.5194583, z: -1.4215312}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1.3333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1456857404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2098234429
 GameObject:
@@ -12804,5 +12867,5 @@ SceneRoots:
   - {fileID: 770675964}
   - {fileID: 409559276}
   - {fileID: 1379946330}
-  - {fileID: 2074912591}
   - {fileID: 263132463}
+  - {fileID: 1901722667}

@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShipEffciencyStatusUI : MonoBehaviour
 {
     public Image imgShipEffciencyStatus;
+    public TextMeshProUGUI EffciencyStatusText;
 
     private void OnEnable()
     {
@@ -20,5 +22,6 @@ public class ShipEffciencyStatusUI : MonoBehaviour
         if (imgShipEffciencyStatus == null) return;
 
         imgShipEffciencyStatus.fillAmount = effciencyValue;
+        EffciencyStatusText.text = $"{effciencyValue * 100f:F1}%";
     }
 }

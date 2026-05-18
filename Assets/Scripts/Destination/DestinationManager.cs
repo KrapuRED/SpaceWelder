@@ -11,6 +11,7 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private float _distanceToTravel;
 
     private EffciencyShipManager _effciencyShipManager;
+    private MissionControlManager _missionControlManager;
     private float _currentSpeed;
     private float _distanceTravel;
     private float _efficiency;
@@ -43,7 +44,11 @@ public class DestinationManager : MonoBehaviour
         }
 
         CalculateShipToDestination();
-        _timeElapsed += Time.deltaTime;
+
+        if (_efficiency > 0f)                                          
+            _timeElapsed += Time.deltaTime * (1f / _efficiency);
+        else
+            _timeElapsed += Time.deltaTime;
 
         GlobalEvents.OnProgressDestinationUI.Invoke(_distanceTravel, _distanceToTravel);
         GlobalEvents.OnProgressTimeDestinationUI.Invoke(_timeElapsed);
@@ -58,7 +63,6 @@ public class DestinationManager : MonoBehaviour
     {
         _reachDestination = true;
         GlobalEvents.OnShowPanel.Invoke();
-        Debug.Log($"Ship reach the Destination in {_timeElapsed}");
     }
 
     private void CalculateShipToDestination()
@@ -66,9 +70,18 @@ public class DestinationManager : MonoBehaviour
         float prevEfficiency = _efficiency;
         _efficiency = _effciencyShipManager.EfficiencyShip / 100f;
 
-        float targetSpeed = Mathf.Min(_speedShip * _efficiency, _maxSpeedShip   ) ;
-        _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
+        // Debug to confirm values
+        Debug.Log($"Efficiency: {_efficiency} | TargetSpeed: {_speedShip * _efficiency} | CurrentSpeed: {_currentSpeed}");
 
+        float targetSpeed = Mathf.Min(_speedShip * _efficiency, _maxSpeedShip);
+        _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
         _distanceTravel += _currentSpeed * Time.deltaTime;
+    }
+
+    private float GetETA()
+    {
+        if (_currentSpeed == 0) return float.MaxValue;
+        float remainingDistance = _distanceToTravel - _distanceTravel;
+        return remainingDistance / _currentSpeed;
     }
 }

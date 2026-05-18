@@ -5,7 +5,6 @@ public class DamageHull : MonoBehaviour, IRepairAble
     [Header("Hull Damage Configure")]
     [SerializeField] private string _hullID;
     [SerializeField] private float _maxHealth;
-    [SerializeField] private float _repairMultiplier;
     [SerializeField] private bool _isHullBreach;
     public Transform WeldingEffectContiner;
     private float _currentHealth;
@@ -18,32 +17,33 @@ public class DamageHull : MonoBehaviour, IRepairAble
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = Color.green;
     }
 
-    public void OnHullBreach()
+    public void OnHullBreach(Sprite hullBreachSprite)
     {
         _currentHealth = 0;
         _isHullBreach = true;
-        _spriteRenderer.color = Color.red;
+        _spriteRenderer.sprite = hullBreachSprite;
     }
 
     public void OnReapairHull(float repairAmount)
     {
         if (!_isHullBreach) return;
 
-        _currentHealth = Mathf.Abs(Mathf.Min(_currentHealth + repairAmount * _repairMultiplier, _maxHealth));
+        _currentHealth = Mathf.Abs(Mathf.Min(_currentHealth + repairAmount, _maxHealth));
 
         if (_currentHealth >= _maxHealth)
         {
             _isHullBreach = false;
             GlobalEvents.OnHullBeenReapir.Invoke(HullID);
-            _spriteRenderer.color = Color.green;
+            _spriteRenderer.sprite = null;
 
             foreach (Transform child in WeldingEffectContiner)
             {
                 Destroy(child.gameObject);
             }
         }
+
+        Debug.Log($"{gameObject.name} : {_currentHealth}/{_maxHealth}");
     }
 }

@@ -20,6 +20,7 @@ public class RailPoint
 [System.Serializable]
 public class RailConnector
 {
+    public string connectorName;
     public Rail fromRail;
     public Rail toRail;
     public Direction directionFromTo;

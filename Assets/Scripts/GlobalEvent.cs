@@ -85,6 +85,8 @@ public class CustomEvents<T1, T2, T3>
 
 public class GlobalEvents 
 {
+    public static readonly CustomEvents<int> OnChangeScene = new CustomEvents<int>();
+
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
 
     public static readonly CustomEvents<UpgradeType, float> OnUpgradeRobot = new();
