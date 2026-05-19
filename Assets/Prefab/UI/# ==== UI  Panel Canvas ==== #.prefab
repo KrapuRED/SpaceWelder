@@ -168,8 +168,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Delivery Log
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -463,8 +463,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Arrival
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+  m_sharedMaterial: {fileID: -6219834417860989253, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -703,7 +703,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000038146973, y: -0.0000038146973}
-  m_SizeDelta: {x: 978.7749, y: 754.3167}
+  m_SizeDelta: {x: 726.20215, y: 1041.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6637788949876053081
 CanvasRenderer:
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3912798099085682059, guid: b63e3a66d764dc24285ef91e02ca6ad8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -880,7 +880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5595228, y: 0.23211671}
   m_AnchorMax: {x: 0.683, y: 0.29923433}
-  m_AnchoredPosition: {x: -3.4299927, y: 1.3198853}
+  m_AnchoredPosition: {x: 219, y: 437}
   m_SizeDelta: {x: 4.9900055, y: -4.919998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4669244642246860395
@@ -916,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50.53206}
+  m_AnchoredPosition: {x: 0, y: -50.53209}
   m_SizeDelta: {x: 0, y: -101.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8833450212826978133
@@ -1012,8 +1012,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Time Taken
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 482da3147fa78bb4d8c3307bf2cbcd78, type: 2}
+  m_sharedMaterial: {fileID: -5146612927857335320, guid: 482da3147fa78bb4d8c3307bf2cbcd78, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.79607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1285,9 +1285,9 @@ RectTransform:
   m_Father: {fileID: 2496132258945362630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 71.5, y: 35.4}
+  m_SizeDelta: {x: 117.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6873172898061699379
 CanvasRenderer:
@@ -1317,8 +1317,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -7877229825462887920, guid: 1335d5343cd5cf342b921e12b05cc276, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1407,9 +1407,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button - Upgrade Speed
       objectReference: {fileID: 0}
+    - target: {fileID: 1665545298552847963, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2931224069329341874, guid: 7c2d740d1fab432439865291f16b479d, type: 3}
     - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: m_text
-      value: Upgrade Speed
+      value: +SPEED
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6219834417860989253, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2046182039964665373, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: amount
@@ -1418,6 +1434,10 @@ PrefabInstance:
     - target: {fileID: 2046182039964665373, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: upgradeType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135502392000007623, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6135502392000007623, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: m_Color.b
@@ -1715,9 +1735,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button - Upgrade Welding
       objectReference: {fileID: 0}
+    - target: {fileID: 1665545298552847963, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2965326616260768849, guid: b0f4cff880d47fa4b8bce058fe380ff3, type: 3}
     - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: m_text
-      value: Upgrade Welding
+      value: +WELD AREA
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6219834417860989253, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2046182039964665373, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: amount
@@ -1726,6 +1762,10 @@ PrefabInstance:
     - target: {fileID: 2046182039964665373, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: upgradeType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135502392000007623, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6135502392000007623, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: m_Color.b
@@ -1841,9 +1881,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button - Extra Boom Arm
       objectReference: {fileID: 0}
+    - target: {fileID: 1665545298552847963, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1229753107003218718, guid: a4083537a0665a641a9846977587c13e, type: 3}
     - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: m_text
-      value: Extra Boom Arm
+      value: +LONGER ARM
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6219834417860989253, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+    - target: {fileID: 1844110338280446776, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135502392000007623, guid: d521618ca73455240982b4217f9c5631, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6135502392000007623, guid: d521618ca73455240982b4217f9c5631, type: 3}
       propertyPath: m_Color.b
