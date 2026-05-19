@@ -684,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161229993}
   m_Layer: 5
-  m_Name: Captian Name
+  m_Name: Captian Profile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 539307040}
   - component: {fileID: 539307039}
   m_Layer: 5
-  m_Name: DialogueBox Captian - dialogue Text (TMP) (1)
+  m_Name: DialogueBox Captian - Insturction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1173,7 +1173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25.830008}
+  m_AnchoredPosition: {x: 0, y: -25.830002}
   m_SizeDelta: {x: -102.119995, y: -99.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &695900403
@@ -1326,6 +1326,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697486684}
   m_CullTransparentMesh: 1
+--- !u!1 &745810661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745810662}
+  m_Layer: 0
+  m_Name: ==== Input ====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745810662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745810661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6573937, y: -3.9352732, z: -2.2473166}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1282738203}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747981511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 747981512}
+  - component: {fileID: 747981513}
   m_Layer: 5
   m_Name: DialogueBox -  Standard
   m_TagString: Untagged
@@ -1362,9 +1395,25 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 259.95, y: -25.830008}
+  m_AnchoredPosition: {x: 259.95, y: -25.830002}
   m_SizeDelta: {x: -622.04, y: -99.41}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &747981513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747981511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5108288019c846d4da2f85d235358807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  characterIcon: {fileID: 0}
+  characterNameText: {fileID: 0}
+  dialogueText: {fileID: 0}
 --- !u!1 &829626304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829626305}
   - component: {fileID: 829626306}
+  - component: {fileID: 829626307}
   m_Layer: 5
   m_Name: Dialogue UI - DialogueBox Standard
   m_TagString: Untagged
@@ -1411,10 +1461,26 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829626304}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &829626307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829626304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5108288019c846d4da2f85d235358807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 829626306}
+  characterIcon: {fileID: 1483394531}
+  characterNameText: {fileID: 106492520}
+  dialogueText: {fileID: 1728209215}
 --- !u!1 &911993066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911993067}
   - component: {fileID: 911993068}
+  - component: {fileID: 911993069}
   m_Layer: 5
   m_Name: Dialogue UI - DialogueBox Captian
   m_TagString: Untagged
@@ -1465,6 +1532,21 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &911993069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911993066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d609b67fef1eb14e92fdecdb96e90e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 911993068}
+  characterNameText: {fileID: 963042992}
+  dialogueText: {fileID: 951333554}
 --- !u!1 &951333552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,7 +1695,7 @@ GameObject:
   - component: {fileID: 963042993}
   - component: {fileID: 963042992}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Captian Profile - Name Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1998,13 +2080,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76979030708087499bb79b741f4489a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  captianDialogueBox: {fileID: 0}
-  standardDialogueBox: {fileID: 0}
+  storyLogUI: {fileID: 1580188162}
+  captianDialogueBox: {fileID: 911993069}
+  standardDialogueBox: {fileID: 829626307}
   storyData:
-    clientName: "Helix Biotech Logistics \u2014 Procurement Director Elian Voss"
+    clientName: Helix Biotech Logistics - Procurement Director Elian Voss
     cargo: Medical Cryo-Containers
     storyDialogueDatas:
     - characterName: Elian Voss
+      characterIcon: {fileID: 0}
       charType: 2
       dialogueData:
         dialogueName: 
@@ -2012,12 +2096,14 @@ MonoBehaviour:
         dialogue: Captain Rhea, confirm transport of twelve medical cryo-containers
           to Outpost K-12.
     - characterName: Captain Rhea
+      characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
         dialogue: Cargo secured. Departure ready.
     - characterName: Elian Voss
+      characterIcon: {fileID: 0}
       charType: 2
       dialogueData:
         dialogueName: 
@@ -2025,29 +2111,119 @@ MonoBehaviour:
         dialogue: "The colony\u2019s medical reserves are nearly exhausted. We expect
           an on-time delivery."
     - characterName: Captain Rhea
+      characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
         dialogue: "You\u2019ll get your shipment."
     - characterName: Elian Voss
+      characterIcon: {fileID: 0}
       charType: 2
       dialogueData:
         dialogueName: 
         dialogueID: 
         dialogue: Our system flagged your vessel for repeated maintenance delays.
     - characterName: Captain Rhea
+      characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
         dialogue: Ship still flies.
     - characterName: Elian Voss
+      characterIcon: {fileID: 0}
       charType: 2
       dialogueData:
         dialogueName: 
         dialogueID: 
         dialogue: For both our sakes, make sure it keeps flying.
+--- !u!1 &1282738202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282738203}
+  - component: {fileID: 1282738204}
+  m_Layer: 0
+  m_Name: Input - Player Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282738203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282738202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 745810662}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282738204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282738202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8ad486d23f759844180099724bd532cc, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 946c6608-2799-418b-908b-55fb804ffda8
+    m_ActionName: 'GamePlay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a342511b-e887-4ac2-86ca-bbb02016fbd9
+    m_ActionName: 'GamePlay/Welding[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1260329536}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: OnPressContinue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 76a7d053-5cf8-4325-94b6-cb29cd8ab7d6
+    m_ActionName: 'GamePlay/Tutorial[/Keyboard/space]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: GamePlay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1483394529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,7 +2258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.14, y: 1.4600067}
+  m_AnchoredPosition: {x: -1.1399994, y: 1.4600067}
   m_SizeDelta: {x: -29.57, y: -23.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483394531
@@ -2133,6 +2309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580188160}
   - component: {fileID: 1580188161}
+  - component: {fileID: 1580188162}
   m_Layer: 5
   m_Name: Dialogue UI - Story Log
   m_TagString: Untagged
@@ -2187,6 +2364,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1580188162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580188159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fd07f288014df48aed1f0cff44880e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cargoText: {fileID: 51881282}
+  clienText: {fileID: 1679428729}
 --- !u!1 &1679428727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,7 +2413,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 735.09, y: 90.49}
+  m_SizeDelta: {x: 870.25, y: 90.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679428729
 MonoBehaviour:
@@ -2530,7 +2721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 930, y: 90}
+  m_SizeDelta: {x: 930, y: 135.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803955702
 MonoBehaviour:
@@ -2567,6 +2758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1886978156}
+  - component: {fileID: 1886978157}
   m_Layer: 5
   m_Name: Standarad Profile
   m_TagString: Untagged
@@ -2595,6 +2787,21 @@ RectTransform:
   m_AnchoredPosition: {x: -288.13, y: 4.065}
   m_SizeDelta: {x: 316.09, y: 348.13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1886978157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886978155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d609b67fef1eb14e92fdecdb96e90e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  characterNameText: {fileID: 0}
+  dialogueText: {fileID: 0}
 --- !u!1 &2111697304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,3 +2884,4 @@ SceneRoots:
   - {fileID: 234545549}
   - {fileID: 138160755}
   - {fileID: 181776776}
+  - {fileID: 745810662}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -13,6 +14,7 @@ public enum CharacterType
 public class StoryDialogueData
 {
     public string characterName;
+    public Sprite characterIcon;
     public CharacterType charType;
     public DialogueData dialogueData;
 }
@@ -28,19 +30,35 @@ public class StoryData
 
 public class DialogueManager : MonoBehaviour
 {
-    public DialogueBox captianDialogueBox;
-    public DialogueBox standardDialogueBox;
+    public StoryLogUI storyLogUI;
+    public CaptainDialogueBox captianDialogueBox;
+    public StandaradDialogueBox standardDialogueBox;
 
     [SerializeField] private StoryData storyData;
 
     private int _dialogueCount;
 
+    private void Start()
+    {
+        TriggerDialogue(storyData.storyDialogueDatas[_dialogueCount]);
+        storyLogUI.SetStoryLogUI(storyData.cargo, storyData.clientName);
+    }
+
+    public void OnPressContinue(InputAction.CallbackContext context)
+    {
+        if (context.started && _dialogueCount < storyData.storyDialogueDatas.Count)
+            ContinueDialogue();
+    }
+
     public void ContinueDialogue()
     {
+
         if (captianDialogueBox == null || standardDialogueBox == null) return;
 
         captianDialogueBox.HideDialogueBox();
         standardDialogueBox.HideDialogueBox();
+
+        _dialogueCount++;
 
         if (_dialogueCount >= storyData.storyDialogueDatas.Count)
         {
@@ -50,13 +68,20 @@ public class DialogueManager : MonoBehaviour
 
         var nextDialogue = storyData.storyDialogueDatas[_dialogueCount];
 
-        if (nextDialogue.charType == CharacterType.Captian)
+        TriggerDialogue(nextDialogue);
+    }
+
+    private void TriggerDialogue(StoryDialogueData storyDialogue)
+    {
+        Debug.Log($"[{storyDialogue.characterName}] : {storyDialogue.dialogueData.dialogue}");
+
+        if (storyDialogue.charType == CharacterType.Captian)
         {
-            captianDialogueBox.ShowDialogueBox();
+           captianDialogueBox.SetCaptainDialogueBox(storyDialogue.characterName, storyDialogue.dialogueData.dialogue);
         }
         else
         {
-            standardDialogueBox.ShowDialogueBox();
+            standardDialogueBox.SetStandaradDialogueBox(storyDialogue.characterName, storyDialogue.dialogueData.dialogue, storyDialogue.characterIcon);
         }
     }
 
