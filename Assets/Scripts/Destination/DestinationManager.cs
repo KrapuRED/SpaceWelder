@@ -18,6 +18,7 @@ public class DestinationManager : MonoBehaviour
     private bool _reachDestination;
     private float _timeElapsed;
 
+    public bool IsReachDestinantion => _reachDestination;
     public float TimeElapsed => _timeElapsed;
     public float TotalDistance => _distanceTravel;
 

@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _level = 1;
 
+    private bool _isTutorialComplete;
+    public bool IsTutorialComplete => _isTutorialComplete;
+
     private void Awake()
     {
         if (Instance != null)
@@ -17,6 +20,11 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void OnTutorialComplete()
+    {
+        _isTutorialComplete = true;
     }
 
     public void NextLevel()

@@ -1529,6 +1529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7117720215148795217}
     m_Modifications:
+    - target: {fileID: 184305469325128984, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1041725091266531093, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 60.120438
@@ -1544,6 +1548,58 @@ PrefabInstance:
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.ArrivalAt
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: missionData.MissionName
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesFailed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesFailed.Array.data[0].dialogue
+      value: Maintenance unit offline. Hull failure imminent.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesFailed.Array.data[0].dialogueName
+      value: Player Dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[1].missionSuccesType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[2].missionSuccesType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[0].dialogueData.dialogue
+      value: Excellent work, FiXbot-42. We made it in time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[1].dialogueData.dialogue
+      value: Late arrival logged. Still better than drifting in space.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[2].dialogueData.dialogue
+      value: "Command won\u2019t be happy about this arrival time."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[0].dialogueData.dialogueName
+      value: Mission Controller OnTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[1].dialogueData.dialogueName
+      value: Mission Controller Delay
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
+      propertyPath: _missionControlDialoguesRating.Array.data[2].dialogueData.dialogueName
+      value: 'Mission Controller Late '
       objectReference: {fileID: 0}
     - target: {fileID: 1732985624621533210, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: m_AnchoredPosition.x

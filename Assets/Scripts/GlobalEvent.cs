@@ -89,7 +89,9 @@ public class GlobalEvents
 
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
 
+    public static readonly CustomEvents OnCompleteTutorial = new CustomEvents();
     public static readonly CustomEvents OnReachDestination = new CustomEvents();
+    public static readonly CustomEvents OnPlayerDeath = new CustomEvents();
 
     public static readonly CustomEvents<UpgradeType, float> OnUpgradeRobot = new();
     public static readonly CustomEvents<int> OnApplyExtraBoomArm = new();
