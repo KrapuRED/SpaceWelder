@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ffeba6fdad160c84a8f1160c9d6fcbd5
+guid: 552ff97fe436ca849a7f0f670b247de3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4470011301890188551
-    second: Environment_FlatWall_0
+      213: -7726780160461374183
+    second: Screen Light_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Environment_FlatWall_0
+      name: Screen Light_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4000
-        height: 4000
+        width: 3302
+        height: 2160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fa9ad0776457f1c0800000000000000
-      internalID: -4470011301890188551
+      spriteID: 91df92ed166f4c490800000000000000
+      internalID: -7726780160461374183
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Environment_FlatWall_0: -4470011301890188551
+      Screen Light_0: -7726780160461374183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
