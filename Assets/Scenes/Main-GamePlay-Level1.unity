@@ -760,18 +760,6 @@ PrefabInstance:
       value: Player - Robot Welder
       objectReference: {fileID: 0}
     - target: {fileID: 5678808923406250524, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678808923406250524, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678808923406250524, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678808923406250524, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.65
       objectReference: {fileID: 0}

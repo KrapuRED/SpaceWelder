@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deltaTheta: 0.01
   rotateThreshold: 0.05
-  rotate_rate: 5
-  steps: 24
+  rotate_rate: 10
+  steps: 32
   jp_root: {fileID: 5133825649409573981}
   jp_end: {fileID: 0}
   target: {fileID: 0}
@@ -335,6 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750c8b70e3d2cbf4e913bd22e4517cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  extraBoomArm: 0
+  speedUpgrade: 0
+  weldingAreaUpgrade: 0
 --- !u!1 &4864978544919444346
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +683,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3580447055546418070}
