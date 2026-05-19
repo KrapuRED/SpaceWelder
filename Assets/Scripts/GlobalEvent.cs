@@ -107,5 +107,6 @@ public class GlobalEvents
     //=============================== Panel ================================================//
     public static readonly CustomEvents OnHideUpgradePanel = new();
     public static readonly CustomEvents OnShowUpgradePanel = new();
-    public static readonly CustomEvents<List<MissionSuccesData>> OnShowPerformacePanel = new();
+    public static readonly CustomEvents<List<MissionSuccesData>> OnShowPerformancePanel = new();
+    public static readonly CustomEvents OnHidePerformacnePanel = new();
 }

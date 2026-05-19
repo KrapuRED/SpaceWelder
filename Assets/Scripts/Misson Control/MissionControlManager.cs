@@ -93,25 +93,11 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     }
 
     #region Event Area
-    private void OnEnable()
-    {
-        GlobalEvents.OnReachDestination.AddListener(OnReachDestination);
-    }
 
-    private void OnDisable()
-    {
-        GlobalEvents.OnReachDestination.RemoveListener(OnReachDestination);
-    }
-
-    private void OnDestroy()
-    {
-        GlobalEvents.OnReachDestination.RemoveListener(OnReachDestination);
-    }
-
-    private void OnReachDestination()
+    public void OnReachDestination(float time)
     {
         if (this == null) return;
-        CheckDurationMission(DestinationManager.Instance.TimeElapsed);
+        CheckDurationMission(time);
     }
     #endregion
 
@@ -127,7 +113,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
             if (_lockedTimer >= _lockedTimeout)
             {
                 _lockedTimer = 0f;
-                _lockedTypes.Clear(); // force unlock all
+                _lockedTypes.Clear();
             }
         }
         else
@@ -292,23 +278,17 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        foreach (var mission in data.missionSuccesDatas)
-        {
-            _missionSuccesDatas.Add(mission);
-        }
+        _missionSuccesDatas = new List<MissionSuccesData>(data.missionSuccesDatas);
     }
 
     public void SaveData(ref GameData data)
     {
-        foreach (var mission in _missionSuccesDatas)
-        {
-            data.missionSuccesDatas.Add(mission);
-        }
+        data.missionSuccesDatas = new List<MissionSuccesData>(_missionSuccesDatas);
     }
 
     public void OnShowPerformace() 
     {
 
-        GlobalEvents.OnShowPerformacePanel.Invoke(_missionSuccesDatas);
+        GlobalEvents.OnShowPerformancePanel.Invoke(_missionSuccesDatas);
     }
 }

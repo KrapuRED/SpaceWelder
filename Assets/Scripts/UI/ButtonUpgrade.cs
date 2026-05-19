@@ -15,6 +15,7 @@ public class ButtonUpgrade : MonoBehaviour
     public void OnClickButtonUpgrade()
     {
         GlobalEvents.OnUpgradeRobot.Invoke(upgradeType, amount);
+        GlobalEvents.OnHideUpgradePanel.Invoke();
         MissionControlManager.Instance.OnShowPerformace();
     }
 }

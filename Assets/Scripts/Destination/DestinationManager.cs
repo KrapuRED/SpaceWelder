@@ -64,6 +64,8 @@ public class DestinationManager : MonoBehaviour
     private void ReachDestination()
     {
         _reachDestination = true;
+
+        MissionControlManager.Instance.OnReachDestination(_timeElapsed);
         GlobalEvents.OnShowUpgradePanel.Invoke();
         GlobalEvents.OnReachDestination.Invoke();
     }
@@ -76,12 +78,5 @@ public class DestinationManager : MonoBehaviour
         float targetSpeed = Mathf.Min(_speedShip * _efficiency, _maxSpeedShip);
         _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
         _distanceTravel += _currentSpeed * Time.deltaTime;
-    }
-
-    private float GetETA()
-    {
-        if (_currentSpeed == 0) return float.MaxValue;
-        float remainingDistance = _distanceToTravel - _distanceTravel;
-        return remainingDistance / _currentSpeed;
     }
 }

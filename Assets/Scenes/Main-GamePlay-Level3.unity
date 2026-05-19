@@ -343,9 +343,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-5
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (4)
+      value: Hull Breach - 4
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: damageHulls.Array.size
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[0]'
@@ -622,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[5]'
       value: 
-      objectReference: {fileID: 858851862}
+      objectReference: {fileID: 2129951959}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[6]'
       value: 
@@ -634,27 +638,27 @@ PrefabInstance:
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[8]'
       value: 
-      objectReference: {fileID: 1292208293}
+      objectReference: {fileID: 871131809}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[9]'
       value: 
-      objectReference: {fileID: 871131809}
+      objectReference: {fileID: 2025570145}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[10]'
       value: 
-      objectReference: {fileID: 2025570145}
+      objectReference: {fileID: 401185859}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[11]'
       value: 
-      objectReference: {fileID: 401185859}
+      objectReference: {fileID: 696972196}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[12]'
       value: 
-      objectReference: {fileID: 696972196}
+      objectReference: {fileID: 2144978636}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: 'damageHulls.Array.data[13]'
       value: 
-      objectReference: {fileID: 2144978636}
+      objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[1].phaseID
       value: pd-01
@@ -662,6 +666,14 @@ PrefabInstance:
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[2].phaseID
       value: pd-02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: phaseDatas.Array.data[1].activeAt
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: phaseDatas.Array.data[2].activeAt
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[1].phaseName
@@ -2275,9 +2287,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-3
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (2)
+      value: Hull Breach - 2
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3872,9 +3888,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-6
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (8)
+      value: Hull Breach - 6
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3945,9 +3965,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-10
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (12)
+      value: Hull Breach - 10
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4679,7 +4703,6 @@ Transform:
   - {fileID: 1013282577}
   - {fileID: 41478696}
   - {fileID: 1666786944}
-  - {fileID: 858851861}
   - {fileID: 383065815}
   - {fileID: 1292208292}
   - {fileID: 871131808}
@@ -4697,9 +4720,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-11
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (13)
+      value: Hull Breach - 11
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5114,9 +5141,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-2
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (1)
+      value: Hull Breach - 1
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5377,79 +5408,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1113551555}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &858851860
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 662286072}
-    m_Modifications:
-    - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_Name
-      value: Hull  Breach (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.08558107
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
---- !u!4 &858851861 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-  m_PrefabInstance: {fileID: 858851860}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &858851862 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
-  m_PrefabInstance: {fileID: 858851860}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff69ee1394d12bd4dbabf78a84dd370d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &867526533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5539,9 +5497,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-8
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (10)
+      value: Hull Breach - 8
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6515,9 +6477,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-4
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (3)
+      value: Hull Breach - 3
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7526,9 +7492,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-7
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (9)
+      value: Hull Breach - 7
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8841,9 +8811,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-5
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (6)
+      value: Hull Breach - 5
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9731,9 +9705,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-9
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (11)
+      value: Hull Breach - 9
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10109,6 +10087,17 @@ Transform:
   - {fileID: 74699351}
   m_Father: {fileID: 476740113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129951959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+  m_PrefabInstance: {fileID: 1666786943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff69ee1394d12bd4dbabf78a84dd370d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2144978635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10117,9 +10106,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _hullID
+      value: SCH-12
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
-      value: Hull  Breach (14)
+      value: Hull Breach - 12
       objectReference: {fileID: 0}
     - target: {fileID: 7912010048985340098, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10190,10 +10183,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 380099406}
     m_Modifications:
+    - target: {fileID: 550663494458704456, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550663494458704456, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550663494458704456, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550663494458704456, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: _currentPlayer
       value: 
       objectReference: {fileID: 1987306630}
+    - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: _lockedTimeout
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: missionData.ArrivalAt
+      value: 260
+      objectReference: {fileID: 0}
     - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10312,6 +10329,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7117720215148795217, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394639679101095043, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394639679101095043, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394639679101095043, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394639679101095043, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101017480124301418, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101017480124301418, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101017480124301418, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101017480124301418, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8459945708764396504, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
