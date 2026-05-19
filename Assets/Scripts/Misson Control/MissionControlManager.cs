@@ -22,6 +22,13 @@ public enum MissionSuccesType
 }
 
 [System.Serializable]
+public class MissionControlDialoguePerformace
+{
+    public MissionSuccesType missionSuccesType;
+    public DialogueData dialogueData;
+}
+
+[System.Serializable]
 public class MissionControlDialogueData
 {
     public int activeAt;
@@ -49,27 +56,29 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 {
     public static MissionControlManager Instance;
 
+    [SerializeField] private PerfomanceRatingCalculate perfomanceRatingCalculate;
     [SerializeField] private MissionData missionData;
     
     [Header("Mission Control Dialogue")]
+    [SerializeField] private List<DialogueData> _missionControlDialoguesFailed =  new();
+    [SerializeField] private List<MissionControlDialoguePerformace> _missionControlDialoguesRating = new ();
     [SerializeField] private List<MissionControlData> _missionControlDialogues = new ();
     [SerializeField] private float _InactiveTalking;
     [SerializeField] private bool _isActive = true;
     [SerializeField] private float _lockedTimeout;
 
+    private List<MissionSuccesData> _missionSuccesDatas = new();
     private MissionControltype _prevSelectedMissionControltype;
     private EffciencyShipManager _shipManager;
     private DestinationManager _destinationManager;
     [SerializeField] private RobotWelder _currentPlayer;
     private Coroutine _inactiveCoroutine;
+   
     private float _lockedTimer;
-
-    private List<MissionSuccesData> _missionSuccesDatas = new();
-    private HashSet<int> _firedPlayerThresholds = new();
-    private HashSet<int> _firedEfficiencyThresholds = new();
-    private HashSet<int> _firedDistanceThresholds = new();
     private HashSet<MissionControltype> _lockedTypes = new();
+    private Dictionary<MissionControltype, float> _typeCooldowns = new();
 
+    private MissionSuccesType _missionSuccesType;
     private bool _missionStarted;
     private bool _missionResultRecorded = false;
 
@@ -86,7 +95,12 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         _shipManager = EffciencyShipManager.Instance;
         _destinationManager = DestinationManager.Instance;
 
-        TriggerDialogueByType(MissionControltype.Start);
+        if (GameManager.Instance.IsTutorialComplete) 
+        {
+            TriggerDialogueByType(MissionControltype.Start);
+
+        }
+
         GlobalEvents.OnMissionGoalUI.Invoke(missionData.ArrivalAt);
 
         _missionStarted = true;
@@ -94,10 +108,44 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     #region Event Area
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnPlayerDeath.AddListener(OnFailedMission);
+    }
+
+    private void OnDisable()
+    {
+        RemoveAllEvent();
+    }
+
+    private void OnDestroy()
+    {
+        RemoveAllEvent();
+    }
+
     public void OnReachDestination(float time)
     {
         if (this == null) return;
         CheckDurationMission(time);
+    }
+
+    public void OnFailedMission()
+    {
+        int index = Random.Range(0, _missionControlDialoguesFailed.Count);
+        var dialogue = _missionControlDialoguesFailed[index];
+
+        TriggerDialogue(dialogue);
+    }
+
+    private void RemoveAllEvent()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(OnFailedMission);
+
+    }
+
+    private void OnTutorailComplete()
+    {
+        TriggerDialogueByType(MissionControltype.Start);
     }
     #endregion
 
@@ -107,55 +155,13 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
         if (!_missionStarted) return;
 
-        if (_lockedTypes.Count > 0)
-        {
-            _lockedTimer += Time.deltaTime;
-            if (_lockedTimer >= _lockedTimeout)
-            {
-                _lockedTimer = 0f;
-                _lockedTypes.Clear();
-            }
-        }
-        else
-        {
-            _lockedTimer = 0f;
-        }
+        if (_destinationManager.IsReachDestinantion) return;
+
+        UpdateCoolDownDialogue();
 
         CheckEfficienyThreshold();
         CheckDistanceThreshold();
         CheckPlayerHealthThreshold();
-    }
-
-    private void CheckDurationMission(float time)
-    {
-        Debug.Log(time);
-        if (_missionResultRecorded) return;
-        _missionResultRecorded = true;
-
-        var missionSucces = new MissionSuccesData();
-        missionSucces.MissionName = missionData.MissionName;
-        missionSucces.ArriveAt = time;
-
-        if (time <= missionData.ArrivalAt)
-            missionSucces.MissionSuccesType = MissionSuccesType.OnTime;
-        else if (time <= missionData.ArrivalAt + missionData.maxDelay) 
-            missionSucces.MissionSuccesType = MissionSuccesType.Delay;
-        else
-            missionSucces.MissionSuccesType = MissionSuccesType.Late;
-
-        _missionSuccesDatas.Add(missionSucces);
-        DataPersistenceManager.Instance.SaveGame();
-    }
-
-    private void OnTypeFired(MissionControltype type)
-    {
-        _lockedTypes.Add(type);
-
-        foreach (MissionControltype t in System.Enum.GetValues(typeof(MissionControltype)))
-        {
-            if (t == type || t == MissionControltype.Start) continue;
-            _lockedTypes.Remove(t);
-        }
     }
 
     //============== Trigger ================================
@@ -173,17 +179,73 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     private void TriggerDialogue(DialogueData data)
     {
-        Debug.Log($"[MissionControl]: {data.dialogue}");
+        if (!GameManager.Instance.IsTutorialComplete) return;
+
+            Debug.Log($"[MissionControl]: {data.dialogue}");
         GlobalEvents.OnMissionControlDialogue.Invoke(data.dialogue);
         if (_inactiveCoroutine != null) StopCoroutine(_inactiveCoroutine);
         _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
     }
 
-    //============== Checker ================================
+    //============== Checker Mission ================================
+    private void UpdateCoolDownDialogue()
+    {
+        List<MissionControltype> keys = _typeCooldowns.Keys.ToList();
+
+        foreach (var key in keys)
+        {
+            _typeCooldowns[key] -= Time.deltaTime;
+
+            if (_typeCooldowns[key] <= 0f)
+            {
+                _typeCooldowns.Remove(key);
+            }
+        }
+    }
+
+    private void OnTypeFired(MissionControltype type)
+    {
+        _typeCooldowns[type] = _lockedTimeout;
+    }
+
+    //============== Checker Performance Rating ================================
+
+    private void CheckDurationMission(float time)
+    {
+        if (_missionResultRecorded) return;
+        _missionResultRecorded = true;
+
+        var missionSucces = new MissionSuccesData();
+        missionSucces.MissionName = missionData.MissionName;
+        missionSucces.ArriveAt = time;
+        MissionSuccesType rating = MissionSuccesType.OnTime;
+
+        if (time <= missionData.ArrivalAt)
+            rating = MissionSuccesType.OnTime;
+        else if (time <= missionData.ArrivalAt + missionData.maxDelay)
+            rating = MissionSuccesType.Delay;
+        else
+            rating = MissionSuccesType.Late;
+
+        _missionSuccesType = rating;
+        missionSucces.MissionSuccesType = rating;
+        _missionSuccesDatas.Add(missionSucces);
+        DataPersistenceManager.Instance.SaveGame();
+    }
+
+    private void CheckMissionSuccesType(MissionSuccesType type)
+    {
+        var target = _missionControlDialoguesRating.Find(x => x.missionSuccesType == type);
+        if (target == null) return;
+
+        TriggerDialogue(target.dialogueData);
+    }
+
+    //============== Checker Mission ================================
     private void CheckEfficienyThreshold()
     {
         if (_shipManager == null) return;
-        if (_lockedTypes.Contains(MissionControltype.Efficiency)) return;
+        if (_typeCooldowns.ContainsKey(MissionControltype.Efficiency)) return;
 
         float efficiency = _shipManager.EfficiencyShip;
 
@@ -193,26 +255,31 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         if (mcd == null) return;
 
         // Find the FIRST(highest) threshold that efficiency is at or below
-        var target = mcd.MissionControlDialogueData
-       .Where(x => x.activeAt >= efficiency &&
-                   !_firedEfficiencyThresholds.Contains(x.activeAt))
-       .OrderBy(x => x.activeAt)
-       .FirstOrDefault();
+        MissionControlDialogueData target = null;
+
+        if (efficiency >= 100f)
+        {
+            target = mcd.MissionControlDialogueData.
+                FirstOrDefault(x => x.activeAt == 100f);
+        }
+        else
+        {
+            target = mcd.MissionControlDialogueData
+                .Where(x => efficiency >= x.activeAt && efficiency < 100f)
+                .OrderByDescending(x => x.activeAt)
+                .FirstOrDefault();
+        }
 
         if (target == null) return;
 
-        _firedEfficiencyThresholds.Add(target.activeAt);
         TriggerDialogue(target.dialogueData);
         OnTypeFired(MissionControltype.Efficiency);
-
-        if (_firedEfficiencyThresholds.Count >= mcd.MissionControlDialogueData.Count)
-            _firedEfficiencyThresholds.Clear();
     }
 
     private void CheckDistanceThreshold()
     {
         if (_destinationManager == null) return;
-        if (_lockedTypes.Contains(MissionControltype.Distination)) return;
+        if (_typeCooldowns.ContainsKey(MissionControltype.Distination)) return;
 
         float totalDistance    = _destinationManager.TotalDistance;
         float currentDistance  = _destinationManager.DistanceToTarget();
@@ -222,28 +289,24 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
             .Find(x => x.MissionControlDataType == MissionControltype.Distination);
 
         if (mcd == null) return;
-        foreach (var entry in mcd.MissionControlDialogueData)
+        foreach (var entry in mcd.MissionControlDialogueData
+             .OrderByDescending(x => x.activeAt))
         {
             bool pastThresHold = progressDistance >= entry.activeAt;
-            bool isAlreadyFire = _firedDistanceThresholds.Contains(entry.activeAt);
 
-            if (pastThresHold && !isAlreadyFire)
+            if (pastThresHold)
             {
-                _firedDistanceThresholds.Add(entry.activeAt);
                 TriggerDialogue(entry.dialogueData);
                 OnTypeFired(MissionControltype.Distination);
                 return;
             }
         }
-
-        if (_firedDistanceThresholds.Count >= mcd.MissionControlDialogueData.Count)
-            _firedDistanceThresholds.Clear();
     }
 
     private void CheckPlayerHealthThreshold()
     {
         if (_currentPlayer == null) return;
-        if (_lockedTypes.Contains(MissionControltype.Player)) return;
+        if (_typeCooldowns.ContainsKey(MissionControltype.Player)) return;
 
         float playerHealthPercent = _currentPlayer.CurrentHealth;
 
@@ -251,22 +314,18 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
             .Find(x => x.MissionControlDataType == MissionControltype.Player);
         if (mcd == null) return;
 
-        foreach (var entry in mcd.MissionControlDialogueData)
+        foreach (var entry in mcd.MissionControlDialogueData
+             .OrderBy(x => x.activeAt))
         {
             bool belowThreshold = playerHealthPercent <= entry.activeAt;
-            bool alreadyFired = _firedPlayerThresholds.Contains(entry.activeAt);
 
-            if (belowThreshold && !alreadyFired)
+            if (belowThreshold)
             {
-                _firedPlayerThresholds.Add(entry.activeAt);
                 TriggerDialogue(entry.dialogueData); 
                 OnTypeFired(MissionControltype.Player);
                 return;
             }
         }
-
-        if (_firedPlayerThresholds.Count >= mcd.MissionControlDialogueData.Count)
-            _firedPlayerThresholds.Clear();
     }
 
     IEnumerator OnInactiveTalking()
@@ -288,7 +347,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     public void OnShowPerformace() 
     {
-
+        CheckMissionSuccesType(_missionSuccesType);
         GlobalEvents.OnShowPerformancePanel.Invoke(_missionSuccesDatas);
     }
 }
