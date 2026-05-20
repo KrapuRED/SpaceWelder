@@ -4970,7 +4970,7 @@ MonoBehaviour:
     m_ActionName: 'GamePlay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1006032426}
+      - m_Target: {fileID: 1987306631}
         m_TargetAssemblyTypeName: Welding, Assembly-CSharp
         m_MethodName: OnWelding
         m_Mode: 0
@@ -4984,6 +4984,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a342511b-e887-4ac2-86ca-bbb02016fbd9
     m_ActionName: 'GamePlay/Welding[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 76a7d053-5cf8-4325-94b6-cb29cd8ab7d6
+    m_ActionName: 'GamePlay/Tutorial[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 668f6cff-c5ba-490a-9169-ffbfc9fe1b93
+    m_ActionName: 'UI/Continue[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -6903,17 +6911,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df05a1b887c0634bbcba83ff9e540f0, type: 3}
---- !u!114 &1006032426 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6389468296223909932, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
-  m_PrefabInstance: {fileID: 1987306629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749ebf7ff4f2f1a48a993dadcaad6147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1013282576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10878,6 +10875,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07526e8c91481824b863031b73b17275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1987306631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7032844120633310326, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+  m_PrefabInstance: {fileID: 1987306629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749ebf7ff4f2f1a48a993dadcaad6147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1996926669 stripped

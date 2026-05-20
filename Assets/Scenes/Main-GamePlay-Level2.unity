@@ -1981,17 +1981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baebb5b6d53b70f4aafc4e11b633724e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &255846456 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6389468296223909932, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
-  m_PrefabInstance: {fileID: 1488545358}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749ebf7ff4f2f1a48a993dadcaad6147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &262343119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4275,7 +4264,7 @@ MonoBehaviour:
     m_ActionName: 'GamePlay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 255846456}
+      - m_Target: {fileID: 1488545360}
         m_TargetAssemblyTypeName: Welding, Assembly-CSharp
         m_MethodName: OnWelding
         m_Mode: 0
@@ -5932,6 +5921,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07526e8c91481824b863031b73b17275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1488545360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7032844120633310326, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+  m_PrefabInstance: {fileID: 1488545358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749ebf7ff4f2f1a48a993dadcaad6147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1505473637
