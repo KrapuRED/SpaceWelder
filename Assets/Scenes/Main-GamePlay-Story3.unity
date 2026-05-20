@@ -271,6 +271,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d609b67fef1eb14e92fdecdb96e90e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &86223966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318477512804857692, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393494368577484529, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+      propertyPath: m_Name
+      value: '======== Envrioment ======== '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
 --- !u!1 &138160751
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +408,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!224 &138160755
 RectTransform:
@@ -886,6 +943,7 @@ MonoBehaviour:
   storyLogUI: {fileID: 1580188162}
   captainDialogueBox: {fileID: 64990742}
   standardDialogueBox: {fileID: 1762056135}
+  musicTrackName: 
   storyData:
     clientName: "Orion Interstellar Transit Authority \u2014 Executive Director Nael
       Arden"
@@ -1502,6 +1560,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 234545549}
   - {fileID: 138160755}
+  - {fileID: 86223966}
   - {fileID: 181776776}
   - {fileID: 745810662}
   - {fileID: 306826219}
