@@ -169,6 +169,8 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     //============== Trigger ================================
     private void TriggerDialogueByType(MissionControltype type)
     {
+        if (this == null) return;
+
         MissionControlData mcd = _missionControlDialogues.Find(x => x.MissionControlDataType == type);
         if (mcd == null || mcd.MissionControlDialogueData.Count == 0) return;
 

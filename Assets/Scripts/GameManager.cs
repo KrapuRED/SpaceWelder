@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         _isTutorialComplete = true;
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+    }
+
     public void NextStory()
     {
         _level++;

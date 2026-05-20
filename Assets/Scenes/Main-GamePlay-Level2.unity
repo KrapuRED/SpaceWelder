@@ -3030,6 +3030,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df05a1b887c0634bbcba83ff9e540f0, type: 3}
+--- !u!114 &655372065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1046020634052813045, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
+  m_PrefabInstance: {fileID: 1398761747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814ba1146ac757342add22234f70624b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680218533
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,6 +4289,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a342511b-e887-4ac2-86ca-bbb02016fbd9
     m_ActionName: 'GamePlay/Welding[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 655372065}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: OnContinueTutorial
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 76a7d053-5cf8-4325-94b6-cb29cd8ab7d6
+    m_ActionName: 'GamePlay/Tutorial[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 668f6cff-c5ba-490a-9169-ffbfc9fe1b93
+    m_ActionName: 'UI/Continue[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -5499,6 +5530,10 @@ PrefabInstance:
     - target: {fileID: 6134940029565824198, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322951758246200285, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 9038994827505362544, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8183,6 +8218,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1975504093}
     m_Modifications:
+    - target: {fileID: 1058100386854987248, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.15002441
+      objectReference: {fileID: 0}
     - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: _currentPlayer
       value: 
@@ -8206,6 +8245,14 @@ PrefabInstance:
     - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016135574662668350, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.3499756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016135574662668350, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.850006
       objectReference: {fileID: 0}
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name

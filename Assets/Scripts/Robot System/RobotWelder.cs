@@ -41,11 +41,11 @@ public class RobotWelder : Robot, IDamageAble
 
         if (_currentHealth <= 0)
         {
-            Debug.Log("[RobotWelder] Dead!");
+            GlobalEvents.OnPlayerDeath.Invoke();
             Destroy(gameObject);
         }
 
-        Debug.Log($"[RobotWelder] current Health = {_currentHealth}");
+        SoundEffectManager.Instance.PlaySoundEffect("RobotDamage");
     }
 
     void OnGetExtraBoom(int extraBoom)

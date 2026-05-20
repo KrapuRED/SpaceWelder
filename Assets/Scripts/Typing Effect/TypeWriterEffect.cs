@@ -8,6 +8,7 @@ public class TypeWriterEffect : TypeEffect
     private bool _readyForNewText = true;
 
     [Header("Type Writer Effect Configuration")]
+    [SerializeField] private CharacterType charType;
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private float charactertPerSeconds = 20;
     [SerializeField] private float interpuncuationDelay = 0.5f;
@@ -71,6 +72,16 @@ public class TypeWriterEffect : TypeEffect
         while (_currentVisibleCharacterIndex < textInfo.characterCount)
         {
             //Event Area
+            if (charType == CharacterType.Captian)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("CapBlipEffect");
+
+            }
+            else
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("0therBlipEffect");
+            }
+
             var lastCharacterIndex = textInfo.characterCount - 1;
 
             if (_currentVisibleCharacterIndex == lastCharacterIndex)
