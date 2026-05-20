@@ -34,13 +34,14 @@ public class BoomArmGenerator : MonoBehaviour
 
         Vector3 offset = parentOfTip.position - startPoint.position;
         newArm.transform.position += offset;
-
         newArm.transform.SetParent(parentOfTip, worldPositionStays: true);
+        newArm.transform.localScale = GetScaleToMatchWorld(parentOfTip);
 
         GameObject newJoin = Instantiate(joinPrefab, parentOfTip);
         newJoin.name = $"Join {GetJointCount(ikManager.JointPointRoot)}";
         newJoin.transform.position = endPoint.position;
         newJoin.transform.SetParent(parentOfTip, worldPositionStays: true);
+        newJoin.transform.localScale = GetScaleToMatchWorld(parentOfTip);
 
         joinLastPoint.transform.SetParent(newJoin.transform, worldPositionStays: true);
         joinLastPoint.transform.localPosition = Vector3.zero;
@@ -74,5 +75,14 @@ public class BoomArmGenerator : MonoBehaviour
             current = current.GetJoinPointChild();
         }
         return count;
+    }
+    private Vector3 GetScaleToMatchWorld(Transform parent)
+    {
+        Vector3 parentWorld = parent.lossyScale;
+        return new Vector3(
+            1f / parentWorld.x,
+            1f / parentWorld.y,
+            1f / parentWorld.z
+        );
     }
 }

@@ -59,11 +59,12 @@ Transform:
   m_GameObject: {fileID: 5312738962141466102}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.042, y: 2.533, z: 0.042790536}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3382363161079754632}
+  - {fileID: 1487859523021003969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5849639024658009629
@@ -110,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4940741116190345222
@@ -133,9 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff69ee1394d12bd4dbabf78a84dd370d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionVFX: {fileID: 6753205707231092378, guid: d4df40eb5ecb0b1428ddbb6ccd6787d2, type: 3}
+  _explosionVFXContainer: {fileID: 1487859523021003969}
   _hullID: SCH-1
   _maxHealth: 10
   _isHullBreach: 0
+  _activeAtStart: 0
   WeldingEffectContiner: {fileID: 3382363161079754632}
 --- !u!61 &1478115867508348455
 BoxCollider2D:
@@ -183,3 +187,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &5467335459279305638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487859523021003969}
+  m_Layer: 8
+  m_Name: Explsion Effect Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1487859523021003969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467335459279305638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7912010048985340098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
