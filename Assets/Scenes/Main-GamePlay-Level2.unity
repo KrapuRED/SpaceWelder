@@ -8242,6 +8242,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3128577601633709737, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1693968370}
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name
       value: '# ==== UI  Panel Canvas ==== #'

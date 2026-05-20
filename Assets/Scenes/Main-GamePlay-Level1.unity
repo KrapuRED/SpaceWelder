@@ -2582,6 +2582,10 @@ PrefabInstance:
       propertyPath: _currentPlayer
       value: 
       objectReference: {fileID: 935484415}
+    - target: {fileID: 2239128301932606702, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2602,10 +2606,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2123109601}
-    - target: {fileID: 4016135574662668350, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -22.850021
-      objectReference: {fileID: 0}
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name
       value: '# ==== UI  Panel Canvas ==== #'

@@ -8847,7 +8847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1498123155
 Transform:
   m_ObjectHideFlags: 0
@@ -11581,6 +11581,10 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3128577601633709737, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 918102729}
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name
       value: '# ==== UI  Panel Canvas ==== #'

@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.374604, y: 0.1465818}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.39, y: -74.37}
+  m_AnchoredPosition: {x: 138.39, y: -74.369995}
   m_SizeDelta: {x: 460.01, y: -110.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111148352
@@ -311,26 +311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 312590928655571819, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2382373627888271131, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 831852529}
-    - target: {fileID: 3557927504191680969, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546153431141447523, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_Name
-      value: CrossFade
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087089601825858656, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7059548990404279137, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
       propertyPath: m_Name
       value: DDOL - GamaManager
