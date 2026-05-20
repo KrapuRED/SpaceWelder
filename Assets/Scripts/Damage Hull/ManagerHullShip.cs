@@ -27,9 +27,9 @@ public class ManagerHullShip : MonoBehaviour
     [Header("Damage Hull Breach Control")]
     [SerializeField] private List<DamageHull> damageHulls = new ();
     [SerializeField] private List<PhaseData> phaseDatas = new ();
-    [SerializeField] private List<HullBreachData> hullBreachDatas = new ();
     [SerializeField] private List<Sprite> _aviableHullBreachSprites = new();
     [SerializeField] private int _limitHullBreach;
+    private HashSet<HullBreachData> hullBreachDatas = new();
     private int _activePhaseIndex;
 
     [SerializeField] private PhaseData _selectedPhaseData;

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string gamePlayLevelBGM;
     [SerializeField] private int _level = 1;
 
-    private bool _isTutorialComplete;
+    [SerializeField] private bool _isTutorialComplete;
     public bool IsTutorialComplete => _isTutorialComplete;
 
     private void Awake()
