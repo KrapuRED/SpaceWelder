@@ -45,13 +45,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+        SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Story{_level}", "CrossFade");
+        //SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
     }
 
     public void NextStory()
     {
         _level++;
-        SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+        SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Story{_level}", "CrossFade");
     }
 
     public void NextLevel()
@@ -63,13 +64,13 @@ public class GameManager : MonoBehaviour
         }
 
         MusicManager.Instance.PlayMusic(gamePlayLevelBGM);
-        SceneManager.LoadScene($"Main-GamePlay-Level{_level}");
+        SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Level{_level}", "CrossFade");
     }
 
     public void BackToMainMenu()
     {
         ResetGame();
-        SceneManager.LoadScene("Main Menu");
+        SceneTransitionManager.Instance.LoadScene("Main Menu", "CrossFade");
     }
 
     public void ResetGame()
