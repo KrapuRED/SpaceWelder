@@ -6,7 +6,8 @@ public class StandaradDialogueBox : DialogueBox
 {
     public Image characterIcon;
     public TextMeshProUGUI characterNameText;
-    public TextMeshProUGUI dialogueText;
+    [SerializeField] private TypeEffect typeEffect;
+    public TypeEffect TypeEffect => typeEffect;
 
     public void SetStandaradDialogueBox(string nameCharacter, string dialogue, Sprite charIcon = null)
     {
@@ -33,7 +34,7 @@ public class StandaradDialogueBox : DialogueBox
 
     public override void SetDialogueText(string dialogueTextContex)
     {
-        dialogueText.text = dialogueTextContex;
+        typeEffect.PlayText(dialogueTextContex);
         ShowDialogueBox();
     }
 }

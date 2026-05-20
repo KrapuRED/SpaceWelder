@@ -926,7 +926,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1001 &394583761
+--- !u!1001 &306826219
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2127,7 +2127,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081916865}
   m_CullTransparentMesh: 1
---- !u!1001 &1232006881
+--- !u!1001 &1248172288
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2236,60 +2236,82 @@ MonoBehaviour:
   captainDialogueBox: {fileID: 911993069}
   standardDialogueBox: {fileID: 829626307}
   storyData:
-    clientName: Helix Biotech Logistics - Procurement Director Elian Voss
-    cargo: Medical Cryo-Containers
+    clientName: "Orion Interstellar Transit Authority \u2014 Executive Director Nael
+      Arden"
+    cargo: Quantum Navigation Array
     storyDialogueDatas:
-    - characterName: Elian Voss
+    - characterName: Nael Arden
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Captain Rhea, confirm transport of twelve medical cryo-containers
-          to Outpost K-12.
+        dialogue: Captain Rhea. Your vessel has clearance to cross the Khepri Belt.
     - characterName: Captain Rhea
       characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Cargo secured. Departure ready.
-    - characterName: Elian Voss
+        dialogue: That route was condemned two years ago.
+    - characterName: Nael Arden
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: "The colony\u2019s medical reserves are nearly exhausted. We expect
-          an on-time delivery."
+        dialogue: It remains the fastest available corridor
     - characterName: Captain Rhea
       characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: "You\u2019ll get your shipment."
-    - characterName: Elian Voss
+        dialogue: For ships willing to survive it.
+    - characterName: Nael Arden
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Our system flagged your vessel for repeated maintenance delays.
+        dialogue: The navigation array aboard your freighter must arrive at Orion
+          Gate without delay.
     - characterName: Captain Rhea
       characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Ship still flies.
-    - characterName: Elian Voss
+        dialogue: "You\u2019re asking a cargo ship to fly through an active asteroid
+          storm."
+    - characterName: Nael Arden
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: For both our sakes, make sure it keeps flying.
+        dialogue: "I\u2019m asking you to fulfill your contract."
+    - characterName: Captain Rhea
+      characterIcon: {fileID: 0}
+      charType: 1
+      dialogueData:
+        dialogueName: 
+        dialogueID: 
+        dialogue: "\u2026Right."
+    - characterName: Nael Arden
+      characterIcon: {fileID: 0}
+      charType: 0
+      dialogueData:
+        dialogueName: 
+        dialogueID: 
+        dialogue: Estimated delivery tolerance is under four minutes twenty seconds.
+    - characterName: Captain Rhea
+      characterIcon: {fileID: 0}
+      charType: 1
+      dialogueData:
+        dialogueName: 
+        dialogueID: 
+        dialogue: "I\u2019ll get it there."
 --- !u!1 &1282738202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,5 +3062,5 @@ SceneRoots:
   - {fileID: 138160755}
   - {fileID: 181776776}
   - {fileID: 745810662}
-  - {fileID: 394583761}
-  - {fileID: 1232006881}
+  - {fileID: 306826219}
+  - {fileID: 1248172288}

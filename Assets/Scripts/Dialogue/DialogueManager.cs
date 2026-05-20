@@ -31,31 +31,46 @@ public class StoryData
 public class DialogueManager : MonoBehaviour
 {
     public StoryLogUI storyLogUI;
-    public CaptainDialogueBox captianDialogueBox;
+    public CaptainDialogueBox captainDialogueBox;
     public StandaradDialogueBox standardDialogueBox;
 
     [SerializeField] private StoryData storyData;
+    [SerializeField] private PlayerInput playerInput;
 
     private int _dialogueCount;
 
     private void Start()
     {
         TriggerDialogue(storyData.storyDialogueDatas[_dialogueCount]);
-        storyLogUI.SetStoryLogUI(storyData.cargo, storyData.clientName);
+
+        if (storyLogUI != null)
+            storyLogUI.SetStoryLogUI(storyData.cargo, storyData.clientName);
     }
 
     public void OnPressContinue(InputAction.CallbackContext context)
     {
-        if (context.started && _dialogueCount < storyData.storyDialogueDatas.Count)
+        if (!context.started) return;
+
+        bool isTyping = captainDialogueBox.TypeEffect.IsTyping
+                     || standardDialogueBox.TypeEffect.IsTyping;
+
+        if (isTyping)
+        {
+            captainDialogueBox.TypeEffect.Skip();
+            standardDialogueBox.TypeEffect.Skip();
+            return;
+        }
+
+        if (_dialogueCount < storyData.storyDialogueDatas.Count)
             ContinueDialogue();
     }
 
     public void ContinueDialogue()
     {
 
-        if (captianDialogueBox == null || standardDialogueBox == null) return;
+        if (captainDialogueBox == null || standardDialogueBox == null) return;
 
-        captianDialogueBox.HideDialogueBox();
+        captainDialogueBox.HideDialogueBox();
         standardDialogueBox.HideDialogueBox();
 
         _dialogueCount++;
@@ -73,11 +88,9 @@ public class DialogueManager : MonoBehaviour
 
     private void TriggerDialogue(StoryDialogueData storyDialogue)
     {
-        Debug.Log($"[{storyDialogue.characterName}] : {storyDialogue.dialogueData.dialogue}");
-
         if (storyDialogue.charType == CharacterType.Captian)
         {
-           captianDialogueBox.SetCaptainDialogueBox(storyDialogue.characterName, storyDialogue.dialogueData.dialogue);
+           captainDialogueBox.SetCaptainDialogueBox(storyDialogue.characterName, storyDialogue.dialogueData.dialogue);
         }
         else
         {
@@ -89,6 +102,8 @@ public class DialogueManager : MonoBehaviour
     {
         //Change Scene to Main-GamePlay-Levelx via GameManager
         Debug.Log("Story is Done! Please Change Scene to Main-GamePlay-Level");
+        GameManager.Instance.NextLevel();
+
     }
 
 }

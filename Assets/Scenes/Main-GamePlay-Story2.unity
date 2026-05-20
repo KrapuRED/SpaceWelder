@@ -926,63 +926,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1001 &394583761
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.0359097
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6881356
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.9863889
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361589380563167385, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
-      propertyPath: m_Name
-      value: === Save & load ===
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
 --- !u!1 &445662010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1721,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951333552}
   m_CullTransparentMesh: 1
+--- !u!1001 &953067429
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.0359097
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6881356
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9863889
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994743724425149285, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361589380563167385, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
+      propertyPath: m_Name
+      value: === Save & load ===
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bed55f81dd049d418c3806b2e3230dd, type: 3}
 --- !u!1 &963042990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,63 +2127,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081916865}
   m_CullTransparentMesh: 1
---- !u!1001 &1232006881
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.0359097
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6881356
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.9863889
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059548990404279137, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
-      propertyPath: m_Name
-      value: DDOL - GamaManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
 --- !u!1 &1260329534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,60 +2179,67 @@ MonoBehaviour:
   captainDialogueBox: {fileID: 911993069}
   standardDialogueBox: {fileID: 829626307}
   storyData:
-    clientName: Helix Biotech Logistics - Procurement Director Elian Voss
-    cargo: Medical Cryo-Containers
+    clientName: "Valkar Heavy Industries \u2014 Operations Supervisor Mira Kess"
+    cargo: Reactor Stabilizers
     storyDialogueDatas:
-    - characterName: Elian Voss
+    - characterName: Mira Kess
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Captain Rhea, confirm transport of twelve medical cryo-containers
-          to Outpost K-12.
+        dialogue: Captain Rhea. Your assigned route crosses the Naros asteroid cluster.
     - characterName: Captain Rhea
       characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Cargo secured. Departure ready.
-    - characterName: Elian Voss
+        dialogue: I saw the navigation path
+    - characterName: Mira Kess
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: "The colony\u2019s medical reserves are nearly exhausted. We expect
-          an on-time delivery."
+        dialogue: Then you understand the delivery risks.
     - characterName: Captain Rhea
       characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: "You\u2019ll get your shipment."
-    - characterName: Elian Voss
+        dialogue: I understand the contract.
+    - characterName: Mira Kess
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Our system flagged your vessel for repeated maintenance delays.
+        dialogue: The reactor stabilizers aboard your vessel are scheduled for refinery
+          deployment immediately upon arrival.
     - characterName: Captain Rhea
       characterIcon: {fileID: 0}
       charType: 1
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: Ship still flies.
-    - characterName: Elian Voss
+        dialogue: So delays cost money.
+    - characterName: Mira Kess
       characterIcon: {fileID: 0}
-      charType: 2
+      charType: 0
       dialogueData:
         dialogueName: 
         dialogueID: 
-        dialogue: For both our sakes, make sure it keeps flying.
+        dialogue: An impressive amount of money.
+    - characterName: Captain Rhea
+      characterIcon: {fileID: 0}
+      charType: 1
+      dialogueData:
+        dialogueName: 
+        dialogueID: 
+        dialogue: "\u2026Then I\u2019ll keep the ship moving."
+  playerInput: {fileID: 1282738204}
 --- !u!1 &1282738202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,6 +2306,10 @@ MonoBehaviour:
     m_ActionId: a342511b-e887-4ac2-86ca-bbb02016fbd9
     m_ActionName: 'GamePlay/Welding[/Mouse/leftButton]'
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 76a7d053-5cf8-4325-94b6-cb29cd8ab7d6
+    m_ActionName: 'GamePlay/Tutorial[/Keyboard/space]'
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1260329536}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
@@ -2369,23 +2323,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 911993070}
-        m_TargetAssemblyTypeName: TypeWriterEffect, Assembly-CSharp
-        m_MethodName: OnSkippingDialogue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 76a7d053-5cf8-4325-94b6-cb29cd8ab7d6
-    m_ActionName: 'GamePlay/Tutorial[/Keyboard/space]'
+    m_ActionId: 668f6cff-c5ba-490a-9169-ffbfc9fe1b93
+    m_ActionName: 'UI/Continue[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: GamePlay
+  m_DefaultActionMap: da9337eb-aa22-45fa-9dfa-949169dbc8f1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1483394529
@@ -2957,6 +2899,63 @@ RectTransform:
   m_AnchoredPosition: {x: -288.13, y: 4.065}
   m_SizeDelta: {x: 316.09, y: 348.13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1954393555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.0359097
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6881356
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9863889
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059548990404279137, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: m_Name
+      value: DDOL - GamaManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
 --- !u!1 &2111697304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,5 +3039,5 @@ SceneRoots:
   - {fileID: 138160755}
   - {fileID: 181776776}
   - {fileID: 745810662}
-  - {fileID: 394583761}
-  - {fileID: 1232006881}
+  - {fileID: 953067429}
+  - {fileID: 1954393555}
