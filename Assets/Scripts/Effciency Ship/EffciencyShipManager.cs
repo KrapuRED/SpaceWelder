@@ -44,7 +44,7 @@ public class EffciencyShipManager : MonoBehaviour
         else if (effciencyShip > 60 && _isAlertPlaying)
         {
             _isAlertPlaying = false;
-            SoundEffectManager.Instance.StopSoundEffectLoop();
+            SoundEffectManager.Instance.StopSoundEffectLoop("AlertEfficiency");
         }
 
         GlobalEvents.OnShipEffciencyUI.Invoke(effciencyShip/100f);

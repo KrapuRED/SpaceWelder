@@ -107,6 +107,7 @@ public class PanelPerformance : Panel
             }
         }
 
+        performaceRatingText.text = performanceResultText;
         Debug.Log($"Performance Result : {performanceResultText} total missions : {missionSuccesDatas.Count}");
     }
 }

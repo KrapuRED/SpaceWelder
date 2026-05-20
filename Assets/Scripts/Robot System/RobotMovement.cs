@@ -87,7 +87,7 @@ public class RobotMovement : MonoBehaviour
     private void StopMoving()
     {
         _isMoving = false;
-        SoundEffectManager.Instance.StopSoundEffectLoop();
+        SoundEffectManager.Instance.StopSoundEffectLoop("Move-Constant");
         SoundEffectManager.Instance.PlaySoundEffect("Move-End");
     }
 

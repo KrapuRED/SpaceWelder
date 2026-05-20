@@ -9,6 +9,7 @@ public class Welding : MonoBehaviour
     [SerializeField] private LayerMask _hullDamageLayer;
     [SerializeField] private float _minMoveDistance;
     [SerializeField] private float _baseRepairRate = 1f;
+    [SerializeField] private GameObject weldingParticle;
     private float _weldingMultiplier = 1f;
 
     [SerializeField] private GameObject _particelWelding;
@@ -27,7 +28,8 @@ public class Welding : MonoBehaviour
         if (context.canceled)
         {
             _isWelding = false;
-            SoundEffectManager.Instance.StopSoundEffectLoop();
+            weldingParticle.SetActive(false);
+            SoundEffectManager.Instance.StopSoundEffectLoop("Welding");
         }
 
     }
@@ -46,7 +48,6 @@ public class Welding : MonoBehaviour
     private void UpgradeWelding(float percent)
     {
         _weldingMultiplier = _baseRepairRate + (percent / 100f);
-        Debug.Log("Welding been upgrade to " + _weldingMultiplier);
     }
 
     private void Update()
@@ -65,6 +66,7 @@ public class Welding : MonoBehaviour
                 {
                     if (!damageHull.IsHullBreach) return;
 
+                    weldingParticle.SetActive(true);
                     damageHull.OnReapairHull(_baseRepairRate * _weldingMultiplier);
                     WeldingHullEffect(damageHull.WeldingEffectContiner);
                 }

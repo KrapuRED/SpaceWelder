@@ -36,12 +36,13 @@ public class DamageHull : MonoBehaviour, IRepairAble
     {
         if (_activeAtStart)
         {
-            ManagerHullShip.Insantce.OnStartHullBreach  (HullID);
+            ManagerHullShip.Insantce.OnStartHullBreach(HullID);
         }
     }
 
     public void OnHullBreach(Sprite hullBreachSprite)
     {
+        ClearEffect();
         PlayVFX();
 
         _currentHealth = 0;
@@ -63,10 +64,7 @@ public class DamageHull : MonoBehaviour, IRepairAble
             GlobalEvents.OnHullBeenReapir.Invoke(HullID);
             _spriteRenderer.sprite = null;
 
-            foreach (Transform child in WeldingEffectContiner)
-            {
-                Destroy(child.gameObject);
-            }
+            ClearEffect();
         }
     }
 
@@ -89,5 +87,13 @@ public class DamageHull : MonoBehaviour, IRepairAble
            _explosionVFXContainer);
 
         explosion.GetComponent<ExplosionVFX>()?.PlayExplosion();
+    }
+
+    private void ClearEffect()
+    {
+        foreach (Transform child in WeldingEffectContiner)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

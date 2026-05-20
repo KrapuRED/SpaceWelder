@@ -5428,6 +5428,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1975504093}
     m_Modifications:
+    - target: {fileID: 1046020634052813045, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
+      propertyPath: _tutorials.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4183838436851907446, guid: be6dc00507fd40740bd6a95d6da9125b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5855,6 +5859,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1438666607}
     m_Modifications:
+    - target: {fileID: 517271433261913867, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+      propertyPath: _maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5295570484719866044, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
       propertyPath: _startPoint
       value: 
@@ -7054,7 +7062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1561636097
 Transform:
   m_ObjectHideFlags: 0
@@ -7755,6 +7763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 118184157710039267, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
+      propertyPath: soundEffects.Array.data[12].groupID
+      value: HullReapir
+      objectReference: {fileID: 0}
     - target: {fileID: 176207193689841373, guid: 5dd91cfaf8fd83b4b9eef99d78a6d0fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.0359097
@@ -8218,18 +8230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1975504093}
     m_Modifications:
-    - target: {fileID: 1058100386854987248, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.15002441
-      objectReference: {fileID: 0}
     - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: _currentPlayer
       value: 
       objectReference: {fileID: 1488545359}
-    - target: {fileID: 1739373959660648279, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
-      propertyPath: missionData.MissionName
-      value: Reactor Stabilizers
-      objectReference: {fileID: 0}
     - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8245,14 +8249,6 @@ PrefabInstance:
     - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4016135574662668350, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.3499756
-      objectReference: {fileID: 0}
-    - target: {fileID: 4016135574662668350, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -22.850006
       objectReference: {fileID: 0}
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name

@@ -11,8 +11,9 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        if (!GameManager.Instance.IsTutorialComplete &&
-             _tutorials.Count > 0)
+        if (!GameManager.Instance.IsTutorialComplete) return;
+
+        if (_tutorials.Count > 0)
         {
             GlobalEvents.OnStartHullBreachGame.Invoke();
             PauseGame();

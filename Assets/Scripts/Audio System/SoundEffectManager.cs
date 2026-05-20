@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SoundEffectManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SoundEffectManager : MonoBehaviour
     [Header("Sound Effec Audio Source Settings")]
     [SerializeField] private AudioSource _soundSource;
     [SerializeField] private AudioSource _soundSourceLoop;
+
+    private Dictionary<string, AudioSource> _loopSources = new();
 
     private void Awake()
     {
@@ -32,21 +35,27 @@ public class SoundEffectManager : MonoBehaviour
 
     public void PlaySoundEffectLoop(string groupID)
     {
-        if (_soundSourceLoop.isPlaying) return;
-
-        Debug.Log($"[SoundEffectManager] PlaySoundEffectLoop by : {groupID}");
+        if (_loopSources.ContainsKey(groupID))
+            return;
 
         AudioClip clip = _library.GetClipByID(groupID);
-        if (clip != null)
+
+        if (clip == null)
         {
-            _soundSourceLoop.clip = clip;
-            _soundSourceLoop.loop = true; 
-            _soundSourceLoop.Play();
+            Debug.LogWarning($"Loop clip not found: {groupID}");
+            return;
         }
-        else
-        {
-            Debug.LogWarning($"[SoundEffectManager] Loop clip not found: {groupID}");
-        }
+
+        GameObject loopObj = new GameObject($"Loop_{groupID}");
+        loopObj.transform.SetParent(transform);
+
+        AudioSource source = loopObj.AddComponent<AudioSource>();
+
+        source.clip = clip;
+        source.loop = true;
+        source.Play();
+
+        _loopSources.Add(groupID, source);
     }
 
     public void StopSoundEffect()
@@ -55,13 +64,15 @@ public class SoundEffectManager : MonoBehaviour
             _soundSource.Stop();
     }
 
-    public void StopSoundEffectLoop()
+    public void StopSoundEffectLoop(string groupID)
     {
-        Debug.Log($"[Stop] isPlaying: {_soundSourceLoop.isPlaying}, clip: {_soundSourceLoop.clip}");
+        if (!_loopSources.TryGetValue(groupID, out AudioSource source))
+            return;
 
-        if (_soundSourceLoop == null) return;
+        source.Stop();
 
-        _soundSourceLoop.Stop();
-        _soundSourceLoop.clip = null;
+        Destroy(source.gameObject);
+
+        _loopSources.Remove(groupID);
     }
 }

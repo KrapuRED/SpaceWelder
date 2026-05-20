@@ -23,6 +23,21 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnPlayerDeath.AddListener(BackToMainMenu);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(BackToMainMenu);
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(BackToMainMenu);
+    }
+
     public void OnTutorialComplete()
     {
         _isTutorialComplete = true;
@@ -49,6 +64,12 @@ public class GameManager : MonoBehaviour
 
         MusicManager.Instance.PlayMusic(gamePlayLevelBGM);
         SceneManager.LoadScene($"Main-GamePlay-Level{_level}");
+    }
+
+    public void BackToMainMenu()
+    {
+        ResetGame();
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void ResetGame()
