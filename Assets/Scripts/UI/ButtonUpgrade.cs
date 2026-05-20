@@ -14,6 +14,7 @@ public class ButtonUpgrade : MonoBehaviour
 
     public void OnClickButtonUpgrade()
     {
+        SoundEffectManager.Instance.PlaySoundEffect("ClickBottom");
         GlobalEvents.OnUpgradeRobot.Invoke(upgradeType, amount);
         GlobalEvents.OnHideUpgradePanel.Invoke();
         MissionControlManager.Instance.OnShowPerformace();

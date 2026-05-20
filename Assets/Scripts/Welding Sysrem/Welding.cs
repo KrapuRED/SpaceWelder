@@ -22,11 +22,12 @@ public class Welding : MonoBehaviour
         {
             _isWelding = true;
             _lastWeldingPointPos = _weldingPoint.position;
+            SoundEffectManager.Instance.PlaySoundEffectLoop("Welding");
         }
-
         if (context.canceled)
         {
             _isWelding = false;
+            SoundEffectManager.Instance.StopSoundEffectLoop();
         }
 
     }

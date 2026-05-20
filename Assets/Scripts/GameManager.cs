@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [SerializeField] private string gamePlayLevelBGM;
     [SerializeField] private int _level = 1;
 
     private bool _isTutorialComplete;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        MusicManager.Instance.PlayMusic(gamePlayLevelBGM);
         SceneManager.LoadScene($"Main-GamePlay-Level{_level}");
     }
 

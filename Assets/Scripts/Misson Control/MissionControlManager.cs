@@ -111,6 +111,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     private void OnEnable()
     {
         GlobalEvents.OnPlayerDeath.AddListener(OnFailedMission);
+        GlobalEvents.OnTutorialComplete.AddListener(OnTutorailComplete);
     }
 
     private void OnDisable()
@@ -140,6 +141,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     private void RemoveAllEvent()
     {
         GlobalEvents.OnPlayerDeath.RemoveListener(OnFailedMission);
+        GlobalEvents.OnTutorialComplete.AddListener(OnTutorailComplete);
 
     }
 
@@ -172,6 +174,8 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
         _lockedTypes.Add(type);
         GlobalEvents.OnMissionControlDialogue.Invoke(mcd.MissionControlDialogueData[0].dialogueData.dialogue);
+        SoundEffectManager.Instance.PlaySoundEffect("Intercom");
+
 
         if (_inactiveCoroutine != null) StopCoroutine(_inactiveCoroutine);
         _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
@@ -181,7 +185,8 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     {
         if (!GameManager.Instance.IsTutorialComplete) return;
 
-            Debug.Log($"[MissionControl]: {data.dialogue}");
+        SoundEffectManager.Instance.PlaySoundEffect("Intercom");
+
         GlobalEvents.OnMissionControlDialogue.Invoke(data.dialogue);
         if (_inactiveCoroutine != null) StopCoroutine(_inactiveCoroutine);
         _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
@@ -237,6 +242,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     {
         var target = _missionControlDialoguesRating.Find(x => x.missionSuccesType == type);
         if (target == null) return;
+
 
         TriggerDialogue(target.dialogueData);
     }

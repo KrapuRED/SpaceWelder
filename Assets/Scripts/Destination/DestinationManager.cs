@@ -66,6 +66,7 @@ public class DestinationManager : MonoBehaviour
     {
         _reachDestination = true;
 
+        SoundEffectManager.Instance.PlaySoundEffect("ReachDestination");
         MissionControlManager.Instance.OnReachDestination(_timeElapsed);
         GlobalEvents.OnShowUpgradePanel.Invoke();
         GlobalEvents.OnReachDestination.Invoke();

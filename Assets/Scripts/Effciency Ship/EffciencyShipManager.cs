@@ -12,7 +12,7 @@ public class EffciencyShipManager : MonoBehaviour
 
     ManagerHullShip _managerHullShip;
     private float _targetEffciency;
-
+    private bool _isAlertPlaying = false;
     public float EfficiencyShip => effciencyShip;
 
     private void Awake()
@@ -35,6 +35,17 @@ public class EffciencyShipManager : MonoBehaviour
         _targetEffciency = CalculateEffciencyShip();
 
         effciencyShip = Mathf.Lerp(effciencyShip, _targetEffciency, _effciencyShipLerpSpeed * Time.deltaTime);
+
+        if (effciencyShip <= 60 && !_isAlertPlaying)
+        {
+            _isAlertPlaying = true;
+            SoundEffectManager.Instance.PlaySoundEffectLoop("AlertEfficiency");
+        }
+        else if (effciencyShip > 60 && _isAlertPlaying)
+        {
+            _isAlertPlaying = false;
+            SoundEffectManager.Instance.StopSoundEffectLoop();
+        }
 
         GlobalEvents.OnShipEffciencyUI.Invoke(effciencyShip/100f);
     }

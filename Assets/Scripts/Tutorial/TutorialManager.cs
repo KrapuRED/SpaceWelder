@@ -14,6 +14,7 @@ public class TutorialManager : MonoBehaviour
         if (!GameManager.Instance.IsTutorialComplete &&
              _tutorials.Count > 0)
         {
+            GlobalEvents.OnStartHullBreachGame.Invoke();
             PauseGame();
             _tutorials[_tutorialCount].ShowTutorial();
         }
@@ -36,7 +37,7 @@ public class TutorialManager : MonoBehaviour
             ResumeGame();
 
             GameManager.Instance.OnTutorialComplete();
-            GlobalEvents.OnCompleteTutorial.Invoke();
+            GlobalEvents.OnTutorialComplete.Invoke();
             return;
         }
 

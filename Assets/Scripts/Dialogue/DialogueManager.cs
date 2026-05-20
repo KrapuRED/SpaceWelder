@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     public StoryLogUI storyLogUI;
     public CaptainDialogueBox captainDialogueBox;
     public StandaradDialogueBox standardDialogueBox;
+    public string musicTrackName;
 
     [SerializeField] private StoryData storyData;
     [SerializeField] private PlayerInput playerInput;
@@ -41,6 +42,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        MusicManager.Instance.PlayMusic(musicTrackName);
         TriggerDialogue(storyData.storyDialogueDatas[_dialogueCount]);
 
         if (storyLogUI != null)

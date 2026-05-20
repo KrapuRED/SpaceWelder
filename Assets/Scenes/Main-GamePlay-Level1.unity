@@ -2568,8 +2568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hullID: SCH-4
-  _maxHealth: 10
+  _maxHealth: 50
   _isHullBreach: 0
+  _activeAtStart: 0
   WeldingEffectContiner: {fileID: 1258562072}
 --- !u!4 &1052517714
 Transform:
@@ -2791,8 +2792,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hullID: SCH-2
-  _maxHealth: 10
+  _maxHealth: 50
   _isHullBreach: 0
+  _activeAtStart: 1
   WeldingEffectContiner: {fileID: 403982079}
 --- !u!61 &1076921623
 BoxCollider2D:
@@ -2888,6 +2890,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2123109601}
+    - target: {fileID: 4016135574662668350, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.850014
+      objectReference: {fileID: 0}
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name
       value: '# ==== UI  Panel Canvas ==== #'
@@ -4902,8 +4908,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hullID: SCH-3
-  _maxHealth: 10
+  _maxHealth: 50
   _isHullBreach: 0
+  _activeAtStart: 0
   WeldingEffectContiner: {fileID: 299299404}
 --- !u!61 &2048207546
 BoxCollider2D:
@@ -5235,6 +5242,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 257439475}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: 'Section 1 Hull '

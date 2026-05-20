@@ -2235,6 +2235,7 @@ MonoBehaviour:
   storyLogUI: {fileID: 1580188162}
   captainDialogueBox: {fileID: 911993069}
   standardDialogueBox: {fileID: 829626307}
+  musicTrackName: Story
   storyData:
     clientName: Helix Biotech Logistics - Procurement Director Elian Voss
     cargo: Medical Cryo-Containers
@@ -2290,6 +2291,7 @@ MonoBehaviour:
         dialogueName: 
         dialogueID: 
         dialogue: For both our sakes, make sure it keeps flying.
+  playerInput: {fileID: 0}
 --- !u!1 &1282738202
 GameObject:
   m_ObjectHideFlags: 0

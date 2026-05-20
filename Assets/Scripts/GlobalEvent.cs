@@ -91,9 +91,11 @@ public class GlobalEvents
 
 
     //=============================== Game Play ================================================//
-    public static readonly CustomEvents OnCompleteTutorial = new CustomEvents();
+    public static readonly CustomEvents OnTutorialComplete = new CustomEvents();
     public static readonly CustomEvents OnReachDestination = new CustomEvents();
     public static readonly CustomEvents OnPlayerDeath = new CustomEvents();
+    public static readonly CustomEvents OnRestartGame = new CustomEvents();
+    public static readonly CustomEvents OnStartHullBreachGame = new CustomEvents();
 
     //=============================== Upgrade ================================================//
     public static readonly CustomEvents<UpgradeType, float> OnUpgradeRobot = new();

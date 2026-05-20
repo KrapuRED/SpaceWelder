@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.VisualScripting;
 
 [System.Serializable]
 public class PhaseData
@@ -157,6 +156,7 @@ public class ManagerHullShip : MonoBehaviour
         hullBreachDatas.Remove(removeData);
     }
 
+
     private void OnHullBreach()
     {
         if (_reachDestination) return;
@@ -178,6 +178,45 @@ public class ManagerHullShip : MonoBehaviour
 
         int index = Random.Range(0, availableHulls.Count);
         var possibel = availableHulls[index];
+
+        Sprite sprite = GetRandomHullBreachSprite();
+
+        if (sprite == null)
+            return;
+
+        possibel.OnHullBreach(sprite);
+
+        HullBreachData newData = new HullBreachData
+        {
+            hullID = possibel.HullID,
+            IsHullBreach = possibel.IsHullBreach
+        };
+
+        hullBreachDatas.Add(newData);
+
+        _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
+    }
+
+    public void OnStartHullBreach(string hullID)
+    {
+        if (_reachDestination) return;
+
+        if (damageHulls.Count <= 0)
+        {
+            Debug.Log($"Damage Hull in {gameObject.name} is empty");
+            return;
+        }
+
+        if (hullBreachDatas.Count >= _limitHullBreach)
+        {
+            _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
+            return;
+        }
+
+        var availableHulls = damageHulls.FindAll(h => !CheckHullBreachData(h.HullID));
+        if (availableHulls.Count <= 0) return;
+
+        var possibel = damageHulls.Find(x => x.HullID == hullID);
 
         Sprite sprite = GetRandomHullBreachSprite();
 

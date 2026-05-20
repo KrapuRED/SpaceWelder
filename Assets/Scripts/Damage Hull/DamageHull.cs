@@ -6,6 +6,7 @@ public class DamageHull : MonoBehaviour, IRepairAble
     [SerializeField] private string _hullID;
     [SerializeField] private float _maxHealth;
     [SerializeField] private bool _isHullBreach;
+    [SerializeField] private bool _activeAtStart;
     public Transform WeldingEffectContiner;
     private float _currentHealth;
 
@@ -19,11 +20,30 @@ public class DamageHull : MonoBehaviour, IRepairAble
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnStartHullBreachGame.AddListener(HullBreachAtStart);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnStartHullBreachGame.RemoveListener(HullBreachAtStart);
+    }
+
+    private void HullBreachAtStart()
+    {
+        if (_activeAtStart)
+        {
+            ManagerHullShip.Insantce.OnStartHullBreach  (HullID);
+        }
+    }
+
     public void OnHullBreach(Sprite hullBreachSprite)
     {
         _currentHealth = 0;
         _isHullBreach = true;
         _spriteRenderer.sprite = hullBreachSprite;
+        SoundEffectManager.Instance.PlaySoundEffect("Explosion");
     }
 
     public void OnReapairHull(float repairAmount)
@@ -35,6 +55,7 @@ public class DamageHull : MonoBehaviour, IRepairAble
         if (_currentHealth >= _maxHealth)
         {
             _isHullBreach = false;
+            SoundEffectManager.Instance.PlaySoundEffect("HullReapir");
             GlobalEvents.OnHullBeenReapir.Invoke(HullID);
             _spriteRenderer.sprite = null;
 
@@ -43,7 +64,5 @@ public class DamageHull : MonoBehaviour, IRepairAble
                 Destroy(child.gameObject);
             }
         }
-
-        Debug.Log($"{gameObject.name} : {_currentHealth}/{_maxHealth}");
     }
 }

@@ -49,6 +49,11 @@ public class RobotMovement : MonoBehaviour
 
     public void InputMovementRail(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect("Move-Start");
+        }
+
         if (context.performed)
         {
             Vector2 dir = context.ReadValue<Vector2>();
@@ -58,15 +63,32 @@ public class RobotMovement : MonoBehaviour
         if (context.canceled)
         {
             _bufferedInput = null;
+            if(!_isMoving)
+                StopMoving();
         }
     }
 
     private void Update()
     {
         if (_isMoving)
+        {
             MoveToRailPoint();
+        }
         else
             TryToMove();
+    }
+
+    private void StartMoving()
+    {
+        _isMoving = true;
+        SoundEffectManager.Instance.PlaySoundEffectLoop("Move-Constant");
+    }
+
+    private void StopMoving()
+    {
+        _isMoving = false;
+        SoundEffectManager.Instance.StopSoundEffectLoop();
+        SoundEffectManager.Instance.PlaySoundEffect("Move-End");
     }
 
     private void TryToMove()
@@ -80,7 +102,7 @@ public class RobotMovement : MonoBehaviour
         {
             _currentDirection = input;
             _targetPoint = next;
-            _isMoving = true;
+            StartMoving();
             return;
         }
     }
@@ -98,7 +120,11 @@ public class RobotMovement : MonoBehaviour
         {
             transform.position = _targetPoint.position;
             _currentPoint = _targetPoint;
-            _isMoving = false;
+
+            if (_bufferedInput == null)
+                StopMoving();
+            else
+                TryToMove();
         }
     }
 
