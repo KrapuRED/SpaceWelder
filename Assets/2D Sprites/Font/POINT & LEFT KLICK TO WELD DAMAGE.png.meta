@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 59563c86c893715408d96a40f9fc9f23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8314670556002078311
+    second: POINT & LEFT KLICK TO WELD DAMAGE_0
+  - first:
+      213: -6896394076063862476
+    second: POINT & LEFT KLICK TO WELD DAMAGE_1
+  - first:
+      213: 4995619537057589175
+    second: POINT & LEFT KLICK TO WELD DAMAGE_2
+  - first:
+      213: -5547924283129299596
+    second: POINT & LEFT KLICK TO WELD DAMAGE_3
+  - first:
+      213: -562780075480730280
+    second: POINT & LEFT KLICK TO WELD DAMAGE_4
+  - first:
+      213: -4566573758650637684
+    second: POINT & LEFT KLICK TO WELD DAMAGE_5
+  - first:
+      213: 3298206568653881542
+    second: POINT & LEFT KLICK TO WELD DAMAGE_6
+  - first:
+      213: -8899740852625674760
+    second: POINT & LEFT KLICK TO WELD DAMAGE_7
+  - first:
+      213: -3430129061800424376
+    second: POINT & LEFT KLICK TO WELD DAMAGE_8
+  - first:
+      213: -2578849637838370367
+    second: POINT & LEFT KLICK TO WELD DAMAGE_9
+  - first:
+      213: 465830441003434127
+    second: POINT & LEFT KLICK TO WELD DAMAGE_10
+  - first:
+      213: -99356382617200994
+    second: POINT & LEFT KLICK TO WELD DAMAGE_11
+  - first:
+      213: 8586353681400503465
+    second: POINT & LEFT KLICK TO WELD DAMAGE_12
+  - first:
+      213: 8615760838563443489
+    second: POINT & LEFT KLICK TO WELD DAMAGE_13
+  - first:
+      213: 5474611077788366883
+    second: POINT & LEFT KLICK TO WELD DAMAGE_14
+  - first:
+      213: -3660440580810137670
+    second: POINT & LEFT KLICK TO WELD DAMAGE_15
+  - first:
+      213: -6053581814668587113
+    second: POINT & LEFT KLICK TO WELD DAMAGE_16
+  - first:
+      213: -4447238136896913920
+    second: POINT & LEFT KLICK TO WELD DAMAGE_17
+  - first:
+      213: 3447077077968042244
+    second: POINT & LEFT KLICK TO WELD DAMAGE_18
+  - first:
+      213: -3187674532105204998
+    second: POINT & LEFT KLICK TO WELD DAMAGE_19
+  - first:
+      213: 6227303034267520887
+    second: POINT & LEFT KLICK TO WELD DAMAGE_20
+  - first:
+      213: 3125027374458334327
+    second: POINT & LEFT KLICK TO WELD DAMAGE_21
+  - first:
+      213: 8743257536933742898
+    second: POINT & LEFT KLICK TO WELD DAMAGE_22
+  - first:
+      213: -1015569027619656472
+    second: POINT & LEFT KLICK TO WELD DAMAGE_23
+  - first:
+      213: -8166274929966209886
+    second: POINT & LEFT KLICK TO WELD DAMAGE_24
+  - first:
+      213: -424161532336733097
+    second: POINT & LEFT KLICK TO WELD DAMAGE_25
+  - first:
+      213: 639812954831036748
+    second: POINT & LEFT KLICK TO WELD DAMAGE_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: POINT & LEFT KLICK TO WELD DAMAGE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1269
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e47e251d4a36370800000000000000
+      internalID: 8314670556002078311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 87066d74355f30643898c0a3e941afcb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      POINT & LEFT KLICK TO WELD DAMAGE_0: 8314670556002078311
+      POINT & LEFT KLICK TO WELD DAMAGE_1: -6896394076063862476
+      POINT & LEFT KLICK TO WELD DAMAGE_10: 465830441003434127
+      POINT & LEFT KLICK TO WELD DAMAGE_11: -99356382617200994
+      POINT & LEFT KLICK TO WELD DAMAGE_12: 8586353681400503465
+      POINT & LEFT KLICK TO WELD DAMAGE_13: 8615760838563443489
+      POINT & LEFT KLICK TO WELD DAMAGE_14: 5474611077788366883
+      POINT & LEFT KLICK TO WELD DAMAGE_15: -3660440580810137670
+      POINT & LEFT KLICK TO WELD DAMAGE_16: -6053581814668587113
+      POINT & LEFT KLICK TO WELD DAMAGE_17: -4447238136896913920
+      POINT & LEFT KLICK TO WELD DAMAGE_18: 3447077077968042244
+      POINT & LEFT KLICK TO WELD DAMAGE_19: -3187674532105204998
+      POINT & LEFT KLICK TO WELD DAMAGE_2: 4995619537057589175
+      POINT & LEFT KLICK TO WELD DAMAGE_20: 6227303034267520887
+      POINT & LEFT KLICK TO WELD DAMAGE_21: 3125027374458334327
+      POINT & LEFT KLICK TO WELD DAMAGE_22: 8743257536933742898
+      POINT & LEFT KLICK TO WELD DAMAGE_23: -1015569027619656472
+      POINT & LEFT KLICK TO WELD DAMAGE_24: -8166274929966209886
+      POINT & LEFT KLICK TO WELD DAMAGE_25: -424161532336733097
+      POINT & LEFT KLICK TO WELD DAMAGE_26: 639812954831036748
+      POINT & LEFT KLICK TO WELD DAMAGE_27: -1585432414
+      POINT & LEFT KLICK TO WELD DAMAGE_3: -5547924283129299596
+      POINT & LEFT KLICK TO WELD DAMAGE_4: -562780075480730280
+      POINT & LEFT KLICK TO WELD DAMAGE_5: -4566573758650637684
+      POINT & LEFT KLICK TO WELD DAMAGE_6: 3298206568653881542
+      POINT & LEFT KLICK TO WELD DAMAGE_7: -8899740852625674760
+      POINT & LEFT KLICK TO WELD DAMAGE_8: -3430129061800424376
+      POINT & LEFT KLICK TO WELD DAMAGE_9: -2578849637838370367
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
