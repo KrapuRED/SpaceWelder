@@ -193,11 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814ba1146ac757342add22234f70624b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tutorials:
-  - {fileID: 8976854934020616730}
-  - {fileID: 3484129109662323908}
-  - {fileID: 4536987629913141679}
-  - {fileID: 4678968934925788485}
+  _tutorials: []
 --- !u!1 &7851261871902171185
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +469,20 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_text
+      value: "That meter shows the ship\u2019s Efficiency. Hull damage will lower
+        it over time, and lower Efficiency means slower travel speed. Keep the hull
+        patched up if you want us arriving on schedule."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2091519015188813557, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -567,17 +577,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1604756788083961761, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
   m_PrefabInstance: {fileID: 2149685908529959765}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8976854934020616730 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7007889032006181199, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
-  m_PrefabInstance: {fileID: 2149685908529959765}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c2a8a2f9ecfd94ca9a94ae5ea51f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2426891015563723786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,6 +685,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_text
+      value: "That bar tracks our progress to the destination. The ship moves faster
+        when Efficiency is high, and slower when the hull\u2019s damaged. Reach the
+        destination before the timer runs out. Time is shown right to left Minutes,
+        Seconds, then Milliseconds."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 2838233392517405584, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.6425934
@@ -708,17 +722,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1604756788083961761, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
   m_PrefabInstance: {fileID: 2426891015563723786}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4678968934925788485 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7007889032006181199, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
-  m_PrefabInstance: {fileID: 2426891015563723786}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c2a8a2f9ecfd94ca9a94ae5ea51f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3447392647804745644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -909,6 +912,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_text
+      value: "That\u2019s your Integrity meter, Weldbot. Taking damage will lower
+        it, and if it reaches zero, you\u2019ll shut down completely. Try not to
+        get yourself smashed out there."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2838233392517405584, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.6425934
@@ -926,17 +943,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
---- !u!114 &3484129109662323908 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7007889032006181199, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
-  m_PrefabInstance: {fileID: 5844292458612061579}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c2a8a2f9ecfd94ca9a94ae5ea51f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5142588288325179946 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1604756788083961761, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
@@ -1046,6 +1052,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 1759096965623292298, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_text
+      value: Those hull breaches are slowing the ship down.  Weld them shut before
+        Efficiency drops too far and we start losing time.
+      objectReference: {fileID: 0}
     - target: {fileID: 2838233392517405584, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.6425934
@@ -1063,17 +1074,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
---- !u!114 &4536987629913141679 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7007889032006181199, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
-  m_PrefabInstance: {fileID: 6897152637188559072}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c2a8a2f9ecfd94ca9a94ae5ea51f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5328503879701233473 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1604756788083961761, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
@@ -1315,7 +1315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3142491108206740228, guid: 14783771019ae634581ca7f555c44149, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 3142491108206740228, guid: 14783771019ae634581ca7f555c44149, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
