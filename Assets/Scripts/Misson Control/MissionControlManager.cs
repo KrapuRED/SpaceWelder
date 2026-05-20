@@ -56,6 +56,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 {
     public static MissionControlManager Instance;
 
+    [SerializeField] private CaptianRhea captianRhea;
     [SerializeField] private PerfomanceRatingCalculate perfomanceRatingCalculate;
     [SerializeField] private MissionData missionData;
     
@@ -81,6 +82,9 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     private MissionSuccesType _missionSuccesType;
     private bool _missionStarted;
     private bool _missionResultRecorded = false;
+
+    private Coroutine _delayIdleAnimCoroutine;
+
 
     private void Awake()
     {
@@ -171,6 +175,9 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     {
         if (this == null) return;
 
+        if (captianRhea != null)
+            captianRhea.TalkingAnimation();
+
         MissionControlData mcd = _missionControlDialogues.Find(x => x.MissionControlDataType == type);
         if (mcd == null || mcd.MissionControlDialogueData.Count == 0) return;
 
@@ -178,6 +185,8 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         GlobalEvents.OnMissionControlDialogue.Invoke(mcd.MissionControlDialogueData[0].dialogueData.dialogue);
         SoundEffectManager.Instance.PlaySoundEffect("Intercom");
 
+        if (_delayIdleAnimCoroutine != null) StopCoroutine(_delayIdleAnimCoroutine);
+        _delayIdleAnimCoroutine = StartCoroutine(DelayIdleAnimation());
 
         if (_inactiveCoroutine != null) StopCoroutine(_inactiveCoroutine);
         _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
@@ -187,9 +196,16 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     {
         if (!GameManager.Instance.IsTutorialComplete) return;
 
+        if (captianRhea != null)
+            captianRhea.TalkingAnimation();
+
         SoundEffectManager.Instance.PlaySoundEffect("Intercom");
 
         GlobalEvents.OnMissionControlDialogue.Invoke(data.dialogue);
+
+        if (_delayIdleAnimCoroutine != null) StopCoroutine(_delayIdleAnimCoroutine);
+        _delayIdleAnimCoroutine = StartCoroutine(DelayIdleAnimation());
+
         if (_inactiveCoroutine != null) StopCoroutine(_inactiveCoroutine);
         _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
     }
@@ -336,9 +352,18 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         }
     }
 
+    IEnumerator DelayIdleAnimation()
+    {
+        yield return new WaitForSeconds(4f);
+
+        if (captianRhea != null)
+            captianRhea.IdleAnimation();
+    }
+
     IEnumerator OnInactiveTalking()
     {
         _isActive = false;
+
         yield return new WaitForSeconds(_InactiveTalking);
         _isActive = true;
     }

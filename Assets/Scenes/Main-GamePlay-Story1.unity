@@ -929,7 +929,7 @@ MonoBehaviour:
         dialogueName: 
         dialogueID: 
         dialogue: For both our sakes, make sure it keeps flying.
-  playerInput: {fileID: 0}
+  captianRhea: {fileID: 1727590829}
 --- !u!1 &1282738202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1243,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679428727}
   m_CullTransparentMesh: 1
+--- !u!114 &1727590829 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8163808593036535520, guid: a69da48443b39ad47854bf2b734150a9, type: 3}
+  m_PrefabInstance: {fileID: 776398046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bca6199683544e47b89ff9fbaba946a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1784811888
 GameObject:
   m_ObjectHideFlags: 0

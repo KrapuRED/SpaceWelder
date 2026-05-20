@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
     public string musicTrackName;
 
     [SerializeField] private StoryData storyData;
-    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private CaptianRhea captianRhea;
 
     private int _dialogueCount;
 
@@ -92,10 +92,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (storyDialogue.charType == CharacterType.Captian)
         {
+           captianRhea.TalkingAnimation();
            captainDialogueBox.SetCaptainDialogueBox(storyDialogue.characterName, storyDialogue.dialogueData.dialogue);
         }
         else
         {
+            captianRhea.IdleAnimation();
             standardDialogueBox.SetStandaradDialogueBox(storyDialogue.characterName, storyDialogue.dialogueData.dialogue, storyDialogue.characterIcon);
         }
     }

@@ -369,6 +369,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9186298889976676884}
     m_Modifications:
+    - target: {fileID: 115511216077977102, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419169160259096734, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 634172961458975659, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058251739415796568, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399163933535364571, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1604756788083961761, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -449,9 +469,93 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1661861047303244639, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091519015188813557, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382480397025659348, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917265458216225131, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651194001039561604, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103052034606451166, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143048591436610344, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657702998024568003, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847019514227623231, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933847592981862502, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974124729717463536, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149520924215792529, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746415596081801845, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593445205556756689, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730409729742689719, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908873462889673145, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926243038259756528, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981916971687065, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281951279548212741, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8386077199816556475, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
       propertyPath: m_Name
       value: UI - Mission Controller Turorial Efficeincy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386077199816556475, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485047055976833252, guid: 40846463b9a53084abd396ec9b2a3626, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
