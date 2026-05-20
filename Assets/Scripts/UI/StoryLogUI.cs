@@ -3,14 +3,14 @@ using TMPro;
 
 public class StoryLogUI : MonoBehaviour
 {
-    public TextMeshProUGUI cargoText;
-    public TextMeshProUGUI clienText;
+    [SerializeField] private TypeEffect typeEffectCargo;
+    [SerializeField] private TypeEffect typeEffectClient;
 
     public void SetStoryLogUI(string cargo, string client)
     {
         if (this == null) return;
 
-        cargoText.text = "Cargo : " + cargo;
-        clienText.text = "Client : " + client;
+        typeEffectCargo.PlayText("cargo : " + cargo);
+        typeEffectClient.PlayText("Client : " + client);
     }
 }

@@ -27,10 +27,20 @@ public class GameManager : MonoBehaviour
         _isTutorialComplete = true;
     }
 
-    public void NextLevel()
+    public void NextStory()
     {
         _level++;
-        Debug.Log($"Change Scene to {_level}");
+        SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+    }
+
+    public void NextLevel()
+    {
+        if (_level >= 4)
+        {
+            Debug.Log("Congratulations! You've completed all levels!");
+            return;
+        }
+
         SceneManager.LoadScene($"Main-GamePlay-Level{_level}");
     }
 

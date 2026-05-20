@@ -89,10 +89,13 @@ public class GlobalEvents
 
     public static readonly CustomEvents<string> OnHullBeenReapir = new();
 
+
+    //=============================== Game Play ================================================//
     public static readonly CustomEvents OnCompleteTutorial = new CustomEvents();
     public static readonly CustomEvents OnReachDestination = new CustomEvents();
     public static readonly CustomEvents OnPlayerDeath = new CustomEvents();
 
+    //=============================== Upgrade ================================================//
     public static readonly CustomEvents<UpgradeType, float> OnUpgradeRobot = new();
     public static readonly CustomEvents<int> OnApplyExtraBoomArm = new();
     public static readonly CustomEvents<float> OnApplySpeedUpgrade = new();
@@ -111,4 +114,8 @@ public class GlobalEvents
     public static readonly CustomEvents OnShowUpgradePanel = new();
     public static readonly CustomEvents<List<MissionSuccesData>> OnShowPerformancePanel = new();
     public static readonly CustomEvents OnHidePerformacnePanel = new();
+
+    //=============================== UI ================================================//
+    public static readonly CustomEvents OnCompleteTextRevealed = new CustomEvents();
+    public static readonly CustomEvents<char> OnCharaceretReveal = new();
 }

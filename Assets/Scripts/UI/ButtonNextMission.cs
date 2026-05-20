@@ -7,6 +7,6 @@ public class ButtonNextMission : MonoBehaviour
         GlobalEvents.OnHidePerformacnePanel.Invoke();
 
         DataPersistenceManager.Instance.SaveGame();
-        GameManager.Instance.NextLevel();
+        GameManager.Instance.NextStory();
     }
 }

@@ -4,7 +4,8 @@ using TMPro;
 public class CaptainDialogueBox : DialogueBox
 {
     public TextMeshProUGUI characterNameText;
-    public TextMeshProUGUI dialogueText;
+    [SerializeField] private TypeEffect typeEffect;
+    public TypeEffect TypeEffect => typeEffect;
 
     public void SetCaptainDialogueBox(string nameCharacter, string dialogue)
     {
@@ -28,7 +29,7 @@ public class CaptainDialogueBox : DialogueBox
 
     public override void SetDialogueText(string dialogueTextContex)
     {
-        dialogueText.text = dialogueTextContex;
+        typeEffect.PlayText(dialogueTextContex);
         ShowDialogueBox();
     }
 }
