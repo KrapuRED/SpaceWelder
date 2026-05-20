@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764b939aa7496b445864422e54c7e86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charType: 2
   textBox: {fileID: 3932763584186272959}
   charactertPerSeconds: 20
   interpuncuationDelay: 0.5

@@ -51,6 +51,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 0be145c10b802f840aef74e456bbf9c9, type: 3}
   - Name: GamePlay
     Clip: {fileID: 8300000, guid: 30827c6c09d9da5478e419e6d3b5a8e6, type: 3}
+  - Name: MainMenuMusic
+    Clip: {fileID: 8300000, guid: 426468c8630181a43abcda13c2ce0ded, type: 3}
 --- !u!114 &4875591142573288891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +304,15 @@ MonoBehaviour:
   - groupID: Intercom
     clips:
     - {fileID: 8300000, guid: 1c7756d7a9202894c8e9b4e7ee89291a, type: 3}
+  - groupID: RobotDamage
+    clips:
+    - {fileID: 8300000, guid: c6cb016613d30d74f898ecd07c2d85ad, type: 3}
+  - groupID: CapBlipEffect
+    clips:
+    - {fileID: 8300000, guid: 01d8ce8b5a263a44a920652fe9dd8a21, type: 3}
+  - groupID: 0therBlipEffect
+    clips:
+    - {fileID: 8300000, guid: e010d00068f74614e95b1f19b0b2abd9, type: 3}
 --- !u!114 &9190194898028710288
 MonoBehaviour:
   m_ObjectHideFlags: 0
