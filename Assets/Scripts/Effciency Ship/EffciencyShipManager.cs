@@ -13,6 +13,7 @@ public class EffciencyShipManager : MonoBehaviour
     ManagerHullShip _managerHullShip;
     private float _targetEffciency;
     private bool _isAlertPlaying = false;
+    private bool _stop;
     public float EfficiencyShip => effciencyShip;
 
     private void Awake()
@@ -30,8 +31,28 @@ public class EffciencyShipManager : MonoBehaviour
         _totalPossibleHullBreach = _managerHullShip.PossibleHullDamages;
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnPlayerDeath.AddListener(StopCalctulate);
+
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(StopCalctulate);
+
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(StopCalctulate);
+
+    }
+
     private void Update()
     {
+        if (_stop) return;
+
         _targetEffciency = CalculateEffciencyShip();
 
         effciencyShip = Mathf.Lerp(effciencyShip, _targetEffciency, _effciencyShipLerpSpeed * Time.deltaTime);
@@ -48,6 +69,11 @@ public class EffciencyShipManager : MonoBehaviour
         }
 
         GlobalEvents.OnShipEffciencyUI.Invoke(effciencyShip/100f);
+    }
+
+    public void StopCalctulate()
+    {
+        _stop = true;
     }
 
     private float CalculateEffciencyShip()

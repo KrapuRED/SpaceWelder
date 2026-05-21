@@ -64,6 +64,8 @@ public class ManagerHullShip : MonoBehaviour
     {
         GlobalEvents.OnHullBeenReapir.AddListener(OnHullBeenReapir);
         GlobalEvents.OnReachDestination.AddListener(ReachDestination);
+
+        GlobalEvents.OnPlayerDeath.AddListener(StopHullBreach);
     }
 
     private void OnDisable()
@@ -74,6 +76,14 @@ public class ManagerHullShip : MonoBehaviour
     private void OnDestroy()
     {
         Unsubscripe();
+    }
+
+    public void StopHullBreach()
+    {
+        if (this == null) return;
+
+        if (_activeManagerDamageHull != null)
+            StopCoroutine(_activeManagerDamageHull);
     }
 
     private void ReachDestination()
@@ -255,5 +265,7 @@ public class ManagerHullShip : MonoBehaviour
     {
         GlobalEvents.OnReachDestination.RemoveListener(ReachDestination);
         GlobalEvents.OnHullBeenReapir.RemoveListener(OnHullBeenReapir);
+        GlobalEvents.OnPlayerDeath.RemoveListener(StopHullBreach);
+
     }
 }

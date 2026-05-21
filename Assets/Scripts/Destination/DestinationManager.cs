@@ -17,6 +17,7 @@ public class DestinationManager : MonoBehaviour
     private float _efficiency;
     private bool _reachDestination;
     private float _timeElapsed;
+    private bool _stop;
 
     public bool IsReachDestinantion => _reachDestination;
     public float TimeElapsed => _timeElapsed;
@@ -35,8 +36,28 @@ public class DestinationManager : MonoBehaviour
         _effciencyShipManager = EffciencyShipManager.Instance;
     }
 
+    private void OnEnable()
+    {
+        GlobalEvents.OnPlayerDeath.AddListener(StopMove);
+
+    }
+
+    private void OnDisable()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(StopMove);
+
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnPlayerDeath.RemoveListener(StopMove);
+
+    }
+
     private void Update()
     {
+        if (_stop) return;
+
         if (_reachDestination) return;
 
         if (_distanceTravel >= _distanceToTravel)
@@ -55,6 +76,13 @@ public class DestinationManager : MonoBehaviour
         ManagerHullShip.Insantce.CheckPhase(_timeElapsed);
         GlobalEvents.OnProgressDestinationUI.Invoke(_distanceTravel, _distanceToTravel);
         GlobalEvents.OnProgressTimeDestinationUI.Invoke(_timeElapsed);
+    }
+
+    public void StopMove()
+    {
+        if (this == null) return;
+
+        _stop = true;
     }
 
     public float DistanceToTarget()

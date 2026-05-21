@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log($"Tutorial Done? {GameManager.Instance.IsTutorialComplete}");
         if (GameManager.Instance.IsTutorialComplete) return;
 
         if (_tutorials.Count > 0)

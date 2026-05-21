@@ -73,6 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        _level = 1;
+        _level = 1;  
     }
 }
