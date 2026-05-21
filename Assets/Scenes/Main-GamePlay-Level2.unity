@@ -10006,7 +10006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[1].activeAt
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[1].phaseName
@@ -10022,7 +10022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[1].minSpawnRate
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[2].maxSpawnRate
