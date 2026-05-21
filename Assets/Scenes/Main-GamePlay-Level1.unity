@@ -2770,6 +2770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7557032765277443544, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_text
+      value: You Are Destroyed
+      objectReference: {fileID: 0}
     - target: {fileID: 8459945708764396504, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
