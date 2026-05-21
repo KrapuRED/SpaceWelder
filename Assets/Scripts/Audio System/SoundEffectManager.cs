@@ -75,4 +75,13 @@ public class SoundEffectManager : MonoBehaviour
 
         _loopSources.Remove(groupID);
     }
+
+    public void StopAllSoundEFfectLoop()
+    {
+        foreach (var source in _loopSources.Values)
+        {
+            source.Stop();
+            Destroy(source.gameObject);
+        }
+    }
 }

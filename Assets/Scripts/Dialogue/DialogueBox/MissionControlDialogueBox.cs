@@ -44,6 +44,7 @@ public class MissionControlDialogueBox : MonoBehaviour
 
     public void SetDialogueText(string dialogueTextContex)
     {
+        Debug.Log("MissionControlDialogueBox SetDialogueText: " + dialogueTextContex);
         ShowDialogueBox();
         dialogueText.text = dialogueTextContex;
     }

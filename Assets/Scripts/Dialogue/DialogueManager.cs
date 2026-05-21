@@ -106,7 +106,7 @@ public class DialogueManager : MonoBehaviour
     {
         //Change Scene to Main-GamePlay-Levelx via GameManager
         Debug.Log("Story is Done! Please Change Scene to Main-GamePlay-Level");
-        GameManager.Instance.NextLevel();
+        GameManager.Instance.PlayLevel();
 
     }
 

@@ -21,12 +21,12 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         Instance = this;
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
 
     }
 
     private void Start()
     {
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this._dataPersistences = FindAllDataPersistenceObjects();
         LoadGame();
     }
@@ -34,6 +34,10 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame()
     {
         this.gameData = new GameData();
+        dataHandler.Save(gameData);
+
+        foreach (IDataPersistence dataPersistenceObj in _dataPersistences)
+            dataPersistenceObj.LoadData(gameData);
     }
 
     public void LoadGame()

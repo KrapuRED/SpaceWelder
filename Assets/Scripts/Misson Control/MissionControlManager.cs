@@ -67,6 +67,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     [SerializeField] private float _InactiveTalking;
     [SerializeField] private bool _isActive = true;
     [SerializeField] private float _lockedTimeout;
+    [SerializeField] private MissionControlDialogueBox _dialogueBox;
 
     private List<MissionSuccesData> _missionSuccesDatas = new();
     private MissionControltype _prevSelectedMissionControltype;
@@ -82,6 +83,9 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     private MissionSuccesType _missionSuccesType;
     private bool _missionStarted;
     private bool _missionResultRecorded = false;
+
+    private Queue<DialogueData> _dialogueQueue = new Queue<DialogueData>();
+    private bool _isPlayingDialogue = false;
 
     private Coroutine _delayIdleAnimCoroutine;
 
@@ -136,10 +140,11 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     public void OnFailedMission()
     {
-        int index = Random.Range(0, _missionControlDialoguesFailed.Count);
-        var dialogue = _missionControlDialoguesFailed[index];
+        _dialogueQueue.Clear();
+        _isPlayingDialogue = false;
 
-        TriggerDialogue(dialogue);
+        int index = Random.Range(0, _missionControlDialoguesFailed.Count);
+        TriggerDialogue(_missionControlDialoguesFailed[index]);
     }
 
     private void RemoveAllEvent()
@@ -182,7 +187,10 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         if (mcd == null || mcd.MissionControlDialogueData.Count == 0) return;
 
         _lockedTypes.Add(type);
-        GlobalEvents.OnMissionControlDialogue.Invoke(mcd.MissionControlDialogueData[0].dialogueData.dialogue);
+
+        //GlobalEvents.OnMissionControlDialogue.Invoke(mcd.MissionControlDialogueData[0].dialogueData.dialogue);
+        _dialogueBox.SetDialogueText(mcd.MissionControlDialogueData[0].dialogueData.dialogue);
+
         SoundEffectManager.Instance.PlaySoundEffect("Intercom");
 
         if (_delayIdleAnimCoroutine != null) StopCoroutine(_delayIdleAnimCoroutine);
@@ -192,22 +200,40 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
     }
 
+    private IEnumerator PlayDialogueQueue()
+    {
+        _isPlayingDialogue = true;
+
+        while (_dialogueQueue.Count > 0)
+        {
+            DialogueData data = _dialogueQueue.Dequeue();
+
+            if (captianRhea != null)
+                captianRhea.TalkingAnimation();
+
+            if (_dialogueBox == null) yield break;
+
+            _dialogueBox.SetDialogueText(data.dialogue);
+            SoundEffectManager.Instance.PlaySoundEffect("Intercom");
+
+            if (_delayIdleAnimCoroutine != null) StopCoroutine(_delayIdleAnimCoroutine);
+            _delayIdleAnimCoroutine = StartCoroutine(DelayIdleAnimation());
+
+            // Wait before playing next dialogue
+            yield return new WaitForSeconds(_InactiveTalking);
+        }
+
+        _isPlayingDialogue = false;
+    }
+
     private void TriggerDialogue(DialogueData data)
     {
-        if (!GameManager.Instance.IsTutorialComplete) return;
+        // Add to queue instead of playing immediately
+        _dialogueQueue.Enqueue(data);
 
-        if (captianRhea != null)
-            captianRhea.TalkingAnimation();
-
-        SoundEffectManager.Instance.PlaySoundEffect("Intercom");
-
-        GlobalEvents.OnMissionControlDialogue.Invoke(data.dialogue);
-
-        if (_delayIdleAnimCoroutine != null) StopCoroutine(_delayIdleAnimCoroutine);
-        _delayIdleAnimCoroutine = StartCoroutine(DelayIdleAnimation());
-
-        if (_inactiveCoroutine != null) StopCoroutine(_inactiveCoroutine);
-        _inactiveCoroutine = StartCoroutine(OnInactiveTalking());
+        // Only start playing if nothing is currently playing
+        if (!_isPlayingDialogue)
+            StartCoroutine(PlayDialogueQueue());
     }
 
     //============== Checker Mission ================================

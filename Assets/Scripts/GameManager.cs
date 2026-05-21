@@ -23,30 +23,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnEnable()
-    {
-        GlobalEvents.OnPlayerDeath.AddListener(BackToMainMenu);
-    }
-
-    private void OnDisable()
-    {
-        GlobalEvents.OnPlayerDeath.RemoveListener(BackToMainMenu);
-    }
-
-    private void OnDestroy()
-    {
-        GlobalEvents.OnPlayerDeath.RemoveListener(BackToMainMenu);
-    }
-
     public void OnTutorialComplete()
     {
         _isTutorialComplete = true;
     }
 
+    private void Start()
+    {
+        DataPersistenceManager.Instance.NewGame();
+    }
+
     public void StartGame()
     {
         SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Story{_level}", "CrossFade");
-        //SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+        DataPersistenceManager.Instance.NewGame();
     }
 
     public void NextStory()
@@ -55,7 +45,7 @@ public class GameManager : MonoBehaviour
         SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Story{_level}", "CrossFade");
     }
 
-    public void NextLevel()
+    public void PlayLevel()
     {
         if (_level >= 4)
         {
@@ -64,7 +54,13 @@ public class GameManager : MonoBehaviour
         }
 
         MusicManager.Instance.PlayMusic(gamePlayLevelBGM);
-        SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Level{_level}", "CrossFade");
+
+        if (_level <= 1)
+        {
+            SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+        }
+        else
+            SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Level{_level}", "CrossFade");
     }
 
     public void BackToMainMenu()
