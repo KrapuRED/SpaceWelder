@@ -194,6 +194,8 @@ public class ManagerHullShip : MonoBehaviour
 
         hullBreachDatas.Add(newData);
 
+        if (_activeManagerDamageHull != null) StopCoroutine(_activeManagerDamageHull);
+
         _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
     }
 
@@ -233,6 +235,7 @@ public class ManagerHullShip : MonoBehaviour
 
         hullBreachDatas.Add(newData);
 
+        if (_activeManagerDamageHull != null) StopCoroutine( _activeManagerDamageHull );
         _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
     }
 
