@@ -9942,7 +9942,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 890648573888779949, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: _distanceToTravel
-      value: 180
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 3193920981556276334, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: m_Name
