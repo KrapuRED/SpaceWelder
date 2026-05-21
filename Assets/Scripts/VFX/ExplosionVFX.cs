@@ -1,9 +1,12 @@
 using UnityEngine;
+using FirstGearGames.SmoothCameraShaker;
 
 public class ExplosionVFX : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private string _explosionTrigger = "Explode";
+
+    public ShakeData shakeData;
 
     private static readonly int ExplodeTrigger = Animator.StringToHash("Explode");
 
@@ -16,6 +19,7 @@ public class ExplosionVFX : MonoBehaviour
     public void PlayExplosion()
     {
         gameObject.SetActive(true);
+        CameraShakerHandler.Shake(shakeData);
         _animator.SetTrigger(ExplodeTrigger);
     }
 
