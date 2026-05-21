@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.374604, y: 0.1465818}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.39, y: -74.369995}
-  m_SizeDelta: {x: 460.01, y: -110.19}
+  m_AnchoredPosition: {x: 138.39, y: -63.82}
+  m_SizeDelta: {x: 460.01, y: -89.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111148352
 MonoBehaviour:
@@ -440,8 +440,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -715,8 +715,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -849,10 +849,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Credits
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -965,7 +967,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 390.25, y: 78.89}
+  m_SizeDelta: {x: 216.4, y: 67.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341626133
 MonoBehaviour:
@@ -1043,8 +1045,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -8322380279004402570, guid: b2f5519c813e9384883e50577a18a464, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1098,7 +1100,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 390.25, y: 78.89}
+  m_SizeDelta: {x: 356, y: 131.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378668416
 MonoBehaviour:
@@ -1176,8 +1178,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 2530564911472380330, guid: 350a4304181e9fc42a1f76455d138ecd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1284,12 +1286,12 @@ GameObject:
   - component: {fileID: 1628269585}
   - component: {fileID: 1628269584}
   m_Layer: 5
-  m_Name: Button - settings
+  m_Name: Button -  Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1628269583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1305,10 +1307,10 @@ RectTransform:
   - {fileID: 1016930123}
   m_Father: {fileID: 111148351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350.3852, y: -135.70361}
-  m_SizeDelta: {x: 390.25, y: 78.89}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 216.4, y: 67.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628269584
 MonoBehaviour:
@@ -1374,8 +1376,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -8322380279004402570, guid: b2f5519c813e9384883e50577a18a464, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
