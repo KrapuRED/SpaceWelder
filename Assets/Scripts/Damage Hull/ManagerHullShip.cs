@@ -207,7 +207,7 @@ public class ManagerHullShip : MonoBehaviour
             return;
         }
 
-        if (hullBreachDatas.Count >= _limitHullBreach)
+        if (hullBreachDatas.Count >= 1)
         {
             _activeManagerDamageHull = StartCoroutine(OnDelayHullBreach());
             return;

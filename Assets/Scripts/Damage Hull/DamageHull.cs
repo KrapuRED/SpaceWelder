@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class DamageHull : MonoBehaviour, IRepairAble
 {
-    [Header("Hull Damage Configure")]
+    [Header("VFX")]
+    [SerializeField] private GameObject _smokeVFX;
     [SerializeField] private GameObject _explosionVFX;
     [SerializeField] private Transform _explosionVFXContainer;
+
+    [Header("Hull Damage Configure")]
+    
     [SerializeField] private string _hullID;
     [SerializeField] private float _maxHealth;
     [SerializeField] private bool _isHullBreach;
@@ -70,6 +74,9 @@ public class DamageHull : MonoBehaviour, IRepairAble
 
     private void PlayVFX()
     {
+        if (_smokeVFX == null) return;
+        _smokeVFX.SetActive(true);
+
         if (_explosionVFXContainer.childCount > 1)
         {
             var explsionVFX = _explosionVFXContainer.GetChild(0).GetComponent<ExplosionVFX>();
@@ -91,6 +98,9 @@ public class DamageHull : MonoBehaviour, IRepairAble
 
     private void ClearEffect()
     {
+        if (_smokeVFX == null) return;
+        _smokeVFX.SetActive(false);
+
         foreach (Transform child in WeldingEffectContiner)
         {
             Destroy(child.gameObject);

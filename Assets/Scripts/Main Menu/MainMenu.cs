@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
         GameManager.Instance.StartGame();
     }
 
+    public void CreditScene()
+    {
+        SceneTransitionManager.Instance.LoadScene($"Credit", "CrossFade");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit Game");

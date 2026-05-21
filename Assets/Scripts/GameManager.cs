@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         if (_level >= 4)
         {
             Debug.Log("Congratulations! You've completed all levels!");
+            SceneTransitionManager.Instance.LoadScene($"Credit", "CrossFade");
+
             return;
         }
 

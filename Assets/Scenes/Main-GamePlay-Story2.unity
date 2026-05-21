@@ -800,7 +800,7 @@ MonoBehaviour:
   storyLogUI: {fileID: 1580188162}
   captainDialogueBox: {fileID: 1702988568}
   standardDialogueBox: {fileID: 232938362}
-  musicTrackName: 
+  musicTrackName: Story
   storyData:
     clientName: "Valkar Heavy Industries \u2014 Operations Supervisor Mira Kess"
     cargo: Reactor Stabilizers

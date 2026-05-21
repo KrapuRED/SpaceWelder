@@ -1035,7 +1035,7 @@ MonoBehaviour:
   storyLogUI: {fileID: 1580188162}
   captainDialogueBox: {fileID: 1352042924}
   standardDialogueBox: {fileID: 1881787590}
-  musicTrackName: 
+  musicTrackName: Story
   storyData:
     clientName: "Orion Interstellar Transit Authority \u2014 Executive Director Nael
       Arden"
