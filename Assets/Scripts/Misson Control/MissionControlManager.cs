@@ -85,6 +85,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
     private bool _missionResultRecorded = false;
 
     private Queue<DialogueData> _dialogueQueue = new Queue<DialogueData>();
+
     private bool _isPlayingDialogue = false;
 
     private Coroutine _delayIdleAnimCoroutine;
@@ -166,7 +167,10 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
         if (!_missionStarted) return;
 
-        if (_destinationManager.IsReachDestinantion) return;
+        if (_destinationManager.IsReachDestinantion) {
+            _dialogueQueue.Clear();
+            return;
+        }
 
         UpdateCoolDownDialogue();
 
@@ -228,9 +232,11 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     private void TriggerDialogue(DialogueData data)
     {
+        if (!GameManager.Instance.IsTutorialComplete) return;
+
         // Add to queue instead of playing immediately
         _dialogueQueue.Enqueue(data);
-
+        
         // Only start playing if nothing is currently playing
         if (!_isPlayingDialogue)
             StartCoroutine(PlayDialogueQueue());

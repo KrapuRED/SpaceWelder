@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         if (_level <= 1)
         {
-            SceneManager.LoadScene($"Main-GamePlay-Story{_level}");
+            SceneManager.LoadScene($"Main-GamePlay-Level{_level}");
         }
         else
             SceneTransitionManager.Instance.LoadScene($"Main-GamePlay-Level{_level}", "CrossFade");

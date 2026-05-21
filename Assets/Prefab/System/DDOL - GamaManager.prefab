@@ -904,7 +904,7 @@ MonoBehaviour:
   - groupID: 0therBlipEffect
     clips:
     - {fileID: 8300000, guid: e010d00068f74614e95b1f19b0b2abd9, type: 3}
-  - groupID: Welding
+  - groupID: HullReapir
     clips:
     - {fileID: 8300000, guid: f734aa13acd7ea84aa31ffed38eecf36, type: 3}
 --- !u!114 &9190194898028710288

@@ -72,14 +72,19 @@ public class TypeWriterEffect : TypeEffect
         while (_currentVisibleCharacterIndex < textInfo.characterCount)
         {
             //Event Area
-            if (charType == CharacterType.Captian)
-            {
-                SoundEffectManager.Instance.PlaySoundEffect("CapBlipEffect");
-
-            }
+            if (CurrentlySkipping)
+                SoundEffectManager.Instance.StopSoundEffect();
             else
             {
-                SoundEffectManager.Instance.PlaySoundEffect("0therBlipEffect");
+                if (charType == CharacterType.Captian)
+                {
+                    SoundEffectManager.Instance.PlaySoundEffect("CapBlipEffect");
+
+                }
+                else
+                {
+                    SoundEffectManager.Instance.PlaySoundEffect("0therBlipEffect");
+                }
             }
 
             var lastCharacterIndex = textInfo.characterCount - 1;
