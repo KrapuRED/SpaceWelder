@@ -2824,11 +2824,11 @@ PrefabInstance:
       objectReference: {fileID: 3664639317761875597}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: _lockedTimeout
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: _InactiveTalking
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.maxDelay
@@ -2836,11 +2836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.ArrivalAt
-      value: 200
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.MissionName
-      value: Reactor Stabilizers
+      value: Quantum Navigation Array
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: perfomanceRatingCalculate
