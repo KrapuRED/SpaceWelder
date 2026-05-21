@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _maxHealth
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _activeAtStart
@@ -900,6 +900,10 @@ PrefabInstance:
     - target: {fileID: 5678808923406250524, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032844120633310326, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+      propertyPath: _minMoveDistance
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8201028332448647049, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
       propertyPath: target
@@ -4615,7 +4619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _maxHealth
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _activeAtStart
@@ -4932,7 +4936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _maxHealth
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _activeAtStart
@@ -5183,7 +5187,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _maxHealth
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _activeAtStart
@@ -5248,7 +5252,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 890648573888779949, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: _distanceToTravel
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3193920981556276334, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: m_Name

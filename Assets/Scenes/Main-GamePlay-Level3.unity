@@ -347,6 +347,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-5
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 4
@@ -685,27 +693,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: phaseDatas.Array.data[0].maxSpawnRate
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
-      propertyPath: phaseDatas.Array.data[0].minSpawnRate
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
-      propertyPath: phaseDatas.Array.data[1].maxSpawnRate
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
-      propertyPath: phaseDatas.Array.data[1].minSpawnRate
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
-      propertyPath: phaseDatas.Array.data[2].maxSpawnRate
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
-      propertyPath: phaseDatas.Array.data[2].minSpawnRate
+      propertyPath: phaseDatas.Array.data[0].minSpawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: phaseDatas.Array.data[1].maxSpawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: phaseDatas.Array.data[1].minSpawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: phaseDatas.Array.data[2].maxSpawnRate
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342796368108431758, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
+      propertyPath: phaseDatas.Array.data[2].minSpawnRate
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5556973924243513266, guid: 368ab5f3570ddd347825aa0091c271ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2290,6 +2298,14 @@ PrefabInstance:
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _hullID
       value: SCH-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
@@ -3937,6 +3953,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-6
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 6
@@ -4013,6 +4037,14 @@ PrefabInstance:
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _hullID
       value: SCH-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
@@ -4818,6 +4850,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-11
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 11
@@ -5247,6 +5287,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-2
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 1
@@ -5602,6 +5650,14 @@ PrefabInstance:
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _hullID
       value: SCH-8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
@@ -6927,6 +6983,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-4
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 3
@@ -7908,9 +7972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabAsteroid: {fileID: 2750430499998168399, guid: 3025711b5fe2453418ad345639f03ff3, type: 3}
   _asteroidContiner: {fileID: 770538273}
-  minAsteroid: 2
-  maxAsteroid: 3
-  spawnRate: 12
+  minAsteroid: 3
+  maxAsteroid: 6
+  spawnRate: 7
   _maxActiveAsteroids: 10
   _spawPointContainer: {fileID: 1113551555}
   _endPointContainer: {fileID: 1539962875}
@@ -7941,6 +8005,14 @@ PrefabInstance:
     - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: _hullID
       value: SCH-7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
@@ -9273,6 +9345,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-5
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 5
@@ -9569,6 +9649,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662286072}
     m_Modifications:
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull  Breach
@@ -11059,6 +11147,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-9
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 9
@@ -11460,6 +11556,14 @@ PrefabInstance:
       propertyPath: _hullID
       value: SCH-12
       objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940741116190345222, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
+      propertyPath: _activeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5312738962141466102, guid: 15f95b2bb9881c049871007c316e7032, type: 3}
       propertyPath: m_Name
       value: Hull Breach - 12
@@ -11537,6 +11641,38 @@ PrefabInstance:
       propertyPath: _currentPlayer
       value: 
       objectReference: {fileID: 1987306630}
+    - target: {fileID: 1934866601196289058, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934866601196289058, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934866601196289058, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934866601196289058, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285111808529240436, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3128577601633709737, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Camera
       value: 
@@ -11544,6 +11680,22 @@ PrefabInstance:
     - target: {fileID: 4054120236824512997, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Name
       value: '# ==== UI  Panel Canvas ==== #'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994199918091872484, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994199918091872484, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994199918091872484, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994199918091872484, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7117720215148795217, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_Pivot.x
@@ -11623,6 +11775,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7117720215148795217, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459945708764396504, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459945708764396504, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459945708764396504, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459945708764396504, guid: c3614fde8bc77d04c99c45ec3eea6047, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

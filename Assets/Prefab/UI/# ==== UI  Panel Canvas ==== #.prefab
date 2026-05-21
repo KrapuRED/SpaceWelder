@@ -140,8 +140,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mission Failed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1119,7 +1119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5595228, y: 0.23211671}
   m_AnchorMax: {x: 0.683, y: 0.29923433}
-  m_AnchoredPosition: {x: 218.99998, y: 437}
+  m_AnchoredPosition: {x: 219, y: 437}
   m_SizeDelta: {x: 4.9900055, y: -4.919998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4669244642246860395
@@ -1155,7 +1155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.3499756, y: -22.850018}
+  m_AnchoredPosition: {x: 3.3499756, y: -22.850021}
   m_SizeDelta: {x: -197.73, y: -323.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8833450212826978133
@@ -1781,7 +1781,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1992,7 +1992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2233,8 +2233,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
-  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
+  m_sharedMaterial: {fileID: -6219834417860989253, guid: 7af5f29bf5f418147acb06803387977f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2904,7 +2904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.MissionName
-      value: Quantum Navigation Array
+      value: Reactor Stabilizers
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: perfomanceRatingCalculate
