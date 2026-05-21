@@ -1155,7 +1155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.3499756, y: -22.850021}
+  m_AnchoredPosition: {x: 3.3499756, y: -22.850018}
   m_SizeDelta: {x: -197.73, y: -323.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8833450212826978133
@@ -1251,8 +1251,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2900,7 +2900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.ArrivalAt
-      value: 260
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1443173143531992437, guid: c1f30b919f3412b449f3bd5819756912, type: 3}
       propertyPath: missionData.MissionName

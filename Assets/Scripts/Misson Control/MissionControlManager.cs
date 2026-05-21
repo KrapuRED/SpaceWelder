@@ -232,6 +232,8 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
 
     private void TriggerDialogue(DialogueData data)
     {
+        if (this == null) return;
+
         if (!GameManager.Instance.IsTutorialComplete) return;
 
         // Add to queue instead of playing immediately
@@ -239,7 +241,7 @@ public class MissionControlManager : MonoBehaviour, IDataPersistence
         
         // Only start playing if nothing is currently playing
         if (!_isPlayingDialogue)
-            StartCoroutine(PlayDialogueQueue());
+            StartCoroutine(PlayDialogueQueue());                
     }
 
     //============== Checker Mission ================================
