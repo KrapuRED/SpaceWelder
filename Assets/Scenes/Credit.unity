@@ -177,18 +177,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\nRxDanz77 - Game Artist\r\nTriUGames - Game Designer\r\nZerosTwos - Game
-    Programmer\n\n\nExplosion SFX\LLarge Underwater ExplosionDavidDumaisAudio\n\LWelding
-    SFX\LWelding Torch Multipleu_xg7ssi08yr\n\nPlayer Movement SFX\nRobot moving,
-    driving, takeoff, motor sound - 12 different SEsShidenBeatsMusic\n\nCharacter
-    Dialogue Blip SFX\nblipu_f1ee7vf7na\L\LUI Klick/Press SFX\nImmersiveControl Button
-    Click SoundDenielCZ\n\nPlayer Hurt SFX\nmetal impactu_ml52e3xzf7\n\nMain Menu
-    BGM\nReflected LightSergePavkinMusic\n\nStory Scene BGM\nBriefing - AmbiencePretex\n\nGamePlay
-    BGM\nIndustrialBransboynd\n\nMissionControl_Trigger SFX\nRadioALEXIS_GAMING_CAM\n\nHull
-    Damaged Fixed SFX\nSystem NotificationUniversfield\n\nEfficiency Below 60 Alert
-    SFX\nAlarm8footdino_on_scratch\n\nLevel Complete SFX\nBrass New LevelUniversfield"
+    Programmer\n\nSmooth Camera Shaker Unity Package\nFirstGearGames\n\nExplosion
+    SFX\LLarge Underwater ExplosionDavidDumaisAudio\n\LWelding SFX\LWelding Torch
+    Multipleu_xg7ssi08yr\n\nPlayer Movement SFX\nRobot moving, driving, takeoff,
+    motor sound - 12 different SEsShidenBeatsMusic\n\nCharacter Dialogue Blip SFX\nblipu_f1ee7vf7na\L\LUI
+    Klick/Press SFX\nImmersiveControl Button Click SoundDenielCZ\n\nPlayer Hurt SFX\nmetal
+    impactu_ml52e3xzf7\n\nMain Menu BGM\nReflected LightSergePavkinMusic\n\nStory
+    Scene BGM\nBriefing - AmbiencePretex\n\nGamePlay BGM\nIndustrialBransboynd\n\nMissionControl_Trigger
+    SFX\nRadioALEXIS_GAMING_CAM\n\nHull Damaged Fixed SFX\nSystem NotificationUniversfield\n\nEfficiency
+    Below 60 Alert SFX\nAlarm8footdino_on_scratch\n\nLevel Complete SFX\nBrass New
+    LevelUniversfield"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
+  m_sharedMaterial: {fileID: 4317285652732631079, guid: b1a70f4716df2944e895acc6d54fa7ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
