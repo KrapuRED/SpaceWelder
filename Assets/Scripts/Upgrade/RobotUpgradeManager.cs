@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
@@ -7,6 +8,9 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
     [SerializeField] private int extraBoomArm;
     [SerializeField] private float speedUpgrade;
     [SerializeField] private float weldingAreaUpgrade;
+    
+    [Header("Auto Start Generate")]
+    [SerializeField] private bool autoStart;
 
     private void Awake()
     {
@@ -19,6 +23,12 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
             Destroy(gameObject);
             return;
         }
+    }
+
+    private void Start()
+    {
+        if (autoStart)
+            ApplyUpgrades();    
     }
 
     private void OnEnable()

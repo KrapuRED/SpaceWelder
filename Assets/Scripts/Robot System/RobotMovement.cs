@@ -19,7 +19,8 @@ public class RobotMovement : MonoBehaviour
 
     private void Start()
     {
-        _currentPoint = _startPoint.GetRailPoint();
+        if (_startPoint != null)
+            _currentPoint = _startPoint.GetRailPoint();
 
         if (_currentPoint == null )
         {
