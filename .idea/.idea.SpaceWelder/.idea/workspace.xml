@@ -10,14 +10,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ee93199-0932-42b4-99a2-b6862ccf9414" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/2D Sprites/Player Character/PlayerCharacter_PlayerHands.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2D Sprites/Player Character/PlayerCharacter_PlayerHands.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test-Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test-Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Robot System/RobotMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Robot System/RobotMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrade/RobotUpgradeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrade/RobotUpgradeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="4ee93199-0932-42b4-99a2-b6862ccf9414" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780386362117</updated>
-      <workItem from="1780386366274" duration="3487000" />
+      <workItem from="1780386366274" duration="3542000" />
     </task>
     <servers />
   </component>
