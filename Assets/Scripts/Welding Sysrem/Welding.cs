@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class Welding : MonoBehaviour
 {
-    [SerializeField] private RobotWelder _ownerRobot;
     [SerializeField] private Transform _weldingPoint;
     [SerializeField] private float _weldingRadius;
     [SerializeField] private LayerMask _hullDamageLayer;
@@ -16,6 +15,29 @@ public class Welding : MonoBehaviour
 
     private bool _isWelding;
     private Vector2 _lastWeldingPointPos;
+    private InputAction _weldingAction;
+
+    private void OnDestroy()
+    {
+        if (_weldingAction != null)
+        {
+            _weldingAction.performed -= OnWelding;
+            _weldingAction.canceled -= OnWelding;
+        }
+    }
+    public void InitWelding(InputAction weldingAction)
+    {
+        // Cleanup old if any
+        if (_weldingAction != null)
+        {
+            _weldingAction.performed -= OnWelding;
+            _weldingAction.canceled -= OnWelding;
+        }
+
+        _weldingAction = weldingAction;
+        _weldingAction.performed += OnWelding;
+        _weldingAction.canceled += OnWelding;
+    }
 
     public void OnWelding(InputAction.CallbackContext context)
     {

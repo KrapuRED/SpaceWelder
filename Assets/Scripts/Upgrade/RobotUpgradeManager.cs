@@ -9,8 +9,9 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
     [SerializeField] private float speedUpgrade;
     [SerializeField] private float weldingAreaUpgrade;
     
-    [Header("Auto Start Generate")]
-    [SerializeField] private bool autoStart;
+    [Header("Test Config")]
+    [SerializeField] private bool applyUpgradeOnStart;
+
 
     private void Awake()
     {
@@ -27,8 +28,11 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        if (autoStart)
-            ApplyUpgrades();    
+        if (applyUpgradeOnStart)
+        {
+            ApplyUpgrades();
+        }
+
     }
 
     private void OnEnable()

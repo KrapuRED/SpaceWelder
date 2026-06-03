@@ -13,6 +13,11 @@ public class RobotMovement : MonoBehaviour
     [SerializeField] private float _baseSpeedRate = 1f;
     private float _speedMultiplier = 1f;
 
+    [Header("Junction Pause Config")]
+    [SerializeField] private float _junctionPauseDuration = 0.25f; // Adjust between 0.1s and 0.5s
+    private bool _isPausedAtJunction = false;
+    private float _pauseTimer = 0f;
+
     private RailPoint _targetPoint;
     [SerializeField] private Direction? _bufferedInput;
     [SerializeField] private bool _isMoving;
@@ -71,6 +76,22 @@ public class RobotMovement : MonoBehaviour
 
     private void Update()
     {
+        if (_isPausedAtJunction)
+        {
+            Debug.Log("Paused at junction, timer: " + _pauseTimer);
+            _pauseTimer -= Time.deltaTime;
+            _isMoving = false; // Ensure movement is blocked while paused
+            if (_pauseTimer <= 0f)
+            {
+                _isPausedAtJunction = false;
+                if (_bufferedInput != null)
+                {
+                    SoundEffectManager.Instance.PlaySoundEffectLoop("Move-Constant");
+                }
+            }
+            return; // Block movement logic while paused
+        }
+
         if (_isMoving)
         {
             MoveToRailPoint();
@@ -121,6 +142,15 @@ public class RobotMovement : MonoBehaviour
         {
             transform.position = _targetPoint.position;
             _currentPoint = _targetPoint;
+
+            if (_currentPoint.connections != null && _currentPoint.connections.Count > 2)
+            {
+                _isPausedAtJunction = true;
+                _pauseTimer = _junctionPauseDuration;
+
+                // Temporarily stop the constant movement sound while paused
+                SoundEffectManager.Instance.StopSoundEffectLoop("Move-Constant");
+            }
 
             if (_bufferedInput == null)
                 StopMoving();

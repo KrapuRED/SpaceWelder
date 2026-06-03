@@ -16,6 +16,8 @@ public class IKBoomArmManager : MonoBehaviour
     public JoinPoint JointPoinEnd => jp_end;
     public GameObject target;
 
+    public bool IsRebuilding = false;
+
     private void Start()
     {
         BuildChainFromHierarchy();
@@ -23,7 +25,9 @@ public class IKBoomArmManager : MonoBehaviour
 
     public void RebuildChain()
     {
+        IsRebuilding = true;
         BuildChainFromHierarchy();
+        IsRebuilding = false;
     }
 
     private void BuildChainFromHierarchy()
@@ -76,6 +80,9 @@ public class IKBoomArmManager : MonoBehaviour
 
     private void Update()
     {
+        if (IsRebuilding) return; // guard against destroyed objects
+        if (jp_end == null || target == null) return; // null safety
+
         for (int i = 0; i < steps; ++i)
         {
             if (GetDistance(jp_end.transform.position, target.transform.position) > rotateThreshold)
@@ -88,8 +95,6 @@ public class IKBoomArmManager : MonoBehaviour
                     current.RotateJoinPoint(-slope * rotate_rate);
                     current = current.GetJoinPointChild();
                 }
-
-
             }
         }
     }
@@ -97,5 +102,12 @@ public class IKBoomArmManager : MonoBehaviour
     float GetDistance(Vector3 point1, Vector3 point2)
     {
         return Vector3.Distance(point1, point2);
+    }
+
+    public void SetChain(JoinPoint root, JoinPoint end)
+    {
+        Debug.Log($"Setting IK chain: Root = {root?.name}, End = {end?.name}");
+        jp_root = root;
+        jp_end = end;
     }
 }
