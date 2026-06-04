@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deltaTheta: 0.01
   rotateThreshold: 0.05
-  rotate_rate: 10
+  rotate_rate: 60
   steps: 32
   jp_root: {fileID: 5133825649409573981}
   jp_end: {fileID: 0}
@@ -679,7 +679,7 @@ MonoBehaviour:
     availableDirections: 
   _currentDirection: 0
   _baseSpeedRate: 1
-  _junctionPauseDuration: 0.25
+  _junctionPauseDuration: 0.05
   _isMoving: 0
 --- !u!50 &1350931123807130912
 Rigidbody2D:
