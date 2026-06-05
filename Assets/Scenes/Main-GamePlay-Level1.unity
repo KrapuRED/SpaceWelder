@@ -905,6 +905,14 @@ PrefabInstance:
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 1029624872}
+    - target: {fileID: 6832387371943111371, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+      propertyPath: extraBoomArm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832387371943111371, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
+      propertyPath: applyUpgradeOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8201028332448647049, guid: c7fdee8f4a59b4142a56b4a540bf8c82, type: 3}
       propertyPath: target
       value: 

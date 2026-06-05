@@ -32,7 +32,6 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
         {
             ApplyUpgrades();
         }
-
     }
 
     private void OnEnable()
@@ -85,6 +84,8 @@ public class RobotUpgradeManager : MonoBehaviour, IDataPersistence
 
     public void ApplyUpgrades()
     {
+        Debug.LogWarning($"Applying Upgrades: ExtraBoomArm={extraBoomArm}, SpeedUpgrade={speedUpgrade}, WeldingAreaUpgrade={weldingAreaUpgrade}");
+
         GlobalEvents.OnApplyExtraBoomArm.Invoke(extraBoomArm);
         GlobalEvents.OnApplySpeedUpgrade.Invoke(speedUpgrade);
         GlobalEvents.OnApplyWeldingUpgrade.Invoke(weldingAreaUpgrade);

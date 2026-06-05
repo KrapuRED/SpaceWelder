@@ -19,9 +19,9 @@ public class BoomArmGenerator : MonoBehaviour
 
     private int armCount = 0;
 
-    public void AddArm()
+    public void AddArm(int extraBoom)
     {
-        armCount = baseLengthArm + 1;
+        armCount = baseLengthArm + extraBoom;
         RebuildChain(armCount);
     }
 

@@ -57,9 +57,6 @@ public class RobotWelder : Robot, IDamageAble
         }
         Debug.Log("Extra boom : " +  extraBoom);
 
-        for (int i = 0; i < extraBoom; i++)
-        {
-            boomArmGenerator.AddArm();
-        }
+        boomArmGenerator.AddArm(extraBoom);
     }
 }
