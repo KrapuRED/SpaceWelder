@@ -32,7 +32,7 @@ My Contribution (AndhikaAtmaja)
 - Created most UI and Scene in game.
 
 ## Layer / Module Design <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/897ab20c-94d2-4398-ad51-ee0f7859921d" />
-
+<img width="1492" height="782" alt="Image" src="https://github.com/user-attachments/assets/bc631d6b-9605-410f-9077-aa4f54419a2e" />
 
 ## Modules and Features <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/718fd774-8614-4ccf-b7f7-297fdcf3c10b" />
 | 📂 Name | 🎬 Scene | 📋 Responsibility |
@@ -55,6 +55,7 @@ My Contribution (AndhikaAtmaja)
 | Welding System        | Gameplay             | - Handle welding logic |
 
 ## Game Flow <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/7759227f-8383-4a35-8846-ad1af00389c1" />
+<img width="2319" height="812" alt="Image" src="https://github.com/user-attachments/assets/88f1de4a-ac3e-40b4-877e-258729c1377c" />
 
 ## Plugin / Unity Asset <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/65b37d28-0412-4092-8f6f-95054849fe7a" />
 Went developed this game we use some Plugin / Unity Asset for polishing and juicy
