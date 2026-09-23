@@ -1,7 +1,7 @@
 ### Space Weld
-<img width="320" height="180" alt="Image" src="https://github.com/user-attachments/assets/59b2f12e-a785-4862-8bc1-f00f509ccf13" />
-<img width="320" height="180" alt="Image" src="https://github.com/user-attachments/assets/43c888a5-49b1-44e8-87ec-39eca2542073" />
-<img width="320" height="180" alt="Image" src="https://github.com/user-attachments/assets/d69f0ceb-acf0-4c9d-b876-211b8d4c5059" />
+<img width="280" height="180" alt="Image" src="https://github.com/user-attachments/assets/59b2f12e-a785-4862-8bc1-f00f509ccf13" />
+<img width="280" height="180" alt="Image" src="https://github.com/user-attachments/assets/43c888a5-49b1-44e8-87ec-39eca2542073" />
+<img width="280" height="180" alt="Image" src="https://github.com/user-attachments/assets/d69f0ceb-acf0-4c9d-b876-211b8d4c5059" />
 
 ## About Game <img width="25" height="25" alt="Image" src="https://github.com/user-attachments/assets/93c1c452-f50d-408d-a1f1-98669efb24f0" /> 
 ***Space Weld*** is a sci-fi maintenance game set aboard a deep-space cargo vessel. As the ship pushes through dangerous routes across the galaxy, the hull continuously suffers damage from debris and asteroid impacts. 
